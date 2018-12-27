@@ -181,7 +181,7 @@
     {
       "text": "%sql \nselect age, count(1) value\nfrom bank \nwhere age \u003c 30 \ngroup by age \norder by age",
       "user": "hadoop",
-      "dateUpdated": "2018-12-27 16:19:04.887",
+      "dateUpdated": "2018-12-27 16:48:12.992",
       "config": {
         "colWidth": 6.0,
         "fontSize": 10.0,
@@ -288,7 +288,7 @@
     {
       "text": "%sql \nselect age, count(1) value \nfrom bank \nwhere age \u003c ${maxAge\u003d30} \ngroup by age \norder by age",
       "user": "hadoop",
-      "dateUpdated": "2018-12-27 16:19:05.025",
+      "dateUpdated": "2018-12-27 16:48:13.285",
       "config": {
         "colWidth": 6.0,
         "fontSize": 10.0,
