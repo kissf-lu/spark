@@ -3,7 +3,11 @@
     {
       "text": "import org.apache.spark.ml.{Pipeline, PipelineModel}\nimport org.apache.spark.ml.classification.LogisticRegression\nimport org.apache.spark.ml.feature.{HashingTF, Tokenizer}\nimport org.apache.spark.ml.linalg.Vector\nimport org.apache.spark.sql.Row\n\n",
       "user": "hadoop",
+<<<<<<< HEAD
       "dateUpdated": "2018-12-27 11:20:08.654",
+=======
+      "dateUpdated": "2018-12-27 11:22:51.729",
+>>>>>>> 10d9bf9ffa0339d39d00fbbff4a85bc2ab1dfd1d
       "config": {
         "colWidth": 6.0,
         "fontSize": 9.0,
@@ -36,15 +40,26 @@
       "jobName": "paragraph_1545837733400_-1196215909",
       "id": "20181226-232213_1646049775",
       "dateCreated": "2018-12-26 23:22:13.401",
+<<<<<<< HEAD
       "dateStarted": "2018-12-27 11:19:57.158",
       "dateFinished": "2018-12-27 11:19:58.254",
+=======
+      "dateStarted": "2018-12-27 11:22:51.770",
+      "dateFinished": "2018-12-27 11:23:08.857",
+>>>>>>> 10d9bf9ffa0339d39d00fbbff4a85bc2ab1dfd1d
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
+<<<<<<< HEAD
       "text": "// Prepare training documents from a list of (id, text, label) tuples.\nval training \u003d spark.createDataFrame(Seq(\n  (0L, \"a b c d e spark\", 1.0),\n  (1L, \"b d\", 0.0),\n  (2L, \"spark f g h\", 1.0),\n  (3L, \"hadoop mapreduce\", 0.0)\n)).toDF(\"id\", \"text\", \"label\")\n\n// Configure an ML pipeline, which consists of three stages: tokenizer, hashingTF, and lr.\nval tokenizer \u003d new Tokenizer().\n  setInputCol(\"text\").\n  setOutputCol(\"words\")\n  \nval hashingTF \u003d new HashingTF().\n  setNumFeatures(1000).\n  setInputCol(tokenizer.getOutputCol).\n  setOutputCol(\"features\")\nval lr \u003d new LogisticRegression().\n  setMaxIter(10).\n  setRegParam(0.001)\nval pipeline \u003d new Pipeline().\nsetStages(Array(tokenizer, hashingTF, lr))\n\n// Fit the pipeline to training documents.\nval model \u003d pipeline.fit(training)\n",
       "user": "hadoop",
       "dateUpdated": "2018-12-27 11:20:08.669",
+=======
+      "text": "// Prepare training documents from a list of (id, text, label) tuples.\nval training \u003d spark.createDataFrame(Seq(\n  (0L, \"a b c d e spark\", 1.0),\n  (1L, \"b d\", 0.0),\n  (2L, \"spark f g h\", 1.0),\n  (3L, \"hadoop mapreduce\", 0.0)\n)).toDF(\"id\", \"text\", \"label\")\n\n// Configure an ML pipeline, which consists of three stages: tokenizer, hashingTF, and lr.\nval tokenizer \u003d new Tokenizer().\n  setInputCol(\"text\").\n  setOutputCol(\"words\")\n  \nval hashingTF \u003d new HashingTF().\n  setNumFeatures(1000).\n  setInputCol(tokenizer.getOutputCol).\n  setOutputCol(\"features\")\nval lr \u003d new LogisticRegression().\n  setMaxIter(10).\n  setRegParam(0.001)\nval pipeline \u003d new Pipeline().\nsetStages(Array(tokenizer, hashingTF, lr))\n\n// Fit the pipeline to training documents.\nval model \u003d pipeline.fit(training)\n\n// Prepare test documents, which are unlabeled (id, text) tuples.\nval test \u003d spark.createDataFrame(Seq(\n  (4L, \"spark i j k\"),\n  (5L, \"l m n\"),\n  (6L, \"spark hadoop spark\"),\n  (7L, \"apache hadoop\")\n)).toDF(\"id\", \"text\")\n\n// Make predictions on test documents.\nval dfTest \u003d model.transform(test)\n",
+      "user": "hadoop",
+      "dateUpdated": "2018-12-27 11:23:14.943",
+>>>>>>> 10d9bf9ffa0339d39d00fbbff4a85bc2ab1dfd1d
       "config": {
         "colWidth": 6.0,
         "fontSize": 9.0,
@@ -69,7 +84,11 @@
         "msg": [
           {
             "type": "TEXT",
+<<<<<<< HEAD
             "data": "training: org.apache.spark.sql.DataFrame \u003d [id: bigint, text: string ... 1 more field]\ntokenizer: org.apache.spark.ml.feature.Tokenizer \u003d tok_65cbe83e7211\nhashingTF: org.apache.spark.ml.feature.HashingTF \u003d hashingTF_f5f816895b10\nlr: org.apache.spark.ml.classification.LogisticRegression \u003d logreg_e10c3ea2bb48\npipeline: org.apache.spark.ml.Pipeline \u003d pipeline_436c8735c000\nmodel: org.apache.spark.ml.PipelineModel \u003d pipeline_436c8735c000\n"
+=======
+            "data": "training: org.apache.spark.sql.DataFrame \u003d [id: bigint, text: string ... 1 more field]\ntokenizer: org.apache.spark.ml.feature.Tokenizer \u003d tok_9cdcb813f785\nhashingTF: org.apache.spark.ml.feature.HashingTF \u003d hashingTF_4ade5c06409b\nlr: org.apache.spark.ml.classification.LogisticRegression \u003d logreg_815b4755401b\npipeline: org.apache.spark.ml.Pipeline \u003d pipeline_4fa747671ad2\nmodel: org.apache.spark.ml.PipelineModel \u003d pipeline_4fa747671ad2\ntest: org.apache.spark.sql.DataFrame \u003d [id: bigint, text: string]\ndfTest: org.apache.spark.sql.DataFrame \u003d [id: bigint, text: string ... 5 more fields]\n"
+>>>>>>> 10d9bf9ffa0339d39d00fbbff4a85bc2ab1dfd1d
           }
         ]
       },
@@ -80,6 +99,7 @@
           "tooltip": "View in Spark web UI",
           "group": "spark",
           "values": [
+<<<<<<< HEAD
             "http://carbon:4040/jobs/job?id\u003d0",
             "http://carbon:4040/jobs/job?id\u003d1",
             "http://carbon:4040/jobs/job?id\u003d2",
@@ -92,6 +112,20 @@
             "http://carbon:4040/jobs/job?id\u003d9",
             "http://carbon:4040/jobs/job?id\u003d10",
             "http://carbon:4040/jobs/job?id\u003d11"
+=======
+            "http://master:4042/jobs/job?id\u003d0",
+            "http://master:4042/jobs/job?id\u003d1",
+            "http://master:4042/jobs/job?id\u003d2",
+            "http://master:4042/jobs/job?id\u003d3",
+            "http://master:4042/jobs/job?id\u003d4",
+            "http://master:4042/jobs/job?id\u003d5",
+            "http://master:4042/jobs/job?id\u003d6",
+            "http://master:4042/jobs/job?id\u003d7",
+            "http://master:4042/jobs/job?id\u003d8",
+            "http://master:4042/jobs/job?id\u003d9",
+            "http://master:4042/jobs/job?id\u003d10",
+            "http://master:4042/jobs/job?id\u003d11"
+>>>>>>> 10d9bf9ffa0339d39d00fbbff4a85bc2ab1dfd1d
           ],
           "interpreterSettingId": "spark"
         }
@@ -100,6 +134,7 @@
       "jobName": "paragraph_1545837778783_-993396225",
       "id": "20181226-232258_664739728",
       "dateCreated": "2018-12-26 23:22:58.783",
+<<<<<<< HEAD
       "dateStarted": "2018-12-27 11:19:45.311",
       "dateFinished": "2018-12-27 11:19:53.359",
       "status": "FINISHED",
@@ -143,13 +178,21 @@
       "dateCreated": "2018-12-27 00:11:07.961",
       "dateStarted": "2018-12-27 11:20:00.116",
       "dateFinished": "2018-12-27 11:20:01.157",
+=======
+      "dateStarted": "2018-12-27 11:23:14.977",
+      "dateFinished": "2018-12-27 11:23:28.759",
+>>>>>>> 10d9bf9ffa0339d39d00fbbff4a85bc2ab1dfd1d
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "dfTest.show",
       "user": "hadoop",
+<<<<<<< HEAD
       "dateUpdated": "2018-12-27 11:20:08.709",
+=======
+      "dateUpdated": "2018-12-27 11:23:41.205",
+>>>>>>> 10d9bf9ffa0339d39d00fbbff4a85bc2ab1dfd1d
       "config": {
         "colWidth": 6.0,
         "fontSize": 9.0,
@@ -161,9 +204,13 @@
           "completionKey": "TAB",
           "completionSupport": true
         },
+<<<<<<< HEAD
         "editorMode": "ace/mode/scala",
         "editorHide": false,
         "tableHide": false
+=======
+        "editorMode": "ace/mode/scala"
+>>>>>>> 10d9bf9ffa0339d39d00fbbff4a85bc2ab1dfd1d
       },
       "settings": {
         "params": {},
@@ -182,15 +229,24 @@
       "jobName": "paragraph_1545840817096_592224788",
       "id": "20181227-001337_1255990654",
       "dateCreated": "2018-12-27 00:13:37.096",
+<<<<<<< HEAD
       "dateStarted": "2018-12-27 11:20:03.583",
       "dateFinished": "2018-12-27 11:20:04.217",
+=======
+      "dateStarted": "2018-12-27 11:23:41.236",
+      "dateFinished": "2018-12-27 11:23:41.849",
+>>>>>>> 10d9bf9ffa0339d39d00fbbff4a85bc2ab1dfd1d
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "dfTest.createOrReplaceTempView(\"test\")",
       "user": "hadoop",
+<<<<<<< HEAD
       "dateUpdated": "2018-12-27 11:20:08.723",
+=======
+      "dateUpdated": "2018-12-27 00:13:26.568",
+>>>>>>> 10d9bf9ffa0339d39d00fbbff4a85bc2ab1dfd1d
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -202,9 +258,13 @@
           "completionKey": "TAB",
           "completionSupport": true
         },
+<<<<<<< HEAD
         "editorMode": "ace/mode/scala",
         "editorHide": false,
         "tableHide": false
+=======
+        "editorMode": "ace/mode/scala"
+>>>>>>> 10d9bf9ffa0339d39d00fbbff4a85bc2ab1dfd1d
       },
       "settings": {
         "params": {},
@@ -226,7 +286,11 @@
     {
       "text": "%sql \nselect age, count(1) value\nfrom bank \nwhere age \u003c 30 \ngroup by age \norder by age",
       "user": "hadoop",
+<<<<<<< HEAD
       "dateUpdated": "2018-12-27 11:20:08.737",
+=======
+      "dateUpdated": "2018-12-27 11:22:48.518",
+>>>>>>> 10d9bf9ffa0339d39d00fbbff4a85bc2ab1dfd1d
       "config": {
         "colWidth": 6.0,
         "fontSize": 10.0,
@@ -333,7 +397,11 @@
     {
       "text": "%sql \nselect age, count(1) value \nfrom bank \nwhere age \u003c ${maxAge\u003d30} \ngroup by age \norder by age",
       "user": "hadoop",
+<<<<<<< HEAD
       "dateUpdated": "2018-12-27 11:20:08.756",
+=======
+      "dateUpdated": "2018-12-27 11:22:48.638",
+>>>>>>> 10d9bf9ffa0339d39d00fbbff4a85bc2ab1dfd1d
       "config": {
         "colWidth": 6.0,
         "fontSize": 10.0,
@@ -341,7 +409,11 @@
         "results": {
           "0": {
             "graph": {
+<<<<<<< HEAD
               "mode": "pieChart",
+=======
+              "mode": "stackedAreaChart",
+>>>>>>> 10d9bf9ffa0339d39d00fbbff4a85bc2ab1dfd1d
               "height": 300.0,
               "optionOpen": false,
               "setting": {
@@ -446,7 +518,11 @@
     {
       "text": "%sql\n",
       "user": "hadoop",
+<<<<<<< HEAD
       "dateUpdated": "2018-12-27 11:20:08.764",
+=======
+      "dateUpdated": "2018-12-27 00:02:45.436",
+>>>>>>> 10d9bf9ffa0339d39d00fbbff4a85bc2ab1dfd1d
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -479,7 +555,10 @@
   "noteParams": {},
   "noteForms": {},
   "angularObjects": {
+<<<<<<< HEAD
     "python:shared_process": [],
+=======
+>>>>>>> 10d9bf9ffa0339d39d00fbbff4a85bc2ab1dfd1d
     "spark:shared_process": []
   },
   "config": {
