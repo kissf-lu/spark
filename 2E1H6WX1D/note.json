@@ -1,0 +1,205 @@
+{
+  "paragraphs": [
+    {
+      "text": "### zeppelin 安装说明",
+      "user": "hadoop",
+      "dateUpdated": "2018-12-27 08:32:58.109",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003ezeppelin 安装说明\u003c/h3\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1545869304387_-1759392540",
+      "id": "20181227-080824_1721765553",
+      "dateCreated": "2018-12-27 08:08:24.387",
+      "dateStarted": "2018-12-27 08:32:58.120",
+      "dateFinished": "2018-12-27 08:32:58.128",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "#### 安装\n\n\n- 下载 zeppelin\n\n   - 从地址 http://zeppelin.apache.org/download.html 下载最新版本\n   - tar -zxvf zeppelin-0.8.0-bin-netinst.tgz \n   - mv zeppelin-0.8.0-bin-netinst.tgz ~/zeppelin\n   - 完成安装\n\n---\n    \n#### 安装解释器！\n\n\n- 官方安装建议进行安装\n\n\n   - https://zeppelin.apache.org/docs/0.8.0/usage/interpreter/installation.html\n\n- Spark 安装的注意事项：\n \n   -  删除已有Spark环境： rm -rf ~/zeppelin/interpreter/spark \n   \n   -  重新安装编译Spark环境： \n      - 为了归并依赖的冲突问题，重新编译zeppelin 的Spark 解释器\n      \n      - ./bin/install-interpreter.sh --name spark --artifact org.apache.zeppelin:spark-interpreter:0.8.0\n   \n",
+      "user": "hadoop",
+      "dateUpdated": "2018-12-27 08:32:40.293",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch4\u003e安装\u003c/h4\u003e\n\u003cul\u003e\n  \u003cli\u003e\n  \u003cp\u003e下载 zeppelin\u003c/p\u003e\u003c/li\u003e\n  \u003cli\u003e\n  \u003cp\u003e从地址 \u003ca href\u003d\"http://zeppelin.apache.org/download.html\"\u003ehttp://zeppelin.apache.org/download.html\u003c/a\u003e 下载最新版本\u003c/p\u003e\u003c/li\u003e\n  \u003cli\u003etar -zxvf zeppelin-0.8.0-bin-netinst.tgz\u003c/li\u003e\n  \u003cli\u003emv zeppelin-0.8.0-bin-netinst.tgz ~/zeppelin\u003c/li\u003e\n  \u003cli\u003e完成安装\u003c/li\u003e\n\u003c/ul\u003e\n\u003chr/\u003e\n\u003ch4\u003e安装解释器！\u003c/h4\u003e\n\u003cul\u003e\n  \u003cli\u003e\n  \u003cp\u003e官方安装建议进行安装\u003c/p\u003e\u003c/li\u003e\n  \u003cli\u003e\n  \u003cp\u003e\u003ca href\u003d\"https://zeppelin.apache.org/docs/0.8.0/usage/interpreter/installation.html\"\u003ehttps://zeppelin.apache.org/docs/0.8.0/usage/interpreter/installation.html\u003c/a\u003e\u003c/p\u003e\u003c/li\u003e\n  \u003cli\u003e\n  \u003cp\u003eSpark 安装的注意事项：\u003c/p\u003e\u003c/li\u003e\n  \u003cli\u003e\n  \u003cp\u003e删除已有Spark环境： rm -rf ~/zeppelin/interpreter/spark \u003c/p\u003e\u003c/li\u003e\n  \u003cli\u003e\n    \u003cp\u003e重新安装编译Spark环境： \u003c/p\u003e\n    \u003cul\u003e\n      \u003cli\u003e\n      \u003cp\u003e为了归并依赖的冲突问题，重新编译zeppelin 的Spark 解释器\u003c/p\u003e\u003c/li\u003e\n      \u003cli\u003e\n      \u003cp\u003e./bin/install-interpreter.sh \u0026ndash;name spark \u0026ndash;artifact org.apache.zeppelin:spark-interpreter:0.8.0\u003c/p\u003e\u003c/li\u003e\n    \u003c/ul\u003e\n  \u003c/li\u003e\n\u003c/ul\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1545870123970_1787750923",
+      "id": "20181227-082203_620574345",
+      "dateCreated": "2018-12-27 08:22:03.970",
+      "dateStarted": "2018-12-27 08:32:40.293",
+      "dateFinished": "2018-12-27 08:32:40.329",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "#### 安装完成后的依赖冲突",
+      "user": "hadoop",
+      "dateUpdated": "2018-12-27 08:33:23.276",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch4\u003e安装完成后的依赖冲突\u003c/h4\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1545869767852_-1004847514",
+      "id": "20181227-081607_345372437",
+      "dateCreated": "2018-12-27 08:16:07.852",
+      "dateStarted": "2018-12-27 08:33:23.277",
+      "dateFinished": "2018-12-27 08:33:23.289",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "",
+      "text": "- slf4j 依赖的冲突\n\n[hadoop@gitserver lib]$ mv slf4j-api-1.7.10.jar slf4j-api-1.7.10.jar.bak\n[hadoop@gitserver lib]$ mv slf4j-log4j12-1.7.10.jar slf4j-log4j12-1.7.10.jar.bak\n[hadoop@gitserver lib]$ cp ~/spark/jars/slf4j-* ./\n\n---\n\n- jackson 依赖的冲突\n\n[hadoop@gitserver lib]$ mv jackson-annotations-2.8.0.jar jackson-annotations-2.8.0.jar.bak\n[hadoop@gitserver lib]$ cp ~/spark/jars/jackson-annotations-2.6.7.jar ./\n\n\n[hadoop@gitserver lib]$ mv jackson-core-2.8.10.jar jackson-core-2.8.10.jar.bak\n[hadoop@gitserver lib]$ cp ~/spark/jars/jackson-core-2.6.7.jar ./\n\n\n[hadoop@gitserver lib]$ mv jackson-databind-2.8.11.1.jar  jackson-databind-2.8.11.1.jar.bak\n[hadoop@gitserver lib]$ cp ~/spark/jars/jackson-databind-2.6.7.1.jar ./\n\n\n[hadoop@gitserver lib]$ mv jackson-module-jaxb-annotations-2.8.10.jar jackson-module-jaxb-annotations-2.8.10.jar.bak\n[hadoop@gitserver lib]$ cp ~/spark/jars/jackson-module-jaxb-annotations-2.6.7.jar ./\n\n",
+      "user": "hadoop",
+      "dateUpdated": "2018-12-27 08:33:18.642",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionSupport": false
+        },
+        "title": false,
+        "tableHide": false,
+        "editorHide": true,
+        "editorMode": "ace/mode/markdown"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cul\u003e\n  \u003cli\u003eslf4j 依赖的冲突\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e[hadoop@gitserver lib]$ mv slf4j-api-1.7.10.jar slf4j-api-1.7.10.jar.bak\u003cbr/\u003e[hadoop@gitserver lib]$ mv slf4j-log4j12-1.7.10.jar slf4j-log4j12-1.7.10.jar.bak\u003cbr/\u003e[hadoop@gitserver lib]$ cp ~/spark/jars/slf4j-* ./\u003c/p\u003e\n\u003chr/\u003e\n\u003cul\u003e\n  \u003cli\u003ejackson 依赖的冲突\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e[hadoop@gitserver lib]$ mv jackson-annotations-2.8.0.jar jackson-annotations-2.8.0.jar.bak\u003cbr/\u003e[hadoop@gitserver lib]$ cp ~/spark/jars/jackson-annotations-2.6.7.jar ./\u003c/p\u003e\n\u003cp\u003e[hadoop@gitserver lib]$ mv jackson-core-2.8.10.jar jackson-core-2.8.10.jar.bak\u003cbr/\u003e[hadoop@gitserver lib]$ cp ~/spark/jars/jackson-core-2.6.7.jar ./\u003c/p\u003e\n\u003cp\u003e[hadoop@gitserver lib]$ mv jackson-databind-2.8.11.1.jar jackson-databind-2.8.11.1.jar.bak\u003cbr/\u003e[hadoop@gitserver lib]$ cp ~/spark/jars/jackson-databind-2.6.7.1.jar ./\u003c/p\u003e\n\u003cp\u003e[hadoop@gitserver lib]$ mv jackson-module-jaxb-annotations-2.8.10.jar jackson-module-jaxb-annotations-2.8.10.jar.bak\u003cbr/\u003e[hadoop@gitserver lib]$ cp ~/spark/jars/jackson-module-jaxb-annotations-2.6.7.jar ./\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1545869339932_-968275330",
+      "id": "20181227-080859_428725674",
+      "dateCreated": "2018-12-27 08:08:59.932",
+      "dateStarted": "2018-12-27 08:33:18.644",
+      "dateFinished": "2018-12-27 08:33:18.679",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "user": "hadoop",
+      "dateUpdated": "2018-12-27 08:32:37.059",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1545869800389_565635980",
+      "id": "20181227-081640_1872408641",
+      "dateCreated": "2018-12-27 08:16:40.390",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "zeppelin_install",
+  "id": "2E1H6WX1D",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {
+    "md:shared_process": [],
+    "spark:shared_process": []
+  },
+  "config": {
+    "isZeppelinNotebookCronEnable": false
+  },
+  "info": {}
+}

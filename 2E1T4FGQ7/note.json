@@ -1,0 +1,491 @@
+{
+  "paragraphs": [
+    {
+      "text": "import org.apache.spark.ml.{Pipeline, PipelineModel}\nimport org.apache.spark.ml.classification.LogisticRegression\nimport org.apache.spark.ml.feature.{HashingTF, Tokenizer}\nimport org.apache.spark.ml.linalg.Vector\nimport org.apache.spark.sql.Row\n\n",
+      "user": "hadoop",
+      "dateUpdated": "2018-12-27 11:20:08.654",
+      "config": {
+        "colWidth": 6.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala",
+        "tableHide": false,
+        "editorHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "import org.apache.spark.ml.{Pipeline, PipelineModel}\nimport org.apache.spark.ml.classification.LogisticRegression\nimport org.apache.spark.ml.feature.{HashingTF, Tokenizer}\nimport org.apache.spark.ml.linalg.Vector\nimport org.apache.spark.sql.Row\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1545837733400_-1196215909",
+      "id": "20181226-232213_1646049775",
+      "dateCreated": "2018-12-26 23:22:13.401",
+      "dateStarted": "2018-12-27 11:19:57.158",
+      "dateFinished": "2018-12-27 11:19:58.254",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "// Prepare training documents from a list of (id, text, label) tuples.\nval training \u003d spark.createDataFrame(Seq(\n  (0L, \"a b c d e spark\", 1.0),\n  (1L, \"b d\", 0.0),\n  (2L, \"spark f g h\", 1.0),\n  (3L, \"hadoop mapreduce\", 0.0)\n)).toDF(\"id\", \"text\", \"label\")\n\n// Configure an ML pipeline, which consists of three stages: tokenizer, hashingTF, and lr.\nval tokenizer \u003d new Tokenizer().\n  setInputCol(\"text\").\n  setOutputCol(\"words\")\n  \nval hashingTF \u003d new HashingTF().\n  setNumFeatures(1000).\n  setInputCol(tokenizer.getOutputCol).\n  setOutputCol(\"features\")\nval lr \u003d new LogisticRegression().\n  setMaxIter(10).\n  setRegParam(0.001)\nval pipeline \u003d new Pipeline().\nsetStages(Array(tokenizer, hashingTF, lr))\n\n// Fit the pipeline to training documents.\nval model \u003d pipeline.fit(training)\n",
+      "user": "hadoop",
+      "dateUpdated": "2018-12-27 11:20:08.669",
+      "config": {
+        "colWidth": 6.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala",
+        "tableHide": false,
+        "editorHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "training: org.apache.spark.sql.DataFrame \u003d [id: bigint, text: string ... 1 more field]\ntokenizer: org.apache.spark.ml.feature.Tokenizer \u003d tok_65cbe83e7211\nhashingTF: org.apache.spark.ml.feature.HashingTF \u003d hashingTF_f5f816895b10\nlr: org.apache.spark.ml.classification.LogisticRegression \u003d logreg_e10c3ea2bb48\npipeline: org.apache.spark.ml.Pipeline \u003d pipeline_436c8735c000\nmodel: org.apache.spark.ml.PipelineModel \u003d pipeline_436c8735c000\n"
+          }
+        ]
+      },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            "http://carbon:4040/jobs/job?id\u003d0",
+            "http://carbon:4040/jobs/job?id\u003d1",
+            "http://carbon:4040/jobs/job?id\u003d2",
+            "http://carbon:4040/jobs/job?id\u003d3",
+            "http://carbon:4040/jobs/job?id\u003d4",
+            "http://carbon:4040/jobs/job?id\u003d5",
+            "http://carbon:4040/jobs/job?id\u003d6",
+            "http://carbon:4040/jobs/job?id\u003d7",
+            "http://carbon:4040/jobs/job?id\u003d8",
+            "http://carbon:4040/jobs/job?id\u003d9",
+            "http://carbon:4040/jobs/job?id\u003d10",
+            "http://carbon:4040/jobs/job?id\u003d11"
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "apps": [],
+      "jobName": "paragraph_1545837778783_-993396225",
+      "id": "20181226-232258_664739728",
+      "dateCreated": "2018-12-26 23:22:58.783",
+      "dateStarted": "2018-12-27 11:19:45.311",
+      "dateFinished": "2018-12-27 11:19:53.359",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "// Prepare test documents, which are unlabeled (id, text) tuples.\nval test \u003d spark.createDataFrame(Seq(\n  (4L, \"spark i j k\"),\n  (5L, \"l m n\"),\n  (6L, \"spark hadoop spark\"),\n  (7L, \"apache hadoop\")\n)).toDF(\"id\", \"text\")\n\n// Make predictions on test documents.\nval dfTest \u003d model.transform(test)\n",
+      "user": "hadoop",
+      "dateUpdated": "2018-12-27 11:20:08.686",
+      "config": {
+        "colWidth": 6.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala",
+        "tableHide": false,
+        "editorHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "test: org.apache.spark.sql.DataFrame \u003d [id: bigint, text: string]\ndfTest: org.apache.spark.sql.DataFrame \u003d [id: bigint, text: string ... 5 more fields]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1545840667961_-1498375467",
+      "id": "20181227-001107_1092492814",
+      "dateCreated": "2018-12-27 00:11:07.961",
+      "dateStarted": "2018-12-27 11:20:00.116",
+      "dateFinished": "2018-12-27 11:20:01.157",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "dfTest.show",
+      "user": "hadoop",
+      "dateUpdated": "2018-12-27 11:20:08.709",
+      "config": {
+        "colWidth": 6.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala",
+        "editorHide": false,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+---+------------------+--------------------+--------------------+--------------------+--------------------+----------+\n| id|              text|               words|            features|       rawPrediction|         probability|prediction|\n+---+------------------+--------------------+--------------------+--------------------+--------------------+----------+\n|  4|       spark i j k|    [spark, i, j, k]|(1000,[105,149,32...|[-1.6609033227473...|[0.15964077387874...|       1.0|\n|  5|             l m n|           [l, m, n]|(1000,[6,638,655]...|[1.64218895265635...|[0.83783256854766...|       0.0|\n|  6|spark hadoop spark|[spark, hadoop, s...|(1000,[105,181],[...|[-2.5980142174392...|[0.06926633132976...|       1.0|\n|  7|     apache hadoop|    [apache, hadoop]|(1000,[181,495],[...|[4.00817033336806...|[0.98215753334442...|       0.0|\n+---+------------------+--------------------+--------------------+--------------------+--------------------+----------+\n\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1545840817096_592224788",
+      "id": "20181227-001337_1255990654",
+      "dateCreated": "2018-12-27 00:13:37.096",
+      "dateStarted": "2018-12-27 11:20:03.583",
+      "dateFinished": "2018-12-27 11:20:04.217",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "dfTest.createOrReplaceTempView(\"test\")",
+      "user": "hadoop",
+      "dateUpdated": "2018-12-27 11:20:08.723",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala",
+        "editorHide": false,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "jobName": "paragraph_1545840761080_-1082022848",
+      "id": "20181227-001241_738765608",
+      "dateCreated": "2018-12-27 00:12:41.080",
+      "dateStarted": "2018-12-27 00:13:26.594",
+      "dateFinished": "2018-12-27 00:13:27.070",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%sql \nselect age, count(1) value\nfrom bank \nwhere age \u003c 30 \ngroup by age \norder by age",
+      "user": "hadoop",
+      "dateUpdated": "2018-12-27 11:20:08.737",
+      "config": {
+        "colWidth": 6.0,
+        "fontSize": 10.0,
+        "enabled": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "multiBarChart",
+              "height": 300.0,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "age": "string",
+                      "value": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                },
+                "stackedAreaChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                },
+                "multiBarChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default",
+                  "stacked": false
+                },
+                "lineChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                }
+              },
+              "commonSetting": {},
+              "keys": [
+                {
+                  "name": "age",
+                  "index": 0.0,
+                  "aggr": "sum"
+                }
+              ],
+              "groups": [],
+              "values": [
+                {
+                  "name": "value",
+                  "index": 1.0,
+                  "aggr": "sum"
+                }
+              ]
+            },
+            "helium": {}
+          }
+        },
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/sql",
+        "editorHide": false,
+        "tableHide": false,
+        "title": false,
+        "lineNumbers": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "age\tvalue\n19\t4\n20\t3\n21\t7\n22\t9\n23\t20\n24\t24\n25\t44\n26\t77\n27\t94\n28\t103\n29\t97\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1545837799285_-1344409373",
+      "id": "20181226-232319_1078906935",
+      "dateCreated": "2018-12-26 23:23:19.285",
+      "dateStarted": "2018-12-26 23:55:24.887",
+      "dateFinished": "2018-12-26 23:55:26.063",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%sql \nselect age, count(1) value \nfrom bank \nwhere age \u003c ${maxAge\u003d30} \ngroup by age \norder by age",
+      "user": "hadoop",
+      "dateUpdated": "2018-12-27 11:20:08.756",
+      "config": {
+        "colWidth": 6.0,
+        "fontSize": 10.0,
+        "enabled": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "pieChart",
+              "height": 300.0,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "age": "string",
+                      "value": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                },
+                "multiBarChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                },
+                "stackedAreaChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                },
+                "lineChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                }
+              },
+              "commonSetting": {},
+              "keys": [
+                {
+                  "name": "age",
+                  "index": 0.0,
+                  "aggr": "sum"
+                }
+              ],
+              "groups": [],
+              "values": [
+                {
+                  "name": "value",
+                  "index": 1.0,
+                  "aggr": "sum"
+                }
+              ]
+            },
+            "helium": {}
+          }
+        },
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/sql",
+        "editorHide": false,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {
+          "maxAge": "30"
+        },
+        "forms": {
+          "maxAge": {
+            "type": "TextBox",
+            "name": "maxAge",
+            "defaultValue": "30",
+            "hidden": false
+          }
+        }
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "age\tvalue\n19\t4\n20\t3\n21\t7\n22\t9\n23\t20\n24\t24\n25\t44\n26\t77\n27\t94\n28\t103\n29\t97\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1545839258102_1358894833",
+      "id": "20181226-234738_1087261397",
+      "dateCreated": "2018-12-26 23:47:38.102",
+      "dateStarted": "2018-12-26 23:48:58.522",
+      "dateFinished": "2018-12-26 23:48:59.898",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%sql\n",
+      "user": "hadoop",
+      "dateUpdated": "2018-12-27 11:20:08.764",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/sql",
+        "tableHide": false,
+        "editorHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1545839338494_-273007454",
+      "id": "20181226-234858_1439166160",
+      "dateCreated": "2018-12-26 23:48:58.494",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "sparkTest",
+  "id": "2E1T4FGQ7",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {
+    "python:shared_process": [],
+    "spark:shared_process": []
+  },
+  "config": {
+    "isZeppelinNotebookCronEnable": false,
+    "looknfeel": "default",
+    "personalizedMode": "false"
+  },
+  "info": {}
+}
