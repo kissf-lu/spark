@@ -3,7 +3,7 @@
     {
       "text": "import org.apache.spark.ml.{Pipeline, PipelineModel}\nimport org.apache.spark.ml.classification.LogisticRegression\nimport org.apache.spark.ml.feature.{HashingTF, Tokenizer}\nimport org.apache.spark.ml.linalg.Vector\nimport org.apache.spark.sql.Row\n\n",
       "user": "hadoop",
-      "dateUpdated": "2018-12-27 10:50:44.994",
+      "dateUpdated": "2018-12-27 11:22:51.729",
       "config": {
         "colWidth": 6.0,
         "fontSize": 9.0,
@@ -17,7 +17,7 @@
         },
         "editorMode": "ace/mode/scala",
         "tableHide": false,
-        "editorHide": true
+        "editorHide": false
       },
       "settings": {
         "params": {},
@@ -36,15 +36,15 @@
       "jobName": "paragraph_1545837733400_-1196215909",
       "id": "20181226-232213_1646049775",
       "dateCreated": "2018-12-26 23:22:13.401",
-      "dateStarted": "2018-12-27 10:50:45.100",
-      "dateFinished": "2018-12-27 10:50:59.895",
+      "dateStarted": "2018-12-27 11:22:51.770",
+      "dateFinished": "2018-12-27 11:23:08.857",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "// Prepare training documents from a list of (id, text, label) tuples.\nval training \u003d spark.createDataFrame(Seq(\n  (0L, \"a b c d e spark\", 1.0),\n  (1L, \"b d\", 0.0),\n  (2L, \"spark f g h\", 1.0),\n  (3L, \"hadoop mapreduce\", 0.0)\n)).toDF(\"id\", \"text\", \"label\")\n\n// Configure an ML pipeline, which consists of three stages: tokenizer, hashingTF, and lr.\nval tokenizer \u003d new Tokenizer().\n  setInputCol(\"text\").\n  setOutputCol(\"words\")\n  \nval hashingTF \u003d new HashingTF().\n  setNumFeatures(1000).\n  setInputCol(tokenizer.getOutputCol).\n  setOutputCol(\"features\")\nval lr \u003d new LogisticRegression().\n  setMaxIter(10).\n  setRegParam(0.001)\nval pipeline \u003d new Pipeline().\nsetStages(Array(tokenizer, hashingTF, lr))\n\n// Fit the pipeline to training documents.\nval model \u003d pipeline.fit(training)\n",
+      "text": "// Prepare training documents from a list of (id, text, label) tuples.\nval training \u003d spark.createDataFrame(Seq(\n  (0L, \"a b c d e spark\", 1.0),\n  (1L, \"b d\", 0.0),\n  (2L, \"spark f g h\", 1.0),\n  (3L, \"hadoop mapreduce\", 0.0)\n)).toDF(\"id\", \"text\", \"label\")\n\n// Configure an ML pipeline, which consists of three stages: tokenizer, hashingTF, and lr.\nval tokenizer \u003d new Tokenizer().\n  setInputCol(\"text\").\n  setOutputCol(\"words\")\n  \nval hashingTF \u003d new HashingTF().\n  setNumFeatures(1000).\n  setInputCol(tokenizer.getOutputCol).\n  setOutputCol(\"features\")\nval lr \u003d new LogisticRegression().\n  setMaxIter(10).\n  setRegParam(0.001)\nval pipeline \u003d new Pipeline().\nsetStages(Array(tokenizer, hashingTF, lr))\n\n// Fit the pipeline to training documents.\nval model \u003d pipeline.fit(training)\n\n// Prepare test documents, which are unlabeled (id, text) tuples.\nval test \u003d spark.createDataFrame(Seq(\n  (4L, \"spark i j k\"),\n  (5L, \"l m n\"),\n  (6L, \"spark hadoop spark\"),\n  (7L, \"apache hadoop\")\n)).toDF(\"id\", \"text\")\n\n// Make predictions on test documents.\nval dfTest \u003d model.transform(test)\n",
       "user": "hadoop",
-      "dateUpdated": "2018-12-27 10:51:05.563",
+      "dateUpdated": "2018-12-27 11:23:14.943",
       "config": {
         "colWidth": 6.0,
         "fontSize": 9.0,
@@ -57,7 +57,7 @@
           "completionSupport": true
         },
         "editorMode": "ace/mode/scala",
-        "tableHide": true,
+        "tableHide": false,
         "editorHide": false
       },
       "settings": {
@@ -69,7 +69,7 @@
         "msg": [
           {
             "type": "TEXT",
-            "data": "training: org.apache.spark.sql.DataFrame \u003d [id: bigint, text: string ... 1 more field]\ntokenizer: org.apache.spark.ml.feature.Tokenizer \u003d tok_2b39304685ec\nhashingTF: org.apache.spark.ml.feature.HashingTF \u003d hashingTF_49401895b95a\nlr: org.apache.spark.ml.classification.LogisticRegression \u003d logreg_8629fd79d316\npipeline: org.apache.spark.ml.Pipeline \u003d pipeline_7b7bbe7d2994\nmodel: org.apache.spark.ml.PipelineModel \u003d pipeline_7b7bbe7d2994\n"
+            "data": "training: org.apache.spark.sql.DataFrame \u003d [id: bigint, text: string ... 1 more field]\ntokenizer: org.apache.spark.ml.feature.Tokenizer \u003d tok_9cdcb813f785\nhashingTF: org.apache.spark.ml.feature.HashingTF \u003d hashingTF_4ade5c06409b\nlr: org.apache.spark.ml.classification.LogisticRegression \u003d logreg_815b4755401b\npipeline: org.apache.spark.ml.Pipeline \u003d pipeline_4fa747671ad2\nmodel: org.apache.spark.ml.PipelineModel \u003d pipeline_4fa747671ad2\ntest: org.apache.spark.sql.DataFrame \u003d [id: bigint, text: string]\ndfTest: org.apache.spark.sql.DataFrame \u003d [id: bigint, text: string ... 5 more fields]\n"
           }
         ]
       },
@@ -80,18 +80,18 @@
           "tooltip": "View in Spark web UI",
           "group": "spark",
           "values": [
-            "http://master:4040/jobs/job?id\u003d0",
-            "http://master:4040/jobs/job?id\u003d1",
-            "http://master:4040/jobs/job?id\u003d2",
-            "http://master:4040/jobs/job?id\u003d3",
-            "http://master:4040/jobs/job?id\u003d4",
-            "http://master:4040/jobs/job?id\u003d5",
-            "http://master:4040/jobs/job?id\u003d6",
-            "http://master:4040/jobs/job?id\u003d7",
-            "http://master:4040/jobs/job?id\u003d8",
-            "http://master:4040/jobs/job?id\u003d9",
-            "http://master:4040/jobs/job?id\u003d10",
-            "http://master:4040/jobs/job?id\u003d11"
+            "http://master:4042/jobs/job?id\u003d0",
+            "http://master:4042/jobs/job?id\u003d1",
+            "http://master:4042/jobs/job?id\u003d2",
+            "http://master:4042/jobs/job?id\u003d3",
+            "http://master:4042/jobs/job?id\u003d4",
+            "http://master:4042/jobs/job?id\u003d5",
+            "http://master:4042/jobs/job?id\u003d6",
+            "http://master:4042/jobs/job?id\u003d7",
+            "http://master:4042/jobs/job?id\u003d8",
+            "http://master:4042/jobs/job?id\u003d9",
+            "http://master:4042/jobs/job?id\u003d10",
+            "http://master:4042/jobs/job?id\u003d11"
           ],
           "interpreterSettingId": "spark"
         }
@@ -100,55 +100,15 @@
       "jobName": "paragraph_1545837778783_-993396225",
       "id": "20181226-232258_664739728",
       "dateCreated": "2018-12-26 23:22:58.783",
-      "dateStarted": "2018-12-27 10:51:05.599",
-      "dateFinished": "2018-12-27 10:51:13.665",
-      "status": "FINISHED",
-      "progressUpdateIntervalMs": 500
-    },
-    {
-      "text": "// Prepare test documents, which are unlabeled (id, text) tuples.\nval test \u003d spark.createDataFrame(Seq(\n  (4L, \"spark i j k\"),\n  (5L, \"l m n\"),\n  (6L, \"spark hadoop spark\"),\n  (7L, \"apache hadoop\")\n)).toDF(\"id\", \"text\")\n\n// Make predictions on test documents.\nval dfTest \u003d model.transform(test)\n",
-      "user": "hadoop",
-      "dateUpdated": "2018-12-27 10:51:38.186",
-      "config": {
-        "colWidth": 6.0,
-        "fontSize": 9.0,
-        "enabled": true,
-        "results": {},
-        "editorSetting": {
-          "language": "scala",
-          "editOnDblClick": false,
-          "completionKey": "TAB",
-          "completionSupport": true
-        },
-        "editorMode": "ace/mode/scala",
-        "tableHide": false
-      },
-      "settings": {
-        "params": {},
-        "forms": {}
-      },
-      "results": {
-        "code": "SUCCESS",
-        "msg": [
-          {
-            "type": "TEXT",
-            "data": "test: org.apache.spark.sql.DataFrame \u003d [id: bigint, text: string]\ndfTest: org.apache.spark.sql.DataFrame \u003d [id: bigint, text: string ... 5 more fields]\n"
-          }
-        ]
-      },
-      "apps": [],
-      "jobName": "paragraph_1545840667961_-1498375467",
-      "id": "20181227-001107_1092492814",
-      "dateCreated": "2018-12-27 00:11:07.961",
-      "dateStarted": "2018-12-27 10:51:38.231",
-      "dateFinished": "2018-12-27 10:51:39.199",
+      "dateStarted": "2018-12-27 11:23:14.977",
+      "dateFinished": "2018-12-27 11:23:28.759",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "dfTest.show",
       "user": "hadoop",
-      "dateUpdated": "2018-12-27 10:51:42.555",
+      "dateUpdated": "2018-12-27 11:23:41.205",
       "config": {
         "colWidth": 6.0,
         "fontSize": 9.0,
@@ -179,8 +139,8 @@
       "jobName": "paragraph_1545840817096_592224788",
       "id": "20181227-001337_1255990654",
       "dateCreated": "2018-12-27 00:13:37.096",
-      "dateStarted": "2018-12-27 10:51:42.590",
-      "dateFinished": "2018-12-27 10:51:43.067",
+      "dateStarted": "2018-12-27 11:23:41.236",
+      "dateFinished": "2018-12-27 11:23:41.849",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -221,7 +181,7 @@
     {
       "text": "%sql \nselect age, count(1) value\nfrom bank \nwhere age \u003c 30 \ngroup by age \norder by age",
       "user": "hadoop",
-      "dateUpdated": "2018-12-27 10:50:40.226",
+      "dateUpdated": "2018-12-27 11:22:48.518",
       "config": {
         "colWidth": 6.0,
         "fontSize": 10.0,
@@ -328,7 +288,7 @@
     {
       "text": "%sql \nselect age, count(1) value \nfrom bank \nwhere age \u003c ${maxAge\u003d30} \ngroup by age \norder by age",
       "user": "hadoop",
-      "dateUpdated": "2018-12-27 00:02:45.409",
+      "dateUpdated": "2018-12-27 11:22:48.638",
       "config": {
         "colWidth": 6.0,
         "fontSize": 10.0,
@@ -336,7 +296,7 @@
         "results": {
           "0": {
             "graph": {
-              "mode": "pieChart",
+              "mode": "stackedAreaChart",
               "height": 300.0,
               "optionOpen": false,
               "setting": {
