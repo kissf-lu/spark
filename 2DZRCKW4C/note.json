@@ -85,9 +85,9 @@
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "\nabstract class Person {\n  def sex: String\n}\n\ntrait BlackPeople extends Person {\n  override def toString \u003d \"Black People\"\n}\n\nclass BlackMan extends Person with BlackPeople{\n  override def sex: String \u003d \"man\"\n}\n\n",
+      "text": "trait RationalTrait {\n  val numerArg: Int\n  val denomArg: Int\n  println(denomArg)\n}\n\nclass Rational extends RationalTrait {\n  val numerArg \u003d 10\n  val denomArg \u003d 2\n}\n\nval r1 \u003d new Rational\n\nr1.denomArg",
       "user": "hadoop",
-      "dateUpdated": "2018-12-28 18:29:45.269",
+      "dateUpdated": "2018-12-28 23:54:11.803",
       "config": {
         "colWidth": 6.0,
         "fontSize": 9.0,
@@ -108,11 +108,53 @@
         "forms": {}
       },
       "results": {
-        "code": "ERROR",
+        "code": "SUCCESS",
         "msg": [
           {
             "type": "TEXT",
-            "data": "java.lang.NullPointerException\n\tat org.apache.thrift.transport.TSocket.open(TSocket.java:170)\n\tat org.apache.zeppelin.interpreter.remote.ClientFactory.create(ClientFactory.java:51)\n\tat org.apache.zeppelin.interpreter.remote.ClientFactory.create(ClientFactory.java:37)\n\tat org.apache.commons.pool2.BasePooledObjectFactory.makeObject(BasePooledObjectFactory.java:60)\n\tat org.apache.commons.pool2.impl.GenericObjectPool.create(GenericObjectPool.java:861)\n\tat org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:435)\n\tat org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:363)\n\tat org.apache.zeppelin.interpreter.remote.RemoteInterpreterProcess.getClient(RemoteInterpreterProcess.java:62)\n\tat org.apache.zeppelin.interpreter.remote.RemoteInterpreterProcess.callRemoteFunction(RemoteInterpreterProcess.java:133)\n\tat org.apache.zeppelin.interpreter.remote.RemoteInterpreter.internal_create(RemoteInterpreter.java:165)\n\tat org.apache.zeppelin.interpreter.remote.RemoteInterpreter.open(RemoteInterpreter.java:132)\n\tat org.apache.zeppelin.interpreter.remote.RemoteInterpreter.getFormType(RemoteInterpreter.java:299)\n\tat org.apache.zeppelin.notebook.Paragraph.jobRun(Paragraph.java:407)\n\tat org.apache.zeppelin.scheduler.Job.run(Job.java:188)\n\tat org.apache.zeppelin.scheduler.RemoteScheduler$JobRunner.run(RemoteScheduler.java:307)\n\tat java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)\n\tat java.util.concurrent.FutureTask.run(FutureTask.java:266)\n\tat java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)\n\tat java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)\n\tat java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)\n\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)\n\tat java.lang.Thread.run(Thread.java:748)\n"
+            "data": "defined trait RationalTrait\ndefined class Rational\n0\nr1: Rational \u003d Rational@4e4ba6f1\nres63: Int \u003d 2\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1546009269775_261714010",
+      "id": "20181228-230109_598231514",
+      "dateCreated": "2018-12-28 23:01:09.775",
+      "dateStarted": "2018-12-28 23:54:11.817",
+      "dateFinished": "2018-12-28 23:54:12.269",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "\ncase class PeopleInfo(age: Int, name: String, birth: Long)\n\nabstract class Person {\n    \n  val info: PeopleInfo \n}\n\n\ntrait PersonTrait extends Person{\n  \n  override def toString \u003d \"Black People\"\n  \n  def getInfo: PeopleInfo \u003d info\n  \n//   def updateInfo(infPerson: PeopleInfo): Unit \u003d {\n//     info \u003d infPerson\n//   }\n  \n}\n\nclass BlackMan(infPeople: PeopleInfo) extends Person with PersonTrait{\n  private val sex \u003d \"man\"\n  val info \u003d infPeople\n}\n\nval blackMan1 \u003d new BlackMan(PeopleInfo(22, \"kiss\", 2018))\n\n// blackMan1.getInfo\n\n\n",
+      "user": "hadoop",
+      "dateUpdated": "2018-12-29 00:42:35.798",
+      "config": {
+        "colWidth": 6.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala",
+        "editorHide": false,
+        "tableHide": false,
+        "lineNumbers": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "defined class PeopleInfo\ndefined class Person\ndefined trait PersonTrait\ndefined class BlackMan\nblackMan1: BlackMan \u003d Black People\n"
           }
         ]
       },
@@ -120,10 +162,9 @@
       "jobName": "paragraph_1545987330083_2024351078",
       "id": "20181228-165530_16872359",
       "dateCreated": "2018-12-28 16:55:30.083",
-      "dateStarted": "2018-12-28 18:29:45.277",
-      "dateFinished": "2018-12-28 18:29:45.278",
-      "status": "ERROR",
-      "errorMessage": "java.lang.NullPointerException\n\tat org.apache.thrift.transport.TSocket.open(TSocket.java:170)\n\tat org.apache.zeppelin.interpreter.remote.ClientFactory.create(ClientFactory.java:51)\n\tat org.apache.zeppelin.interpreter.remote.ClientFactory.create(ClientFactory.java:37)\n\tat org.apache.commons.pool2.BasePooledObjectFactory.makeObject(BasePooledObjectFactory.java:60)\n\tat org.apache.commons.pool2.impl.GenericObjectPool.create(GenericObjectPool.java:861)\n\tat org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:435)\n\tat org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:363)\n\tat org.apache.zeppelin.interpreter.remote.RemoteInterpreterProcess.getClient(RemoteInterpreterProcess.java:62)\n\tat org.apache.zeppelin.interpreter.remote.RemoteInterpreterProcess.callRemoteFunction(RemoteInterpreterProcess.java:133)\n\tat org.apache.zeppelin.interpreter.remote.RemoteInterpreter.internal_create(RemoteInterpreter.java:165)\n\tat org.apache.zeppelin.interpreter.remote.RemoteInterpreter.open(RemoteInterpreter.java:132)\n\tat org.apache.zeppelin.interpreter.remote.RemoteInterpreter.getFormType(RemoteInterpreter.java:299)\n\tat org.apache.zeppelin.notebook.Paragraph.jobRun(Paragraph.java:407)\n\tat org.apache.zeppelin.scheduler.Job.run(Job.java:188)\n\tat org.apache.zeppelin.scheduler.RemoteScheduler$JobRunner.run(RemoteScheduler.java:307)\n\tat java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)\n\tat java.util.concurrent.FutureTask.run(FutureTask.java:266)\n\tat java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)\n\tat java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)\n\tat java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)\n\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)\n\tat java.lang.Thread.run(Thread.java:748)\n",
+      "dateStarted": "2018-12-29 00:42:35.807",
+      "dateFinished": "2018-12-29 00:42:36.221",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -171,10 +212,10 @@
       "progressUpdateIntervalMs": 500
     },
     {
-      "title": "Trait 的混入",
+      "title": "Trait 的混入的",
       "text": "object TraitFunctions {\n  // \n  object QueueIF extends BasicIntQueue with Incrementing with Filtering\n  \n\n}\n\n\nval queueIF \u003d TraitFunctions.QueueIF\n\n(-1 to 4).map(queueIF.put(_))\n\nqueueIF.get\n",
       "user": "hadoop",
-      "dateUpdated": "2018-12-28 16:51:36.967",
+      "dateUpdated": "2018-12-28 22:52:53.974",
       "config": {
         "colWidth": 6.0,
         "fontSize": 9.0,
