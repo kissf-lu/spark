@@ -1,0 +1,207 @@
+{
+  "paragraphs": [
+    {
+      "text": "%md\n\n### SCALA 隐式转换学习\n\n",
+      "user": "hadoop",
+      "dateUpdated": "2018-12-28 08:34:18.087",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eSCALA 隐式转换学习\u003c/h3\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1545957118185_-1540261302",
+      "id": "20181228-083158_317591025",
+      "dateCreated": "2018-12-28 08:31:58.185",
+      "dateStarted": "2018-12-28 08:34:18.087",
+      "dateFinished": "2018-12-28 08:34:18.096",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n\n### 上下文界定\n\n \n \n- 参考：\n \n- Ordering： 参见 https://www.scala-lang.org/api/current/scala/math/Ordering.html 为加强某个对象的排序特性\n \n",
+      "user": "hadoop",
+      "dateUpdated": "2018-12-28 09:22:52.273",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003e上下文界定\u003c/h3\u003e\n\u003cul\u003e\n  \u003cli\u003e\n  \u003cp\u003e参考：\u003c/p\u003e\u003c/li\u003e\n  \u003cli\u003e\n  \u003cp\u003eOrdering： 参见 \u003ca href\u003d\"https://www.scala-lang.org/api/current/scala/math/Ordering.html\"\u003ehttps://www.scala-lang.org/api/current/scala/math/Ordering.html\u003c/a\u003e 为加强某个对象的排序特性\u003c/p\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1545960038635_2109255968",
+      "id": "20181228-092038_1696176405",
+      "dateCreated": "2018-12-28 09:20:38.636",
+      "dateStarted": "2018-12-28 09:22:52.274",
+      "dateFinished": "2018-12-28 09:22:52.281",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "",
+      "text": "\n\nimport math.Ordering\n\ncase class impListOrder[T](ls: List[T]) {\n    \n    // 隐式参数\n    def impArgOrder[A](f: T \u003d\u003e A)(implicit order: Ordering[A]): List[T] \u003d { \n        ls.sortBy(f)(order)\n    }\n    // 上下文定界\n    def impContextOrder[A: Ordering](f: T \u003d\u003e A): List[T] \u003d {\n        ls.sortBy(f)(implicitly[Ordering[A]])\n    }\n    // 非官方版本\n    def order[A : Ordering](f: T \u003d\u003e A): List[T] \u003d {\n        ls.sortBy(f)\n    }\n}\n\n\nval list1 \u003d impListOrder((1 to 4).toList)\n\n\nlist1.impArgOrder(i \u003d\u003e -i)\nlist1.impContextOrder(i \u003d\u003e -i)\nlist1.order(i \u003d\u003e -i)\n\n\n",
+      "user": "hadoop",
+      "dateUpdated": "2018-12-28 14:54:17.778",
+      "config": {
+        "colWidth": 6.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala",
+        "lineNumbers": false,
+        "title": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "import math.Ordering\ndefined class impListOrder\nlist1: impListOrder[Int] \u003d impListOrder(List(1, 2, 3, 4))\nres132: List[Int] \u003d List(4, 3, 2, 1)\nres133: List[Int] \u003d List(4, 3, 2, 1)\nres134: List[Int] \u003d List(4, 3, 2, 1)\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1545957258077_-292473005",
+      "id": "20181228-083418_1092652387",
+      "dateCreated": "2018-12-28 08:34:18.077",
+      "dateStarted": "2018-12-28 14:54:17.790",
+      "dateFinished": "2018-12-28 14:54:19.426",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "object impMax{\n    \n    def maxListImpContext[T : Ordering](listData: List[T]): T \u003d {\n        listData match {\n            case List() \u003d\u003e throw new IllegalAccessException(\"empty list!\")\n            case List(x) \u003d\u003e x\n            case x :: res \u003d\u003e {\n                val maxRes \u003d maxListImpContext(res)\n                if (implicitly[Ordering[T]].gt(x, maxRes)) x\n                else maxRes\n            }\n        }\n    }\n    \n    def maxListImpArgs[T](listData: List[T])(implicit order: Ordering[T]): T \u003d {\n        listData match {\n            case List() \u003d\u003e throw new IllegalAccessException(\"empty list!\")\n            case List(x) \u003d\u003e x\n            case x :: res \u003d\u003e {\n                val maxRes \u003d maxListImpContext(res)\n                if (order.gt(x, maxRes)) x\n                else maxRes\n            }\n        }\n    }\n}\n\nimpMax.maxListImpContext((0 to 4).toList)\nimpMax.maxListImpArgs((0 to 4).toList)",
+      "user": "hadoop",
+      "dateUpdated": "2018-12-28 14:52:02.686",
+      "config": {
+        "colWidth": 6.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "defined object impMax\nres126: Int \u003d 4\nres127: Int \u003d 4\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1545958297467_863289181",
+      "id": "20181228-085137_1039536039",
+      "dateCreated": "2018-12-28 08:51:37.467",
+      "dateStarted": "2018-12-28 14:51:32.062",
+      "dateFinished": "2018-12-28 14:51:33.061",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val arr1 \u003d Array(3, 4, 6)\n\narr1.sorted()",
+      "user": "hadoop",
+      "dateUpdated": "2018-12-28 14:58:15.202",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1545959304132_1120661154",
+      "id": "20181228-090824_532971513",
+      "dateCreated": "2018-12-28 09:08:24.132",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "/scala/programming_scala",
+  "id": "2E27GQUCB",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {
+    "md:shared_process": [],
+    "spark:shared_process": []
+  },
+  "config": {
+    "isZeppelinNotebookCronEnable": false
+  },
+  "info": {}
+}

@@ -1,62 +1,23 @@
 {
   "paragraphs": [
     {
-      "text": "val userDir \u003d \"/user/hadoop\"\n\nval linesLog \u003d spark.sparkContext.textFile(s\"$userDir/TestRoot.log\")\n ",
+      "text": "%md\n### Spark RDD 学习笔记\n",
       "user": "hadoop",
-      "dateUpdated": "2018-12-27 23:27:28.167",
-      "config": {
-        "colWidth": 12.0,
-        "fontSize": 9.0,
-        "enabled": false,
-        "results": {},
-        "editorSetting": {
-          "language": "scala",
-          "editOnDblClick": false,
-          "completionKey": "TAB",
-          "completionSupport": true
-        },
-        "editorMode": "ace/mode/scala",
-        "editorHide": false
-      },
-      "settings": {
-        "params": {},
-        "forms": {}
-      },
-      "results": {
-        "code": "SUCCESS",
-        "msg": [
-          {
-            "type": "TEXT",
-            "data": "userDir: String \u003d /user/hadoop\nlinesLog: org.apache.spark.rdd.RDD[String] \u003d /user/hadoop/TestRoot.log MapPartitionsRDD[1] at textFile at \u003cconsole\u003e:25\n"
-          }
-        ]
-      },
-      "apps": [],
-      "jobName": "paragraph_1545891115149_1750212539",
-      "id": "20181227-141155_1226507706",
-      "dateCreated": "2018-12-27 14:11:55.149",
-      "dateStarted": "2018-12-27 14:18:47.431",
-      "dateFinished": "2018-12-27 14:19:05.326",
-      "status": "FINISHED",
-      "progressUpdateIntervalMs": 500
-    },
-    {
-      "text": "val words \u003d linesLog.flatMap(l \u003d\u003e l.split(\"\u003e\"))\n\nwords.filter(_.contains(\"INFO\")).first",
-      "user": "hadoop",
-      "dateUpdated": "2018-12-27 23:27:28.210",
+      "dateUpdated": "2018-12-28 08:30:10.775",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
         "enabled": true,
         "results": {},
         "editorSetting": {
-          "language": "scala",
-          "editOnDblClick": false,
+          "language": "markdown",
+          "editOnDblClick": true,
           "completionKey": "TAB",
-          "completionSupport": true
+          "completionSupport": false
         },
-        "editorMode": "ace/mode/scala",
-        "editorHide": false
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
       },
       "settings": {
         "params": {},
@@ -66,24 +27,24 @@
         "code": "SUCCESS",
         "msg": [
           {
-            "type": "TEXT",
-            "data": "words: org.apache.spark.rdd.RDD[String] \u003d MapPartitionsRDD[2] at flatMap at \u003cconsole\u003e:27\nres5: String \u003d \u003cINFO\n"
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eSpark RDD 学习笔记\u003c/h3\u003e\n\u003c/div\u003e"
           }
         ]
       },
       "apps": [],
-      "jobName": "paragraph_1545891188384_1781569187",
-      "id": "20181227-141308_1179177093",
-      "dateCreated": "2018-12-27 14:13:08.384",
-      "dateStarted": "2018-12-27 14:21:00.009",
-      "dateFinished": "2018-12-27 14:21:05.262",
+      "jobName": "paragraph_1545956775805_1708996515",
+      "id": "20181228-082615_1963439808",
+      "dateCreated": "2018-12-28 08:26:15.805",
+      "dateStarted": "2018-12-28 08:30:10.775",
+      "dateFinished": "2018-12-28 08:30:10.779",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\n\n### RDD 联合操作\n\n---\n\n- 直接将RDD联合\n",
       "user": "hadoop",
-      "dateUpdated": "2018-12-27 23:27:40.703",
+      "dateUpdated": "2018-12-28 08:26:00.897",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -116,15 +77,15 @@
       "jobName": "paragraph_1545893876394_-1501725914",
       "id": "20181227-145756_97621388",
       "dateCreated": "2018-12-27 14:57:56.394",
-      "dateStarted": "2018-12-27 23:27:40.713",
-      "dateFinished": "2018-12-27 23:27:40.728",
+      "dateStarted": "2018-12-28 08:26:00.897",
+      "dateFinished": "2018-12-28 08:26:00.910",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "val ls1Rdd \u003d (\u0027a\u0027 to \u0027h\u0027).toList\n\nval ls2Rdd \u003d (\u0027g\u0027 to \u0027k\u0027).toList\n    \nval charLs1 \u003d spark.sparkContext.parallelize(ls1Rdd)\nval charLs2 \u003d spark.sparkContext.parallelize(ls2Rdd)\n\n",
       "user": "hadoop",
-      "dateUpdated": "2018-12-27 23:27:28.254",
+      "dateUpdated": "2018-12-27 14:22:50.048",
       "config": {
         "colWidth": 6.0,
         "fontSize": 9.0,
@@ -136,8 +97,7 @@
           "completionKey": "TAB",
           "completionSupport": true
         },
-        "editorMode": "ace/mode/scala",
-        "editorHide": false
+        "editorMode": "ace/mode/scala"
       },
       "settings": {
         "params": {},
@@ -148,7 +108,7 @@
         "msg": [
           {
             "type": "TEXT",
-            "data": "ls1Rdd: List[Char] \u003d List(a, b, c, d, e, f, g, h)\nls2Rdd: List[Char] \u003d List(g, h, i, j, k)\ncharLs1: org.apache.spark.rdd.RDD[Char] \u003d ParallelCollectionRDD[0] at parallelize at \u003cconsole\u003e:25\ncharLs2: org.apache.spark.rdd.RDD[Char] \u003d ParallelCollectionRDD[1] at parallelize at \u003cconsole\u003e:25\n"
+            "data": "ls1Rdd: List[Char] \u003d List(a, b, c, d, e, f, g, h)\nls2Rdd: List[Char] \u003d List(g, h, i, j, k)\ncharLs1: org.apache.spark.rdd.RDD[Char] \u003d ParallelCollectionRDD[4] at parallelize at \u003cconsole\u003e:25\ncharLs2: org.apache.spark.rdd.RDD[Char] \u003d ParallelCollectionRDD[5] at parallelize at \u003cconsole\u003e:25\n"
           }
         ]
       },
@@ -156,8 +116,8 @@
       "jobName": "paragraph_1545891358552_-281359933",
       "id": "20181227-141558_1666426389",
       "dateCreated": "2018-12-27 14:15:58.553",
-      "dateStarted": "2018-12-27 21:52:28.125",
-      "dateFinished": "2018-12-27 21:52:46.184",
+      "dateStarted": "2018-12-27 14:21:31.715",
+      "dateFinished": "2018-12-27 14:21:33.389",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -165,7 +125,7 @@
       "title": "",
       "text": "charLs1.union(charLs2).collect\n\n\n\n\n\n\n\n\n\n\n",
       "user": "hadoop",
-      "dateUpdated": "2018-12-27 23:27:28.292",
+      "dateUpdated": "2018-12-27 15:00:51.103",
       "config": {
         "colWidth": 6.0,
         "fontSize": 9.0,
@@ -178,8 +138,7 @@
           "completionSupport": true
         },
         "editorMode": "ace/mode/scala",
-        "title": false,
-        "editorHide": false
+        "title": false
       },
       "settings": {
         "params": {},
@@ -190,37 +149,25 @@
         "msg": [
           {
             "type": "TEXT",
-            "data": "res5: Array[Char] \u003d Array(a, b, c, d, e, f, g, h, g, h, i, j, k)\n"
+            "data": "res24: Array[Char] \u003d Array(a, b, c, d, e, f, g, h, g, h, i, j, k)\n"
           }
         ]
-      },
-      "runtimeInfos": {
-        "jobUrl": {
-          "propertyName": "jobUrl",
-          "label": "SPARK JOB",
-          "tooltip": "View in Spark web UI",
-          "group": "spark",
-          "values": [
-            "http://carbon:4040/jobs/job?id\u003d0"
-          ],
-          "interpreterSettingId": "spark"
-        }
       },
       "apps": [],
       "jobName": "paragraph_1545891691702_1773217175",
       "id": "20181227-142131_1179167804",
       "dateCreated": "2018-12-27 14:21:31.702",
-      "dateStarted": "2018-12-27 21:52:48.429",
-      "dateFinished": "2018-12-27 21:52:49.865",
+      "dateStarted": "2018-12-27 14:59:05.908",
+      "dateFinished": "2018-12-27 14:59:06.313",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%md\n### RDD fold 操作\n\n---\n\n- parallelize(seq: Seq[T], numSlices: Int \u003d defaultParallelism)\n   - defaultParallelism: 默认取Spark cup的核心并发数(本列为4)\n   - fold(init) (opt) \n      - 1 fold将初始值init 和 opt函数作用到每个RDD分区的数据 各个分区分别结算fold\n      - 2 最后对各个分区的数据汇总，以init 和 opt 汇总\n      \n---\n\n- eg intListVal.fold(1) (_ + _ )： 数据长度为3， 默认分区数为8， 只能分3个区并行计算\n   - 分区计算： 1 + 1； 1 + 2； 1 + 3; 1 + 4\n   - 汇总计算： 2 + 3 + 4 + 5 + 1 \u003d 15\n",
+      "text": "%md\n### RDD fold 操作\n\n---\n\n- parallelize(seq: Seq[T], numSlices: Int \u003d defaultParallelism)\n   - defaultParallelism: 默认取Spark cup的核心并发数(本列为4)\n   - fold(init) (opt) \n      - 1 fold将初始值init 和 opt函数作用到每个RDD分区的数据 各个分区分别结算fold\n      - 2 最后对各个分区的数据汇总，以init 和 opt 汇总\n      \n---\n\n- eg intListVal.fold(1) (_ + _ )： 数据长度为3， 默认分区数为8， 只能分3个区并行计算\n   - 分区计算： 1 + 1； 1 + 2； 1 + 3\n   - 汇总计算： 2 + 3 + 4 + 1 \u003d 10\n",
       "user": "hadoop",
-      "dateUpdated": "2018-12-27 23:27:34.229",
+      "dateUpdated": "2018-12-27 15:22:31.607",
       "config": {
-        "colWidth": 12.0,
+        "colWidth": 6.0,
         "fontSize": 9.0,
         "enabled": true,
         "results": {},
@@ -243,7 +190,7 @@
         "msg": [
           {
             "type": "HTML",
-            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eRDD fold 操作\u003c/h3\u003e\n\u003chr/\u003e\n\u003cul\u003e\n  \u003cli\u003eparallelize(seq: Seq[T], numSlices: Int \u003d defaultParallelism)\u003c/li\u003e\n  \u003cli\u003edefaultParallelism: 默认取Spark cup的核心并发数(本列为4)\u003c/li\u003e\n  \u003cli\u003efold(init) (opt)\n    \u003cul\u003e\n      \u003cli\u003e1 fold将初始值init 和 opt函数作用到每个RDD分区的数据 各个分区分别结算fold\u003c/li\u003e\n      \u003cli\u003e2 最后对各个分区的数据汇总，以init 和 opt 汇总\u003c/li\u003e\n    \u003c/ul\u003e\n  \u003c/li\u003e\n\u003c/ul\u003e\n\u003chr/\u003e\n\u003cul\u003e\n  \u003cli\u003eeg intListVal.fold(1) (_ + _ )： 数据长度为3， 默认分区数为8， 只能分3个区并行计算\u003c/li\u003e\n  \u003cli\u003e分区计算： 1 + 1； 1 + 2； 1 + 3; 1 + 4\u003c/li\u003e\n  \u003cli\u003e汇总计算： 2 + 3 + 4 + 5 + 1 \u003d 15\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/div\u003e"
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eRDD fold 操作\u003c/h3\u003e\n\u003chr/\u003e\n\u003cul\u003e\n  \u003cli\u003eparallelize(seq: Seq[T], numSlices: Int \u003d defaultParallelism)\u003c/li\u003e\n  \u003cli\u003edefaultParallelism: 默认取Spark cup的核心并发数(本列为4)\u003c/li\u003e\n  \u003cli\u003efold(init) (opt)\n    \u003cul\u003e\n      \u003cli\u003e1 fold将初始值init 和 opt函数作用到每个RDD分区的数据 各个分区分别结算fold\u003c/li\u003e\n      \u003cli\u003e2 最后对各个分区的数据汇总，以init 和 opt 汇总\u003c/li\u003e\n    \u003c/ul\u003e\n  \u003c/li\u003e\n\u003c/ul\u003e\n\u003chr/\u003e\n\u003cul\u003e\n  \u003cli\u003eeg intListVal.fold(1) (_ + _ )： 数据长度为3， 默认分区数为8， 只能分3个区并行计算\u003c/li\u003e\n  \u003cli\u003e分区计算： 1 + 1； 1 + 2； 1 + 3\u003c/li\u003e\n  \u003cli\u003e汇总计算： 2 + 3 + 4 + 1 \u003d 10\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/div\u003e"
           }
         ]
       },
@@ -251,16 +198,15 @@
       "jobName": "paragraph_1545892051644_-1022425698",
       "id": "20181227-142731_2044586761",
       "dateCreated": "2018-12-27 14:27:31.645",
-      "dateStarted": "2018-12-27 23:27:34.230",
-      "dateFinished": "2018-12-27 23:27:34.263",
+      "dateStarted": "2018-12-27 15:22:31.607",
+      "dateFinished": "2018-12-27 15:22:31.620",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
-      "title": "初始化数据：4个核心-并行处理fold",
-      "text": "// 加法初始值应该为 0\n\nval intListVal \u003d spark.sparkContext.parallelize((1 to 4).toList)\n\nintListVal.fold(1)(_ + _)\n\n",
+      "text": "val intListVal \u003d spark.sparkContext.parallelize((1 to 3).toList)\n\nintListVal.fold(1)(_ + _)\n\n",
       "user": "hadoop",
-      "dateUpdated": "2018-12-27 23:27:28.336",
+      "dateUpdated": "2018-12-27 15:24:09.173",
       "config": {
         "colWidth": 6.0,
         "fontSize": 9.0,
@@ -370,9 +316,7 @@
           "completionKey": "TAB",
           "completionSupport": true
         },
-        "editorMode": "ace/mode/scala",
-        "title": true,
-        "editorHide": false
+        "editorMode": "ace/mode/scala"
       },
       "settings": {
         "params": {},
@@ -383,354 +327,30 @@
         "msg": [
           {
             "type": "TEXT",
-            "data": "intListVal: org.apache.spark.rdd.RDD[Int] \u003d ParallelCollectionRDD[10] at parallelize at \u003cconsole\u003e:25\nres22: Int \u003d 15\n"
+            "data": "intListVal: org.apache.spark.rdd.RDD[Int] \u003d ParallelCollectionRDD[2] at parallelize at \u003cconsole\u003e:23\nres8: Int \u003d 15\n"
           }
         ]
-      },
-      "runtimeInfos": {
-        "jobUrl": {
-          "propertyName": "jobUrl",
-          "label": "SPARK JOB",
-          "tooltip": "View in Spark web UI",
-          "group": "spark",
-          "values": [
-            "http://carbon:4040/jobs/job?id\u003d8"
-          ],
-          "interpreterSettingId": "spark"
-        }
       },
       "apps": [],
       "jobName": "paragraph_1545892507425_1229127297",
       "id": "20181227-143507_886631687",
       "dateCreated": "2018-12-27 14:35:07.426",
-      "dateStarted": "2018-12-27 22:03:45.937",
-      "dateFinished": "2018-12-27 22:03:46.817",
+      "dateStarted": "2018-12-27 15:24:09.189",
+      "dateFinished": "2018-12-27 15:24:09.969",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
-      "title": "乘法的1初始化",
-      "text": "// 乘法初始值应为 1\n\n\n\nval intListVal \u003d spark.sparkContext.parallelize((1 to 4).toList)\n\nintListVal.fold(1)(_ * _)",
       "user": "hadoop",
-      "dateUpdated": "2018-12-27 23:27:28.403",
-      "config": {
-        "colWidth": 6.0,
-        "fontSize": 9.0,
-        "enabled": true,
-        "results": {},
-        "editorSetting": {
-          "language": "scala",
-          "editOnDblClick": false,
-          "completionKey": "TAB",
-          "completionSupport": true
-        },
-        "editorMode": "ace/mode/scala",
-        "title": true,
-        "editorHide": false
-      },
+      "config": {},
       "settings": {
         "params": {},
         "forms": {}
-      },
-      "results": {
-        "code": "SUCCESS",
-        "msg": [
-          {
-            "type": "TEXT",
-            "data": "intListVal: org.apache.spark.rdd.RDD[Int] \u003d ParallelCollectionRDD[9] at parallelize at \u003cconsole\u003e:23\nres19: Int \u003d 24\n"
-          }
-        ]
-      },
-      "runtimeInfos": {
-        "jobUrl": {
-          "propertyName": "jobUrl",
-          "label": "SPARK JOB",
-          "tooltip": "View in Spark web UI",
-          "group": "spark",
-          "values": [
-            "http://carbon:4040/jobs/job?id\u003d7"
-          ],
-          "interpreterSettingId": "spark"
-        }
-      },
-      "apps": [],
-      "jobName": "paragraph_1545919327261_1856440020",
-      "id": "20181227-220207_178770847",
-      "dateCreated": "2018-12-27 22:02:07.261",
-      "dateStarted": "2018-12-27 22:02:41.577",
-      "dateFinished": "2018-12-27 22:02:42.428",
-      "status": "FINISHED",
-      "progressUpdateIntervalMs": 500
-    },
-    {
-      "text": "%md\n### 数值操作",
-      "user": "hadoop",
-      "dateUpdated": "2018-12-27 23:27:51.497",
-      "config": {
-        "colWidth": 12.0,
-        "fontSize": 9.0,
-        "enabled": true,
-        "results": {},
-        "editorSetting": {
-          "language": "markdown",
-          "editOnDblClick": true,
-          "completionKey": "TAB",
-          "completionSupport": false
-        },
-        "editorMode": "ace/mode/markdown",
-        "editorHide": true,
-        "tableHide": false
-      },
-      "settings": {
-        "params": {},
-        "forms": {}
-      },
-      "results": {
-        "code": "SUCCESS",
-        "msg": [
-          {
-            "type": "HTML",
-            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003e数值操作\u003c/h3\u003e\n\u003c/div\u003e"
-          }
-        ]
       },
       "apps": [],
       "jobName": "paragraph_1545893308062_-1950724019",
       "id": "20181227-144828_374008171",
       "dateCreated": "2018-12-27 14:48:28.062",
-      "dateStarted": "2018-12-27 23:27:51.498",
-      "dateFinished": "2018-12-27 23:27:51.502",
-      "status": "FINISHED",
-      "progressUpdateIntervalMs": 500
-    },
-    {
-      "title": "mean-stdev",
-      "text": "\n// 均值\nsc.parallelize((2 to 4).toList).mean\n// 标准差\nsc.parallelize((2 to 4).toList).stdev\n",
-      "user": "hadoop",
-      "dateUpdated": "2018-12-27 23:41:52.632",
-      "config": {
-        "colWidth": 6.0,
-        "fontSize": 9.0,
-        "enabled": true,
-        "results": {},
-        "editorSetting": {
-          "language": "scala",
-          "editOnDblClick": false,
-          "completionKey": "TAB",
-          "completionSupport": true
-        },
-        "editorMode": "ace/mode/scala",
-        "tableHide": false,
-        "lineNumbers": false,
-        "title": true,
-        "editorHide": false
-      },
-      "settings": {
-        "params": {},
-        "forms": {}
-      },
-      "results": {
-        "code": "SUCCESS",
-        "msg": [
-          {
-            "type": "TEXT",
-            "data": "res34: Double \u003d 3.0\nres36: Double \u003d 0.816496580927726\n"
-          }
-        ]
-      },
-      "runtimeInfos": {
-        "jobUrl": {
-          "propertyName": "jobUrl",
-          "label": "SPARK JOB",
-          "tooltip": "View in Spark web UI",
-          "group": "spark",
-          "values": [
-            "http://carbon:4040/jobs/job?id\u003d14",
-            "http://carbon:4040/jobs/job?id\u003d15"
-          ],
-          "interpreterSettingId": "spark"
-        }
-      },
-      "apps": [],
-      "jobName": "paragraph_1545923389526_-1760591827",
-      "id": "20181227-230949_373347243",
-      "dateCreated": "2018-12-27 23:09:49.527",
-      "dateStarted": "2018-12-27 23:20:48.328",
-      "dateFinished": "2018-12-27 23:20:49.277",
-      "status": "FINISHED",
-      "progressUpdateIntervalMs": 500
-    },
-    {
-      "title": "sum-variance",
-      "text": "\n// 方差\nsc.parallelize((1 to 4).toList).variance\n// 求和\nsc.parallelize((1 to 4).toList).sum\n",
-      "user": "hadoop",
-      "dateUpdated": "2018-12-27 23:41:58.570",
-      "config": {
-        "colWidth": 6.0,
-        "fontSize": 9.0,
-        "enabled": true,
-        "results": {},
-        "editorSetting": {
-          "language": "scala",
-          "editOnDblClick": false,
-          "completionKey": "TAB",
-          "completionSupport": true
-        },
-        "editorMode": "ace/mode/scala",
-        "title": true,
-        "editorHide": false
-      },
-      "settings": {
-        "params": {},
-        "forms": {}
-      },
-      "results": {
-        "code": "SUCCESS",
-        "msg": [
-          {
-            "type": "TEXT",
-            "data": "res30: Double \u003d 1.25\nres31: Double \u003d 10.0\n"
-          }
-        ]
-      },
-      "runtimeInfos": {
-        "jobUrl": {
-          "propertyName": "jobUrl",
-          "label": "SPARK JOB",
-          "tooltip": "View in Spark web UI",
-          "group": "spark",
-          "values": [
-            "http://carbon:4040/jobs/job?id\u003d12",
-            "http://carbon:4040/jobs/job?id\u003d13"
-          ],
-          "interpreterSettingId": "spark"
-        }
-      },
-      "apps": [],
-      "jobName": "paragraph_1545923458393_472567068",
-      "id": "20181227-231058_1834007290",
-      "dateCreated": "2018-12-27 23:10:58.393",
-      "dateStarted": "2018-12-27 23:15:27.273",
-      "dateFinished": "2018-12-27 23:15:28.225",
-      "status": "FINISHED",
-      "progressUpdateIntervalMs": 500
-    },
-    {
-      "text": "%md\n### 广播变量 与 累加器",
-      "user": "hadoop",
-      "dateUpdated": "2018-12-27 23:49:19.086",
-      "config": {
-        "colWidth": 12.0,
-        "fontSize": 9.0,
-        "enabled": true,
-        "results": {},
-        "editorSetting": {
-          "language": "markdown",
-          "editOnDblClick": true,
-          "completionKey": "TAB",
-          "completionSupport": false
-        },
-        "editorMode": "ace/mode/markdown",
-        "editorHide": true,
-        "tableHide": false
-      },
-      "settings": {
-        "params": {},
-        "forms": {}
-      },
-      "results": {
-        "code": "SUCCESS",
-        "msg": [
-          {
-            "type": "HTML",
-            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003e广播变量 与 累加器\u003c/h3\u003e\n\u003c/div\u003e"
-          }
-        ]
-      },
-      "apps": [],
-      "jobName": "paragraph_1545923629415_1308544244",
-      "id": "20181227-231349_930713766",
-      "dateCreated": "2018-12-27 23:13:49.415",
-      "dateStarted": "2018-12-27 23:49:19.090",
-      "dateFinished": "2018-12-27 23:49:19.098",
-      "status": "FINISHED",
-      "progressUpdateIntervalMs": 500
-    },
-    {
-      "text": "case class Transaction(id: Long, custId: Int, itemId: Int)\ncase class TransactionDetail(id: Long, custName: String, itemName: String)\n\nval customerMap \u003d Map( 1 -\u003e \"Chois\", 2 -\u003e \"Kiss\" )\n\nval itemMap \u003d Map( 1 -\u003e \"ok\", 2 -\u003e \"hello\" )\n\n\nval transactions \u003d sc.parallelize(List(Transaction(1, 1, 1), Transaction(2, 1, 2)))\n\nval bcCust \u003d sc.broadcast(customerMap)\nval bcItem \u003d sc.broadcast(itemMap)\n\nval transDetails \u003d transactions.map{T \u003d\u003e \n  TransactionDetail( T.id, bcCust.value(T.custId), bcItem.value(T.itemId))}\n  \ntransDetails.collect",
-      "user": "hadoop",
-      "dateUpdated": "2018-12-27 23:46:27.945",
-      "config": {
-        "colWidth": 6.0,
-        "fontSize": 9.0,
-        "enabled": true,
-        "results": {},
-        "editorSetting": {
-          "language": "scala",
-          "editOnDblClick": false,
-          "completionKey": "TAB",
-          "completionSupport": true
-        },
-        "editorMode": "ace/mode/scala"
-      },
-      "settings": {
-        "params": {},
-        "forms": {}
-      },
-      "results": {
-        "code": "SUCCESS",
-        "msg": [
-          {
-            "type": "TEXT",
-            "data": "defined class Transaction\ndefined class TransactionDetail\ncustomerMap: scala.collection.immutable.Map[Int,String] \u003d Map(1 -\u003e Chois, 2 -\u003e Kiss)\nitemMap: scala.collection.immutable.Map[Int,String] \u003d Map(1 -\u003e ok, 2 -\u003e hello)\ntransactions: org.apache.spark.rdd.RDD[Transaction] \u003d ParallelCollectionRDD[31] at parallelize at \u003cconsole\u003e:27\nbcCust: org.apache.spark.broadcast.Broadcast[scala.collection.immutable.Map[Int,String]] \u003d Broadcast(16)\nbcItem: org.apache.spark.broadcast.Broadcast[scala.collection.immutable.Map[Int,String]] \u003d Broadcast(17)\ntransDetails: org.apache.spark.rdd.RDD[TransactionDetail] \u003d MapPartitionsRDD[32] at map at \u003cconsole\u003e:40\nres38: Array[TransactionDetail] \u003d Array(TransactionDetail(1,Chois,ok), TransactionDetail(2,Chois,hello))\n"
-          }
-        ]
-      },
-      "runtimeInfos": {
-        "jobUrl": {
-          "propertyName": "jobUrl",
-          "label": "SPARK JOB",
-          "tooltip": "View in Spark web UI",
-          "group": "spark",
-          "values": [
-            "http://carbon:4040/jobs/job?id\u003d16"
-          ],
-          "interpreterSettingId": "spark"
-        }
-      },
-      "apps": [],
-      "jobName": "paragraph_1545924806118_-643033305",
-      "id": "20181227-233326_2100431301",
-      "dateCreated": "2018-12-27 23:33:26.118",
-      "dateStarted": "2018-12-27 23:46:10.111",
-      "dateFinished": "2018-12-27 23:46:13.379",
-      "status": "FINISHED",
-      "progressUpdateIntervalMs": 500
-    },
-    {
-      "user": "hadoop",
-      "dateUpdated": "2018-12-27 23:49:27.428",
-      "config": {
-        "colWidth": 6.0,
-        "fontSize": 9.0,
-        "enabled": true,
-        "results": {},
-        "editorSetting": {
-          "language": "scala",
-          "editOnDblClick": false,
-          "completionKey": "TAB",
-          "completionSupport": true
-        },
-        "editorMode": "ace/mode/scala"
-      },
-      "settings": {
-        "params": {},
-        "forms": {}
-      },
-      "apps": [],
-      "jobName": "paragraph_1545925570080_1335749123",
-      "id": "20181227-234610_2084768893",
-      "dateCreated": "2018-12-27 23:46:10.080",
       "status": "READY",
       "progressUpdateIntervalMs": 500
     }
