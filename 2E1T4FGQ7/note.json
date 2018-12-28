@@ -3,7 +3,7 @@
     {
       "text": "import org.apache.spark.ml.{Pipeline, PipelineModel}\nimport org.apache.spark.ml.classification.LogisticRegression\nimport org.apache.spark.ml.feature.{HashingTF, Tokenizer}\nimport org.apache.spark.ml.linalg.Vector\nimport org.apache.spark.sql.Row\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
       "user": "hadoop",
-      "dateUpdated": "2018-12-27 18:32:28.377",
+      "dateUpdated": "2018-12-27 21:42:21.756",
       "config": {
         "colWidth": 6.0,
         "fontSize": 9.0,
@@ -36,8 +36,8 @@
       "jobName": "paragraph_1545837733400_-1196215909",
       "id": "20181226-232213_1646049775",
       "dateCreated": "2018-12-26 23:22:13.401",
-      "dateStarted": "2018-12-27 18:32:28.429",
-      "dateFinished": "2018-12-27 18:32:29.386",
+      "dateStarted": "2018-12-27 21:42:21.830",
+      "dateFinished": "2018-12-27 21:42:37.612",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -72,29 +72,6 @@
             "data": "training: org.apache.spark.sql.DataFrame \u003d [id: bigint, text: string ... 1 more field]\ntokenizer: org.apache.spark.ml.feature.Tokenizer \u003d tok_a8c769fcd34c\nhashingTF: org.apache.spark.ml.feature.HashingTF \u003d hashingTF_a523b2ab58e8\nlr: org.apache.spark.ml.classification.LogisticRegression \u003d logreg_10101e71b0d5\npipeline: org.apache.spark.ml.Pipeline \u003d pipeline_a271e6d42870\nmodel: org.apache.spark.ml.PipelineModel \u003d pipeline_a271e6d42870\ntest: org.apache.spark.sql.DataFrame \u003d [id: bigint, text: string]\ndfTest: org.apache.spark.sql.DataFrame \u003d [id: bigint, text: string ... 5 more fields]\n"
           }
         ]
-      },
-      "runtimeInfos": {
-        "jobUrl": {
-          "propertyName": "jobUrl",
-          "label": "SPARK JOB",
-          "tooltip": "View in Spark web UI",
-          "group": "spark",
-          "values": [
-            "http://master:37424/jobs",
-            "http://master:37424/jobs",
-            "http://master:37424/jobs",
-            "http://master:37424/jobs",
-            "http://master:37424/jobs",
-            "http://master:37424/jobs",
-            "http://master:37424/jobs",
-            "http://master:37424/jobs",
-            "http://master:37424/jobs",
-            "http://master:37424/jobs",
-            "http://master:37424/jobs",
-            "http://master:37424/jobs"
-          ],
-          "interpreterSettingId": "spark"
-        }
       },
       "apps": [],
       "jobName": "paragraph_1545837778783_-993396225",
@@ -181,7 +158,7 @@
     {
       "text": "%sql \nselect age, count(1) value\nfrom bank \nwhere age \u003c 30 \ngroup by age \norder by age",
       "user": "hadoop",
-      "dateUpdated": "2018-12-27 18:31:24.766",
+      "dateUpdated": "2018-12-27 21:46:15.528",
       "config": {
         "colWidth": 6.0,
         "fontSize": 10.0,
@@ -288,7 +265,7 @@
     {
       "text": "%sql \nselect age, count(1) value \nfrom bank \nwhere age \u003c ${maxAge\u003d30} \ngroup by age \norder by age",
       "user": "hadoop",
-      "dateUpdated": "2018-12-27 18:31:24.898",
+      "dateUpdated": "2018-12-27 21:46:15.648",
       "config": {
         "colWidth": 6.0,
         "fontSize": 10.0,
