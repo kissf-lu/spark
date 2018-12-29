@@ -1,0 +1,197 @@
+{
+  "paragraphs": [
+    {
+      "text": "%md\n### Scala Class 实验室\n",
+      "user": "hadoop",
+      "dateUpdated": "2018-12-29 09:25:54.427",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eScala Class 实验室\u003c/h3\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1546046729965_1983267403",
+      "id": "20181229-092529_1375951239",
+      "dateCreated": "2018-12-29 09:25:29.965",
+      "dateStarted": "2018-12-29 09:25:54.449",
+      "dateFinished": "2018-12-29 09:25:54.462",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n#### 类的组合继承\n",
+      "user": "hadoop",
+      "dateUpdated": "2018-12-29 09:53:48.091",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch4\u003e类的组合继承\u003c/h4\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1546046754391_1449483910",
+      "id": "20181229-092554_378095560",
+      "dateCreated": "2018-12-29 09:25:54.391",
+      "dateStarted": "2018-12-29 09:53:48.091",
+      "dateFinished": "2018-12-29 09:53:48.098",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "abstract class Ele {\n  val contents: Array[String]\n  def height \u003d contents.length\n  def width \u003d if (height \u003d\u003d 0) 0 else contents(0).length\n}\n\nclass ArrayEle(conts: Array[String]) extends Ele {\n  /*实例化超类的字段*/\n  val contents \u003d conts\n}\n\nclass LineEle(s: String) extends ArrayEle(Array(s)) {\n  override/* 重写超类的构造方法*/\n  def height \u003d s.length\n  override/* 重写超类的构造方法*/\n  def width \u003d 1\n}\n",
+      "user": "hadoop",
+      "dateUpdated": "2018-12-29 11:52:15.595",
+      "config": {
+        "colWidth": 6.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1546046786955_-157293516",
+      "id": "20181229-092626_1334827248",
+      "dateCreated": "2018-12-29 09:26:26.955",
+      "dateStarted": "2018-12-29 11:52:15.692",
+      "dateFinished": "2018-12-29 11:40:12.454",
+      "status": "RUNNING",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n\n#### 类的伴生对象",
+      "user": "hadoop",
+      "dateUpdated": "2018-12-29 10:03:00.026",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch4\u003e类的伴生对象\u003c/h4\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1546046878595_333802268",
+      "id": "20181229-092758_604837693",
+      "dateCreated": "2018-12-29 09:27:58.595",
+      "dateStarted": "2018-12-29 10:03:00.026",
+      "dateFinished": "2018-12-29 10:03:00.033",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "user": "hadoop",
+      "dateUpdated": "2018-12-29 10:03:28.511",
+      "config": {
+        "colWidth": 6.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1546049000926_1277687466",
+      "id": "20181229-100320_294680821",
+      "dateCreated": "2018-12-29 10:03:20.926",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "scala/class_lab",
+  "id": "2DZ6USPPG",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {
+    "md:shared_process": [],
+    "spark:shared_process": []
+  },
+  "config": {
+    "isZeppelinNotebookCronEnable": false
+  },
+  "info": {}
+}

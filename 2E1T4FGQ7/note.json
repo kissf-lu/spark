@@ -1,9 +1,50 @@
 {
   "paragraphs": [
     {
+      "text": "%md\n\n### Spark 测试环境",
+      "user": "hadoop",
+      "dateUpdated": "2018-12-29 15:59:56.346",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "tableHide": false,
+        "editorHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eSpark 测试环境\u003c/h3\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1546065952621_1637291524",
+      "id": "20181229-144552_1682048773",
+      "dateCreated": "2018-12-29 14:45:52.621",
+      "dateStarted": "2018-12-29 15:59:56.347",
+      "dateFinished": "2018-12-29 15:59:56.360",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
       "text": "import org.apache.spark.ml.{Pipeline, PipelineModel}\nimport org.apache.spark.ml.classification.LogisticRegression\nimport org.apache.spark.ml.feature.{HashingTF, Tokenizer}\nimport org.apache.spark.ml.linalg.Vector\nimport org.apache.spark.sql.Row\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
       "user": "hadoop",
-      "dateUpdated": "2018-12-27 21:42:21.756",
+      "dateUpdated": "2018-12-29 15:23:39.659",
       "config": {
         "colWidth": 6.0,
         "fontSize": 9.0,
@@ -36,15 +77,15 @@
       "jobName": "paragraph_1545837733400_-1196215909",
       "id": "20181226-232213_1646049775",
       "dateCreated": "2018-12-26 23:22:13.401",
-      "dateStarted": "2018-12-27 21:42:21.830",
-      "dateFinished": "2018-12-27 21:42:37.612",
+      "dateStarted": "2018-12-29 15:23:39.699",
+      "dateFinished": "2018-12-29 15:23:40.662",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "// Prepare training documents from a list of (id, text, label) tuples.\nval training \u003d spark.createDataFrame(Seq(\n  (0L, \"a b c d e spark\", 1.0),\n  (1L, \"b d\", 0.0),\n  (2L, \"spark f g h\", 1.0),\n  (3L, \"hadoop mapreduce\", 0.0)\n)).toDF(\"id\", \"text\", \"label\")\n\n// Configure an ML pipeline, which consists of three stages: tokenizer, hashingTF, and lr.\nval tokenizer \u003d new Tokenizer().\n  setInputCol(\"text\").\n  setOutputCol(\"words\")\n  \nval hashingTF \u003d new HashingTF().\n  setNumFeatures(1000).\n  setInputCol(tokenizer.getOutputCol).\n  setOutputCol(\"features\")\nval lr \u003d new LogisticRegression().\n  setMaxIter(10).\n  setRegParam(0.001)\nval pipeline \u003d new Pipeline().\nsetStages(Array(tokenizer, hashingTF, lr))\n\n// Fit the pipeline to training documents.\nval model \u003d pipeline.fit(training)\n\n// Prepare test documents, which are unlabeled (id, text) tuples.\nval test \u003d spark.createDataFrame(Seq(\n  (4L, \"spark i j k\"),\n  (5L, \"l m n\"),\n  (6L, \"spark hadoop spark\"),\n  (7L, \"apache hadoop\")\n)).toDF(\"id\", \"text\")\n\n// Make predictions on test documents.\nval dfTest \u003d model.transform(test)\n\n",
       "user": "hadoop",
-      "dateUpdated": "2018-12-27 18:32:33.909",
+      "dateUpdated": "2018-12-29 15:23:46.584",
       "config": {
         "colWidth": 6.0,
         "fontSize": 9.0,
@@ -69,7 +110,7 @@
         "msg": [
           {
             "type": "TEXT",
-            "data": "training: org.apache.spark.sql.DataFrame \u003d [id: bigint, text: string ... 1 more field]\ntokenizer: org.apache.spark.ml.feature.Tokenizer \u003d tok_a8c769fcd34c\nhashingTF: org.apache.spark.ml.feature.HashingTF \u003d hashingTF_a523b2ab58e8\nlr: org.apache.spark.ml.classification.LogisticRegression \u003d logreg_10101e71b0d5\npipeline: org.apache.spark.ml.Pipeline \u003d pipeline_a271e6d42870\nmodel: org.apache.spark.ml.PipelineModel \u003d pipeline_a271e6d42870\ntest: org.apache.spark.sql.DataFrame \u003d [id: bigint, text: string]\ndfTest: org.apache.spark.sql.DataFrame \u003d [id: bigint, text: string ... 5 more fields]\n"
+            "data": "training: org.apache.spark.sql.DataFrame \u003d [id: bigint, text: string ... 1 more field]\ntokenizer: org.apache.spark.ml.feature.Tokenizer \u003d tok_78c76a491fa6\nhashingTF: org.apache.spark.ml.feature.HashingTF \u003d hashingTF_d7be562f8f5d\nlr: org.apache.spark.ml.classification.LogisticRegression \u003d logreg_1a8a2b1eca30\npipeline: org.apache.spark.ml.Pipeline \u003d pipeline_1ce0af0ced41\nmodel: org.apache.spark.ml.PipelineModel \u003d pipeline_1ce0af0ced41\ntest: org.apache.spark.sql.DataFrame \u003d [id: bigint, text: string]\ndfTest: org.apache.spark.sql.DataFrame \u003d [id: bigint, text: string ... 5 more fields]\n"
           }
         ]
       },
@@ -77,15 +118,15 @@
       "jobName": "paragraph_1545837778783_-993396225",
       "id": "20181226-232258_664739728",
       "dateCreated": "2018-12-26 23:22:58.783",
-      "dateStarted": "2018-12-27 18:32:33.950",
-      "dateFinished": "2018-12-27 18:32:46.930",
+      "dateStarted": "2018-12-29 15:23:46.614",
+      "dateFinished": "2018-12-29 15:23:58.344",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "dfTest.show",
       "user": "hadoop",
-      "dateUpdated": "2018-12-27 18:32:42.704",
+      "dateUpdated": "2018-12-29 15:24:24.384",
       "config": {
         "colWidth": 6.0,
         "fontSize": 9.0,
@@ -116,15 +157,15 @@
       "jobName": "paragraph_1545840817096_592224788",
       "id": "20181227-001337_1255990654",
       "dateCreated": "2018-12-27 00:13:37.096",
-      "dateStarted": "2018-12-27 18:32:42.814",
-      "dateFinished": "2018-12-27 18:32:47.496",
+      "dateStarted": "2018-12-29 15:24:24.411",
+      "dateFinished": "2018-12-29 15:24:24.879",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "dfTest.createOrReplaceTempView(\"test\")",
       "user": "hadoop",
-      "dateUpdated": "2018-12-27 00:13:26.568",
+      "dateUpdated": "2018-12-29 15:24:20.651",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -136,7 +177,8 @@
           "completionKey": "TAB",
           "completionSupport": true
         },
-        "editorMode": "ace/mode/scala"
+        "editorMode": "ace/mode/scala",
+        "tableHide": false
       },
       "settings": {
         "params": {},
@@ -150,15 +192,15 @@
       "jobName": "paragraph_1545840761080_-1082022848",
       "id": "20181227-001241_738765608",
       "dateCreated": "2018-12-27 00:12:41.080",
-      "dateStarted": "2018-12-27 00:13:26.594",
-      "dateFinished": "2018-12-27 00:13:27.070",
+      "dateStarted": "2018-12-29 15:24:11.634",
+      "dateFinished": "2018-12-29 15:24:12.240",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%sql \nselect age, count(1) value\nfrom bank \nwhere age \u003c 30 \ngroup by age \norder by age",
       "user": "hadoop",
-      "dateUpdated": "2018-12-27 21:46:15.528",
+      "dateUpdated": "2018-12-29 16:46:23.826",
       "config": {
         "colWidth": 6.0,
         "fontSize": 10.0,
@@ -265,7 +307,7 @@
     {
       "text": "%sql \nselect age, count(1) value \nfrom bank \nwhere age \u003c ${maxAge\u003d30} \ngroup by age \norder by age",
       "user": "hadoop",
-      "dateUpdated": "2018-12-27 21:46:15.648",
+      "dateUpdated": "2018-12-29 16:46:23.931",
       "config": {
         "colWidth": 6.0,
         "fontSize": 10.0,
@@ -411,6 +453,7 @@
   "noteParams": {},
   "noteForms": {},
   "angularObjects": {
+    "md:shared_process": [],
     "spark:shared_process": []
   },
   "config": {

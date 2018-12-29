@@ -1,9 +1,9 @@
 {
   "paragraphs": [
     {
-      "text": "%md\n\n## Scala trait属性的内容解析\n\n\n---\n\n### 特质属性说明：\n\n\n   ",
+      "text": "%md\n\n## Scala trait属性的内容解析-class\n\n\n---\n\n### 特质属性说明：\n\n\n   ",
       "user": "hadoop",
-      "dateUpdated": "2018-12-28 17:40:48.213",
+      "dateUpdated": "2018-12-29 08:26:41.159",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -28,7 +28,7 @@
         "msg": [
           {
             "type": "HTML",
-            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch2\u003eScala trait属性的内容解析\u003c/h2\u003e\n\u003chr/\u003e\n\u003ch3\u003e特质属性说明：\u003c/h3\u003e\n\u003c/div\u003e"
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch2\u003eScala trait属性的内容解析-class\u003c/h2\u003e\n\u003chr/\u003e\n\u003ch3\u003e特质属性说明：\u003c/h3\u003e\n\u003c/div\u003e"
           }
         ]
       },
@@ -36,18 +36,18 @@
       "jobName": "paragraph_1545982145486_-1606809119",
       "id": "20181228-152905_1851469699",
       "dateCreated": "2018-12-28 15:29:05.486",
-      "dateStarted": "2018-12-28 17:40:48.218",
-      "dateFinished": "2018-12-28 17:40:48.221",
+      "dateStarted": "2018-12-29 08:26:41.168",
+      "dateFinished": "2018-12-29 08:26:43.850",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "title": "trait 的定义",
-      "text": "%md\n\n   - 特质是Scala 代码复用的基础单元， 可以将方法和字段定义封装;\n   - 以混入的方式实现复用；\n   - 特质不能有任何类参数；\n   ",
+      "text": "%md\n\n   - **特质是Scala 代码复用的基础单元， 可以将方法和字段定义封装;**\n   - *以混入的方式实现复用；*\n   - *特质不能有任何类参数；*\n   - *特质本质上类似于抽象类；*\n   \n   \n\n\n\n\n\n\n\n\n   ",
       "user": "hadoop",
-      "dateUpdated": "2018-12-28 16:55:55.119",
+      "dateUpdated": "2018-12-29 09:13:01.582",
       "config": {
-        "colWidth": 6.0,
+        "colWidth": 12.0,
         "fontSize": 9.0,
         "enabled": true,
         "results": {},
@@ -71,7 +71,7 @@
         "msg": [
           {
             "type": "HTML",
-            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cul\u003e\n  \u003cli\u003e特质是Scala 代码复用的基础单元， 可以将方法和字段定义封装;\u003c/li\u003e\n  \u003cli\u003e以混入的方式实现复用；\u003c/li\u003e\n  \u003cli\u003e特质不能有任何类参数；\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/div\u003e"
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cul\u003e\n  \u003cli\u003e\u003cstrong\u003e特质是Scala 代码复用的基础单元， 可以将方法和字段定义封装;\u003c/strong\u003e\u003c/li\u003e\n  \u003cli\u003e\u003cem\u003e以混入的方式实现复用；\u003c/em\u003e\u003c/li\u003e\n  \u003cli\u003e\u003cem\u003e特质不能有任何类参数；\u003c/em\u003e\u003c/li\u003e\n  \u003cli\u003e\u003cem\u003e特质本质上类似于抽象类；\u003c/em\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/div\u003e"
           }
         ]
       },
@@ -79,56 +79,16 @@
       "jobName": "paragraph_1545987176535_1951223942",
       "id": "20181228-165256_1955406293",
       "dateCreated": "2018-12-28 16:52:56.536",
-      "dateStarted": "2018-12-28 16:55:55.119",
-      "dateFinished": "2018-12-28 16:55:55.131",
+      "dateStarted": "2018-12-29 09:12:48.039",
+      "dateFinished": "2018-12-29 09:12:48.047",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "trait RationalTrait {\n  val numerArg: Int\n  val denomArg: Int\n  println(denomArg)\n}\n\nclass Rational extends RationalTrait {\n  val numerArg \u003d 10\n  val denomArg \u003d 2\n}\n\nval r1 \u003d new Rational\n\nr1.denomArg",
+      "title": "1、 混入特质",
+      "text": "/*\n\n**/\n\n\ncase class PeopleInfo(age: Int, name: String, birth: Long)\n\nabstract class Person {\n  val sex: Boolean\n  val info: PeopleInfo\n}\n\n\ntrait PersonTrait extends Person{\n  \n  override def toString \u003d \"Black People\"\n  \n  def getInfo: PeopleInfo \u003d info\n}\n\nclass BlackMan(infPeople: PeopleInfo) extends Person with PersonTrait{\n  val sex \u003d true\n  val info \u003d infPeople\n}\n\nval blackMan1 \u003d new BlackMan(PeopleInfo(22, \"kiss\", 2018))\n\nblackMan1.sex\n",
       "user": "hadoop",
-      "dateUpdated": "2018-12-28 23:54:11.803",
-      "config": {
-        "colWidth": 6.0,
-        "fontSize": 9.0,
-        "enabled": true,
-        "results": {},
-        "editorSetting": {
-          "language": "scala",
-          "editOnDblClick": false,
-          "completionKey": "TAB",
-          "completionSupport": true
-        },
-        "editorMode": "ace/mode/scala",
-        "editorHide": false,
-        "tableHide": false
-      },
-      "settings": {
-        "params": {},
-        "forms": {}
-      },
-      "results": {
-        "code": "SUCCESS",
-        "msg": [
-          {
-            "type": "TEXT",
-            "data": "defined trait RationalTrait\ndefined class Rational\n0\nr1: Rational \u003d Rational@4e4ba6f1\nres63: Int \u003d 2\n"
-          }
-        ]
-      },
-      "apps": [],
-      "jobName": "paragraph_1546009269775_261714010",
-      "id": "20181228-230109_598231514",
-      "dateCreated": "2018-12-28 23:01:09.775",
-      "dateStarted": "2018-12-28 23:54:11.817",
-      "dateFinished": "2018-12-28 23:54:12.269",
-      "status": "FINISHED",
-      "progressUpdateIntervalMs": 500
-    },
-    {
-      "text": "\ncase class PeopleInfo(age: Int, name: String, birth: Long)\n\nabstract class Person {\n    \n  val info: PeopleInfo \n}\n\n\ntrait PersonTrait extends Person{\n  \n  override def toString \u003d \"Black People\"\n  \n  def getInfo: PeopleInfo \u003d info\n  \n//   def updateInfo(infPerson: PeopleInfo): Unit \u003d {\n//     info \u003d infPerson\n//   }\n  \n}\n\nclass BlackMan(infPeople: PeopleInfo) extends Person with PersonTrait{\n  private val sex \u003d \"man\"\n  val info \u003d infPeople\n}\n\nval blackMan1 \u003d new BlackMan(PeopleInfo(22, \"kiss\", 2018))\n\n// blackMan1.getInfo\n\n\n",
-      "user": "hadoop",
-      "dateUpdated": "2018-12-29 00:42:35.798",
+      "dateUpdated": "2018-12-29 09:19:38.934",
       "config": {
         "colWidth": 6.0,
         "fontSize": 9.0,
@@ -143,7 +103,51 @@
         "editorMode": "ace/mode/scala",
         "editorHide": false,
         "tableHide": false,
-        "lineNumbers": true
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "defined class PeopleInfo\ndefined class Person\ndefined trait PersonTrait\ndefined class BlackMan\nblackMan1: BlackMan \u003d Black People\nres33: Boolean \u003d true\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1546009269775_261714010",
+      "id": "20181228-230109_598231514",
+      "dateCreated": "2018-12-28 23:01:09.775",
+      "dateStarted": "2018-12-29 09:19:26.448",
+      "dateFinished": "2018-12-29 09:19:27.306",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "2、特质",
+      "text": "\n",
+      "user": "hadoop",
+      "dateUpdated": "2018-12-29 09:24:00.817",
+      "config": {
+        "colWidth": 6.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala",
+        "editorHide": false,
+        "tableHide": false,
+        "lineNumbers": true,
+        "title": true
       },
       "settings": {
         "params": {},
@@ -162,8 +166,8 @@
       "jobName": "paragraph_1545987330083_2024351078",
       "id": "20181228-165530_16872359",
       "dateCreated": "2018-12-28 16:55:30.083",
-      "dateStarted": "2018-12-29 00:42:35.807",
-      "dateFinished": "2018-12-29 00:42:36.221",
+      "dateStarted": "2018-12-29 09:18:06.928",
+      "dateFinished": "2018-12-29 09:18:07.569",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },

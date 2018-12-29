@@ -85,7 +85,7 @@
     {
       "text": "val ls1Rdd \u003d (\u0027a\u0027 to \u0027h\u0027).toList\n\nval ls2Rdd \u003d (\u0027g\u0027 to \u0027k\u0027).toList\n    \nval charLs1 \u003d spark.sparkContext.parallelize(ls1Rdd)\nval charLs2 \u003d spark.sparkContext.parallelize(ls2Rdd)\n\n",
       "user": "hadoop",
-      "dateUpdated": "2018-12-27 14:22:50.048",
+      "dateUpdated": "2018-12-29 16:46:49.776",
       "config": {
         "colWidth": 6.0,
         "fontSize": 9.0,
@@ -108,7 +108,7 @@
         "msg": [
           {
             "type": "TEXT",
-            "data": "ls1Rdd: List[Char] \u003d List(a, b, c, d, e, f, g, h)\nls2Rdd: List[Char] \u003d List(g, h, i, j, k)\ncharLs1: org.apache.spark.rdd.RDD[Char] \u003d ParallelCollectionRDD[4] at parallelize at \u003cconsole\u003e:25\ncharLs2: org.apache.spark.rdd.RDD[Char] \u003d ParallelCollectionRDD[5] at parallelize at \u003cconsole\u003e:25\n"
+            "data": "ls1Rdd: List[Char] \u003d List(a, b, c, d, e, f, g, h)\nls2Rdd: List[Char] \u003d List(g, h, i, j, k)\ncharLs1: org.apache.spark.rdd.RDD[Char] \u003d ParallelCollectionRDD[0] at parallelize at \u003cconsole\u003e:25\ncharLs2: org.apache.spark.rdd.RDD[Char] \u003d ParallelCollectionRDD[1] at parallelize at \u003cconsole\u003e:25\n"
           }
         ]
       },
@@ -116,8 +116,8 @@
       "jobName": "paragraph_1545891358552_-281359933",
       "id": "20181227-141558_1666426389",
       "dateCreated": "2018-12-27 14:15:58.553",
-      "dateStarted": "2018-12-27 14:21:31.715",
-      "dateFinished": "2018-12-27 14:21:33.389",
+      "dateStarted": "2018-12-29 16:46:49.830",
+      "dateFinished": "2018-12-29 16:47:07.427",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -125,7 +125,7 @@
       "title": "",
       "text": "charLs1.union(charLs2).collect\n\n\n\n\n\n\n\n\n\n\n",
       "user": "hadoop",
-      "dateUpdated": "2018-12-27 15:00:51.103",
+      "dateUpdated": "2018-12-29 16:47:14.062",
       "config": {
         "colWidth": 6.0,
         "fontSize": 9.0,
@@ -149,7 +149,7 @@
         "msg": [
           {
             "type": "TEXT",
-            "data": "res24: Array[Char] \u003d Array(a, b, c, d, e, f, g, h, g, h, i, j, k)\n"
+            "data": "res5: Array[Char] \u003d Array(a, b, c, d, e, f, g, h, g, h, i, j, k)\n"
           }
         ]
       },
@@ -157,8 +157,8 @@
       "jobName": "paragraph_1545891691702_1773217175",
       "id": "20181227-142131_1179167804",
       "dateCreated": "2018-12-27 14:21:31.702",
-      "dateStarted": "2018-12-27 14:59:05.908",
-      "dateFinished": "2018-12-27 14:59:06.313",
+      "dateStarted": "2018-12-29 16:47:14.105",
+      "dateFinished": "2018-12-29 16:47:17.376",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -204,9 +204,9 @@
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "val intListVal \u003d spark.sparkContext.parallelize((1 to 3).toList)\n\nintListVal.fold(1)(_ + _)\n\n",
+      "text": "val intListVal \u003d spark.sparkContext.parallelize((1 to 3).toList, 3)\n\nintListVal.fold(1)(_ + _)\n\n",
       "user": "hadoop",
-      "dateUpdated": "2018-12-27 15:24:09.173",
+      "dateUpdated": "2018-12-29 16:47:22.771",
       "config": {
         "colWidth": 6.0,
         "fontSize": 9.0,
@@ -327,7 +327,7 @@
         "msg": [
           {
             "type": "TEXT",
-            "data": "intListVal: org.apache.spark.rdd.RDD[Int] \u003d ParallelCollectionRDD[2] at parallelize at \u003cconsole\u003e:23\nres8: Int \u003d 15\n"
+            "data": "intListVal: org.apache.spark.rdd.RDD[Int] \u003d ParallelCollectionRDD[3] at parallelize at \u003cconsole\u003e:23\nres7: Int \u003d 10\n"
           }
         ]
       },
@@ -335,22 +335,155 @@
       "jobName": "paragraph_1545892507425_1229127297",
       "id": "20181227-143507_886631687",
       "dateCreated": "2018-12-27 14:35:07.426",
-      "dateStarted": "2018-12-27 15:24:09.189",
-      "dateFinished": "2018-12-27 15:24:09.969",
+      "dateStarted": "2018-12-29 16:47:22.810",
+      "dateFinished": "2018-12-29 16:47:23.882",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
+      "text": "spark",
       "user": "hadoop",
-      "config": {},
+      "dateUpdated": "2018-12-29 17:04:43.683",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
       "settings": {
         "params": {},
         "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res4: org.apache.spark.sql.SparkSession \u003d org.apache.spark.sql.SparkSession@643ce7dc\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1546074210717_455049581",
+      "id": "20181229-170330_220249194",
+      "dateCreated": "2018-12-29 17:03:30.717",
+      "dateStarted": "2018-12-29 17:03:51.808",
+      "dateFinished": "2018-12-29 17:03:52.446",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val cov_data \u003d spark.read.option(\"inferSchema\", true).option(\"header\", false).csv(\"hdfs:///user/hadoop/spark/covtype/covtype.data\")\n\n\n",
+      "user": "hadoop",
+      "dateUpdated": "2018-12-29 18:32:41.379",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala",
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "ERROR",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "java.lang.RuntimeException: Warning: Master yarn-cluster is deprecated since 2.0. Please use master \"yarn\" with specified deploy mode instead.\n2018-12-29 18:32:42 WARN  Utils:66 - Your hostname, gitserver resolves to a loopback address: 127.0.0.1; using 10.0.4.72 instead (on interface eth0)\n2018-12-29 18:32:42 WARN  Utils:66 - Set SPARK_LOCAL_IP if you need to bind to another address\n2018-12-29 18:32:43 WARN  NativeCodeLoader:62 - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable\n2018-12-29 18:32:44 INFO  RMProxy:98 - Connecting to ResourceManager at master/10.0.4.72:18040\n2018-12-29 18:32:44 INFO  Client:54 - Requesting a new application from cluster with 2 NodeManagers\n2018-12-29 18:32:44 INFO  Client:54 - Verifying our application has not requested more than the maximum memory capability of the cluster (8192 MB per container)\n2018-12-29 18:32:44 INFO  Client:54 - Will allocate AM container, with 1408 MB memory including 384 MB overhead\n2018-12-29 18:32:44 INFO  Client:54 - Setting up container launch context for our AM\n2018-12-29 18:32:44 INFO  Client:54 - Setting up the launch environment for our AM container\n2018-12-29 18:32:44 INFO  Client:54 - Preparing resources for our AM container\n2018-12-29 18:32:45 WARN  Client:66 - Neither spark.yarn.jars nor spark.yarn.archive is set, falling back to uploading libraries under SPARK_HOME.\n2018-12-29 18:32:47 INFO  Client:54 - Uploading resource file:/home/hadoop/spark.local/spark-d064911f-c361-4c48-90dd-4c2ee8e37a1c/__spark_libs__5238318926526936211.zip -\u003e hdfs://master:9000/user/hadoop/.sparkStaging/application_1546078499381_0002/__spark_libs__5238318926526936211.zip\n2018-12-29 18:32:48 INFO  Client:54 - Uploading resource file:/home/hadoop/zeppelin/interpreter/spark/spark-interpreter-0.8.0.jar -\u003e hdfs://master:9000/user/hadoop/.sparkStaging/application_1546078499381_0002/spark-interpreter-0.8.0.jar\n2018-12-29 18:32:49 INFO  Client:54 - Uploading resource file:/home/hadoop/zeppelin/conf/log4j_yarn_cluster.properties -\u003e hdfs://master:9000/user/hadoop/.sparkStaging/application_1546078499381_0002/log4j_yarn_cluster.properties\n2018-12-29 18:32:49 INFO  Client:54 - Uploading resource file:/home/hadoop/spark/R/lib/sparkr.zip#sparkr -\u003e hdfs://master:9000/user/hadoop/.sparkStaging/application_1546078499381_0002/sparkr.zip\n2018-12-29 18:32:49 INFO  Client:54 - Uploading resource file:/home/hadoop/spark/python/lib/pyspark.zip -\u003e hdfs://master:9000/user/hadoop/.sparkStaging/application_1546078499381_0002/pyspark.zip\n2018-12-29 18:32:49 INFO  Client:54 - Uploading resource file:/home/hadoop/spark/python/lib/py4j-0.10.7-src.zip -\u003e hdfs://master:9000/user/hadoop/.sparkStaging/application_1546078499381_0002/py4j-0.10.7-src.zip\n2018-12-29 18:32:50 INFO  Client:54 - Uploading resource file:/home/hadoop/spark.local/spark-d064911f-c361-4c48-90dd-4c2ee8e37a1c/__spark_conf__7354990563999780532.zip -\u003e hdfs://master:9000/user/hadoop/.sparkStaging/application_1546078499381_0002/__spark_conf__.zip\n2018-12-29 18:32:50 INFO  SecurityManager:54 - Changing view acls to: hadoop\n2018-12-29 18:32:50 INFO  SecurityManager:54 - Changing modify acls to: hadoop\n2018-12-29 18:32:50 INFO  SecurityManager:54 - Changing view acls groups to: \n2018-12-29 18:32:50 INFO  SecurityManager:54 - Changing modify acls groups to: \n2018-12-29 18:32:50 INFO  SecurityManager:54 - SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(hadoop); groups with view permissions: Set(); users  with modify permissions: Set(hadoop); groups with modify permissions: Set()\n2018-12-29 18:32:50 INFO  Client:54 - Submitting application application_1546078499381_0002 to ResourceManager\n2018-12-29 18:32:50 INFO  YarnClientImpl:273 - Submitted application application_1546078499381_0002\n2018-12-29 18:32:51 INFO  Client:54 - Application report for application_1546078499381_0002 (state: ACCEPTED)\n2018-12-29 18:32:51 INFO  Client:54 - \n\t client token: N/A\n\t diagnostics: [Sat Dec 29 18:32:50 +0800 2018] Application is added to the scheduler and is not yet activated. Queue\u0027s AM resource limit exceeded.  Details : AM Partition \u003d \u003cDEFAULT_PARTITION\u003e; AM Resource Request \u003d \u003cmemory:2048, vCores:1\u003e; Queue Resource Limit for AM \u003d \u003cmemory:2048, vCores:1\u003e; User AM Resource Limit of the queue \u003d \u003cmemory:2048, vCores:1\u003e; Queue AM Resource Usage \u003d \u003cmemory:1024, vCores:1\u003e; \n\t ApplicationMaster host: N/A\n\t ApplicationMaster RPC port: -1\n\t queue: default\n\t start time: 1546079570728\n\t final status: UNDEFINED\n\t tracking URL: http://master:18088/proxy/application_1546078499381_0002/\n\t user: hadoop\n2018-12-29 18:32:52 INFO  Client:54 - Application report for application_1546078499381_0002 (state: ACCEPTED)\n2018-12-29 18:32:53 INFO  Client:54 - Application report for application_1546078499381_0002 (state: ACCEPTED)\n2018-12-29 18:32:54 INFO  Client:54 - Application report for application_1546078499381_0002 (state: ACCEPTED)\n2018-12-29 18:32:55 INFO  Client:54 - Application report for application_1546078499381_0002 (state: ACCEPTED)\n2018-12-29 18:32:56 INFO  Client:54 - Application report for application_1546078499381_0002 (state: ACCEPTED)\n2018-12-29 18:32:57 INFO  Client:54 - Application report for application_1546078499381_0002 (state: ACCEPTED)\n2018-12-29 18:32:58 INFO  Client:54 - Application report for application_1546078499381_0002 (state: ACCEPTED)\n2018-12-29 18:32:59 INFO  Client:54 - Application report for application_1546078499381_0002 (state: ACCEPTED)\n2018-12-29 18:33:00 INFO  Client:54 - Application report for application_1546078499381_0002 (state: ACCEPTED)\n2018-12-29 18:33:01 INFO  Client:54 - Application report for application_1546078499381_0002 (state: ACCEPTED)\n2018-12-29 18:33:02 INFO  Client:54 - Application report for application_1546078499381_0002 (state: ACCEPTED)\n2018-12-29 18:33:03 INFO  Client:54 - Application report for application_1546078499381_0002 (state: ACCEPTED)\n2018-12-29 18:33:04 INFO  Client:54 - Application report for application_1546078499381_0002 (state: ACCEPTED)\n2018-12-29 18:33:05 INFO  Client:54 - Application report for application_1546078499381_0002 (state: ACCEPTED)\n2018-12-29 18:33:06 INFO  Client:54 - Application report for application_1546078499381_0002 (state: ACCEPTED)\n2018-12-29 18:33:07 INFO  Client:54 - Application report for application_1546078499381_0002 (state: ACCEPTED)\n2018-12-29 18:33:08 INFO  Client:54 - Application report for application_1546078499381_0002 (state: ACCEPTED)\n2018-12-29 18:33:09 INFO  Client:54 - Application report for application_1546078499381_0002 (state: ACCEPTED)\n2018-12-29 18:33:10 INFO  Client:54 - Application report for application_1546078499381_0002 (state: ACCEPTED)\n2018-12-29 18:33:11 INFO  Client:54 - Application report for application_1546078499381_0002 (state: ACCEPTED)\n2018-12-29 18:33:12 INFO  Client:54 - Application report for application_1546078499381_0002 (state: ACCEPTED)\n2018-12-29 18:33:13 INFO  Client:54 - Application report for application_1546078499381_0002 (state: ACCEPTED)\n2018-12-29 18:33:14 INFO  Client:54 - Application report for application_1546078499381_0002 (state: ACCEPTED)\n2018-12-29 18:33:15 INFO  Client:54 - Application report for application_1546078499381_0002 (state: ACCEPTED)\n2018-12-29 18:33:16 INFO  Client:54 - Application report for application_1546078499381_0002 (state: ACCEPTED)\n2018-12-29 18:33:17 INFO  Client:54 - Application report for application_1546078499381_0002 (state: ACCEPTED)\n2018-12-29 18:33:18 INFO  Client:54 - Application report for application_1546078499381_0002 (state: ACCEPTED)\n2018-12-29 18:33:19 INFO  Client:54 - Application report for application_1546078499381_0002 (state: ACCEPTED)\n2018-12-29 18:33:20 INFO  Client:54 - Application report for application_1546078499381_0002 (state: ACCEPTED)\n2018-12-29 18:33:21 INFO  Client:54 - Application report for application_1546078499381_0002 (state: ACCEPTED)\n2018-12-29 18:33:22 INFO  Client:54 - Application report for application_1546078499381_0002 (state: ACCEPTED)\n2018-12-29 18:33:23 INFO  Client:54 - Application report for application_1546078499381_0002 (state: ACCEPTED)\n2018-12-29 18:33:24 INFO  Client:54 - Application report for application_1546078499381_0002 (state: ACCEPTED)\n2018-12-29 18:33:25 INFO  Client:54 - Application report for application_1546078499381_0002 (state: ACCEPTED)\n2018-12-29 18:33:26 INFO  Client:54 - Application report for application_1546078499381_0002 (state: ACCEPTED)\n2018-12-29 18:33:27 INFO  Client:54 - Application report for application_1546078499381_0002 (state: ACCEPTED)\n2018-12-29 18:33:28 INFO  Client:54 - Application report for application_1546078499381_0002 (state: ACCEPTED)\n2018-12-29 18:33:29 INFO  Client:54 - Application report for application_1546078499381_0002 (state: ACCEPTED)\n2018-12-29 18:33:30 INFO  Client:54 - Application report for application_1546078499381_0002 (state: ACCEPTED)\n2018-12-29 18:33:31 INFO  Client:54 - Application report for application_1546078499381_0002 (state: ACCEPTED)\n2018-12-29 18:33:32 INFO  Client:54 - Application report for application_1546078499381_0002 (state: ACCEPTED)\n2018-12-29 18:33:33 INFO  Client:54 - Application report for application_1546078499381_0002 (state: ACCEPTED)\n2018-12-29 18:33:34 INFO  Client:54 - Application report for application_1546078499381_0002 (state: ACCEPTED)\n2018-12-29 18:33:35 INFO  Client:54 - Application report for application_1546078499381_0002 (state: ACCEPTED)\n2018-12-29 18:33:36 INFO  Client:54 - Application report for application_1546078499381_0002 (state: ACCEPTED)\n2018-12-29 18:33:37 INFO  Client:54 - Application report for application_1546078499381_0002 (state: ACCEPTED)\n2018-12-29 18:33:38 INFO  Client:54 - Application report for application_1546078499381_0002 (state: ACCEPTED)\n2018-12-29 18:33:39 INFO  Client:54 - Application report for application_1546078499381_0002 (state: ACCEPTED)\n2018-12-29 18:33:40 INFO  Client:54 - Application report for application_1546078499381_0002 (state: ACCEPTED)\n2018-12-29 18:33:41 INFO  Client:54 - Application report for application_1546078499381_0002 (state: ACCEPTED)\n\n\tat org.apache.zeppelin.interpreter.remote.RemoteInterpreterManagedProcess.start(RemoteInterpreterManagedProcess.java:205)\n\tat org.apache.zeppelin.interpreter.ManagedInterpreterGroup.getOrCreateInterpreterProcess(ManagedInterpreterGroup.java:64)\n\tat org.apache.zeppelin.interpreter.remote.RemoteInterpreter.getOrCreateInterpreterProcess(RemoteInterpreter.java:111)\n\tat org.apache.zeppelin.interpreter.remote.RemoteInterpreter.internal_create(RemoteInterpreter.java:164)\n\tat org.apache.zeppelin.interpreter.remote.RemoteInterpreter.open(RemoteInterpreter.java:132)\n\tat org.apache.zeppelin.interpreter.remote.RemoteInterpreter.getFormType(RemoteInterpreter.java:299)\n\tat org.apache.zeppelin.notebook.Paragraph.jobRun(Paragraph.java:407)\n\tat org.apache.zeppelin.scheduler.Job.run(Job.java:188)\n\tat org.apache.zeppelin.scheduler.RemoteScheduler$JobRunner.run(RemoteScheduler.java:307)\n\tat java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)\n\tat java.util.concurrent.FutureTask.run(FutureTask.java:266)\n\tat java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)\n\tat java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)\n\tat java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)\n\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)\n\tat java.lang.Thread.run(Thread.java:748)\n"
+          }
+        ]
       },
       "apps": [],
       "jobName": "paragraph_1545893308062_-1950724019",
       "id": "20181227-144828_374008171",
       "dateCreated": "2018-12-27 14:48:28.062",
+      "dateStarted": "2018-12-29 18:32:41.419",
+      "dateFinished": "2018-12-29 18:33:41.955",
+      "status": "ERROR",
+      "errorMessage": "java.lang.RuntimeException: Warning: Master yarn-cluster is deprecated since 2.0. Please use master \"yarn\" with specified deploy mode instead.\n2018-12-29 18:32:42 WARN  Utils:66 - Your hostname, gitserver resolves to a loopback address: 127.0.0.1; using 10.0.4.72 instead (on interface eth0)\n2018-12-29 18:32:42 WARN  Utils:66 - Set SPARK_LOCAL_IP if you need to bind to another address\n2018-12-29 18:32:43 WARN  NativeCodeLoader:62 - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable\n2018-12-29 18:32:44 INFO  RMProxy:98 - Connecting to ResourceManager at master/10.0.4.72:18040\n2018-12-29 18:32:44 INFO  Client:54 - Requesting a new application from cluster with 2 NodeManagers\n2018-12-29 18:32:44 INFO  Client:54 - Verifying our application has not requested more than the maximum memory capability of the cluster (8192 MB per container)\n2018-12-29 18:32:44 INFO  Client:54 - Will allocate AM container, with 1408 MB memory including 384 MB overhead\n2018-12-29 18:32:44 INFO  Client:54 - Setting up container launch context for our AM\n2018-12-29 18:32:44 INFO  Client:54 - Setting up the launch environment for our AM container\n2018-12-29 18:32:44 INFO  Client:54 - Preparing resources for our AM container\n2018-12-29 18:32:45 WARN  Client:66 - Neither spark.yarn.jars nor spark.yarn.archive is set, falling back to uploading libraries under SPARK_HOME.\n2018-12-29 18:32:47 INFO  Client:54 - Uploading resource file:/home/hadoop/spark.local/spark-d064911f-c361-4c48-90dd-4c2ee8e37a1c/__spark_libs__5238318926526936211.zip -\u003e hdfs://master:9000/user/hadoop/.sparkStaging/application_1546078499381_0002/__spark_libs__5238318926526936211.zip\n2018-12-29 18:32:48 INFO  Client:54 - Uploading resource file:/home/hadoop/zeppelin/interpreter/spark/spark-interpreter-0.8.0.jar -\u003e hdfs://master:9000/user/hadoop/.sparkStaging/application_1546078499381_0002/spark-interpreter-0.8.0.jar\n2018-12-29 18:32:49 INFO  Client:54 - Uploading resource file:/home/hadoop/zeppelin/conf/log4j_yarn_cluster.properties -\u003e hdfs://master:9000/user/hadoop/.sparkStaging/application_1546078499381_0002/log4j_yarn_cluster.properties\n2018-12-29 18:32:49 INFO  Client:54 - Uploading resource file:/home/hadoop/spark/R/lib/sparkr.zip#sparkr -\u003e hdfs://master:9000/user/hadoop/.sparkStaging/application_1546078499381_0002/sparkr.zip\n2018-12-29 18:32:49 INFO  Client:54 - Uploading resource file:/home/hadoop/spark/python/lib/pyspark.zip -\u003e hdfs://master:9000/user/hadoop/.sparkStaging/application_1546078499381_0002/pyspark.zip\n2018-12-29 18:32:49 INFO  Client:54 - Uploading resource file:/home/hadoop/spark/python/lib/py4j-0.10.7-src.zip -\u003e hdfs://master:9000/user/hadoop/.sparkStaging/application_1546078499381_0002/py4j-0.10.7-src.zip\n2018-12-29 18:32:50 INFO  Client:54 - Uploading resource file:/home/hadoop/spark.local/spark-d064911f-c361-4c48-90dd-4c2ee8e37a1c/__spark_conf__7354990563999780532.zip -\u003e hdfs://master:9000/user/hadoop/.sparkStaging/application_1546078499381_0002/__spark_conf__.zip\n2018-12-29 18:32:50 INFO  SecurityManager:54 - Changing view acls to: hadoop\n2018-12-29 18:32:50 INFO  SecurityManager:54 - Changing modify acls to: hadoop\n2018-12-29 18:32:50 INFO  SecurityManager:54 - Changing view acls groups to: \n2018-12-29 18:32:50 INFO  SecurityManager:54 - Changing modify acls groups to: \n2018-12-29 18:32:50 INFO  SecurityManager:54 - SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(hadoop); groups with view permissions: Set(); users  with modify permissions: Set(hadoop); groups with modify permissions: Set()\n2018-12-29 18:32:50 INFO  Client:54 - Submitting application application_1546078499381_0002 to ResourceManager\n2018-12-29 18:32:50 INFO  YarnClientImpl:273 - Submitted application application_1546078499381_0002\n2018-12-29 18:32:51 INFO  Client:54 - Application report for application_1546078499381_0002 (state: ACCEPTED)\n2018-12-29 18:32:51 INFO  Client:54 - \n\t client token: N/A\n\t diagnostics: [Sat Dec 29 18:32:50 +0800 2018] Application is added to the scheduler and is not yet activated. Queue\u0027s AM resource limit exceeded.  Details : AM Partition \u003d \u003cDEFAULT_PARTITION\u003e; AM Resource Request \u003d \u003cmemory:2048, vCores:1\u003e; Queue Resource Limit for AM \u003d \u003cmemory:2048, vCores:1\u003e; User AM Resource Limit of the queue \u003d \u003cmemory:2048, vCores:1\u003e; Queue AM Resource Usage \u003d \u003cmemory:1024, vCores:1\u003e; \n\t ApplicationMaster host: N/A\n\t ApplicationMaster RPC port: -1\n\t queue: default\n\t start time: 1546079570728\n\t final status: UNDEFINED\n\t tracking URL: http://master:18088/proxy/application_1546078499381_0002/\n\t user: hadoop\n2018-12-29 18:32:52 INFO  Client:54 - Application report for application_1546078499381_0002 (state: ACCEPTED)\n2018-12-29 18:32:53 INFO  Client:54 - Application report for application_1546078499381_0002 (state: ACCEPTED)\n2018-12-29 18:32:54 INFO  Client:54 - Application report for application_1546078499381_0002 (state: ACCEPTED)\n2018-12-29 18:32:55 INFO  Client:54 - Application report for application_1546078499381_0002 (state: ACCEPTED)\n2018-12-29 18:32:56 INFO  Client:54 - Application report for application_1546078499381_0002 (state: ACCEPTED)\n2018-12-29 18:32:57 INFO  Client:54 - Application report for application_1546078499381_0002 (state: ACCEPTED)\n2018-12-29 18:32:58 INFO  Client:54 - Application report for application_1546078499381_0002 (state: ACCEPTED)\n2018-12-29 18:32:59 INFO  Client:54 - Application report for application_1546078499381_0002 (state: ACCEPTED)\n2018-12-29 18:33:00 INFO  Client:54 - Application report for application_1546078499381_0002 (state: ACCEPTED)\n2018-12-29 18:33:01 INFO  Client:54 - Application report for application_1546078499381_0002 (state: ACCEPTED)\n2018-12-29 18:33:02 INFO  Client:54 - Application report for application_1546078499381_0002 (state: ACCEPTED)\n2018-12-29 18:33:03 INFO  Client:54 - Application report for application_1546078499381_0002 (state: ACCEPTED)\n2018-12-29 18:33:04 INFO  Client:54 - Application report for application_1546078499381_0002 (state: ACCEPTED)\n2018-12-29 18:33:05 INFO  Client:54 - Application report for application_1546078499381_0002 (state: ACCEPTED)\n2018-12-29 18:33:06 INFO  Client:54 - Application report for application_1546078499381_0002 (state: ACCEPTED)\n2018-12-29 18:33:07 INFO  Client:54 - Application report for application_1546078499381_0002 (state: ACCEPTED)\n2018-12-29 18:33:08 INFO  Client:54 - Application report for application_1546078499381_0002 (state: ACCEPTED)\n2018-12-29 18:33:09 INFO  Client:54 - Application report for application_1546078499381_0002 (state: ACCEPTED)\n2018-12-29 18:33:10 INFO  Client:54 - Application report for application_1546078499381_0002 (state: ACCEPTED)\n2018-12-29 18:33:11 INFO  Client:54 - Application report for application_1546078499381_0002 (state: ACCEPTED)\n2018-12-29 18:33:12 INFO  Client:54 - Application report for application_1546078499381_0002 (state: ACCEPTED)\n2018-12-29 18:33:13 INFO  Client:54 - Application report for application_1546078499381_0002 (state: ACCEPTED)\n2018-12-29 18:33:14 INFO  Client:54 - Application report for application_1546078499381_0002 (state: ACCEPTED)\n2018-12-29 18:33:15 INFO  Client:54 - Application report for application_1546078499381_0002 (state: ACCEPTED)\n2018-12-29 18:33:16 INFO  Client:54 - Application report for application_1546078499381_0002 (state: ACCEPTED)\n2018-12-29 18:33:17 INFO  Client:54 - Application report for application_1546078499381_0002 (state: ACCEPTED)\n2018-12-29 18:33:18 INFO  Client:54 - Application report for application_1546078499381_0002 (state: ACCEPTED)\n2018-12-29 18:33:19 INFO  Client:54 - Application report for application_1546078499381_0002 (state: ACCEPTED)\n2018-12-29 18:33:20 INFO  Client:54 - Application report for application_1546078499381_0002 (state: ACCEPTED)\n2018-12-29 18:33:21 INFO  Client:54 - Application report for application_1546078499381_0002 (state: ACCEPTED)\n2018-12-29 18:33:22 INFO  Client:54 - Application report for application_1546078499381_0002 (state: ACCEPTED)\n2018-12-29 18:33:23 INFO  Client:54 - Application report for application_1546078499381_0002 (state: ACCEPTED)\n2018-12-29 18:33:24 INFO  Client:54 - Application report for application_1546078499381_0002 (state: ACCEPTED)\n2018-12-29 18:33:25 INFO  Client:54 - Application report for application_1546078499381_0002 (state: ACCEPTED)\n2018-12-29 18:33:26 INFO  Client:54 - Application report for application_1546078499381_0002 (state: ACCEPTED)\n2018-12-29 18:33:27 INFO  Client:54 - Application report for application_1546078499381_0002 (state: ACCEPTED)\n2018-12-29 18:33:28 INFO  Client:54 - Application report for application_1546078499381_0002 (state: ACCEPTED)\n2018-12-29 18:33:29 INFO  Client:54 - Application report for application_1546078499381_0002 (state: ACCEPTED)\n2018-12-29 18:33:30 INFO  Client:54 - Application report for application_1546078499381_0002 (state: ACCEPTED)\n2018-12-29 18:33:31 INFO  Client:54 - Application report for application_1546078499381_0002 (state: ACCEPTED)\n2018-12-29 18:33:32 INFO  Client:54 - Application report for application_1546078499381_0002 (state: ACCEPTED)\n2018-12-29 18:33:33 INFO  Client:54 - Application report for application_1546078499381_0002 (state: ACCEPTED)\n2018-12-29 18:33:34 INFO  Client:54 - Application report for application_1546078499381_0002 (state: ACCEPTED)\n2018-12-29 18:33:35 INFO  Client:54 - Application report for application_1546078499381_0002 (state: ACCEPTED)\n2018-12-29 18:33:36 INFO  Client:54 - Application report for application_1546078499381_0002 (state: ACCEPTED)\n2018-12-29 18:33:37 INFO  Client:54 - Application report for application_1546078499381_0002 (state: ACCEPTED)\n2018-12-29 18:33:38 INFO  Client:54 - Application report for application_1546078499381_0002 (state: ACCEPTED)\n2018-12-29 18:33:39 INFO  Client:54 - Application report for application_1546078499381_0002 (state: ACCEPTED)\n2018-12-29 18:33:40 INFO  Client:54 - Application report for application_1546078499381_0002 (state: ACCEPTED)\n2018-12-29 18:33:41 INFO  Client:54 - Application report for application_1546078499381_0002 (state: ACCEPTED)\n\n\tat org.apache.zeppelin.interpreter.remote.RemoteInterpreterManagedProcess.start(RemoteInterpreterManagedProcess.java:205)\n\tat org.apache.zeppelin.interpreter.ManagedInterpreterGroup.getOrCreateInterpreterProcess(ManagedInterpreterGroup.java:64)\n\tat org.apache.zeppelin.interpreter.remote.RemoteInterpreter.getOrCreateInterpreterProcess(RemoteInterpreter.java:111)\n\tat org.apache.zeppelin.interpreter.remote.RemoteInterpreter.internal_create(RemoteInterpreter.java:164)\n\tat org.apache.zeppelin.interpreter.remote.RemoteInterpreter.open(RemoteInterpreter.java:132)\n\tat org.apache.zeppelin.interpreter.remote.RemoteInterpreter.getFormType(RemoteInterpreter.java:299)\n\tat org.apache.zeppelin.notebook.Paragraph.jobRun(Paragraph.java:407)\n\tat org.apache.zeppelin.scheduler.Job.run(Job.java:188)\n\tat org.apache.zeppelin.scheduler.RemoteScheduler$JobRunner.run(RemoteScheduler.java:307)\n\tat java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)\n\tat java.util.concurrent.FutureTask.run(FutureTask.java:266)\n\tat java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)\n\tat java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)\n\tat java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)\n\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)\n\tat java.lang.Thread.run(Thread.java:748)\n",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "cov_data.show",
+      "user": "hadoop",
+      "dateUpdated": "2018-12-29 17:37:28.000",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+----+---+---+---+---+----+---+---+---+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+\n| _c0|_c1|_c2|_c3|_c4| _c5|_c6|_c7|_c8| _c9|_c10|_c11|_c12|_c13|_c14|_c15|_c16|_c17|_c18|_c19|_c20|_c21|_c22|_c23|_c24|_c25|_c26|_c27|_c28|_c29|_c30|_c31|_c32|_c33|_c34|_c35|_c36|_c37|_c38|_c39|_c40|_c41|_c42|_c43|_c44|_c45|_c46|_c47|_c48|_c49|_c50|_c51|_c52|_c53|_c54|\n+----+---+---+---+---+----+---+---+---+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+\n|2596| 51|  3|258|  0| 510|221|232|148|6279|   1|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   1|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   5|\n|2590| 56|  2|212| -6| 390|220|235|151|6225|   1|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   1|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   5|\n|2804|139|  9|268| 65|3180|234|238|135|6121|   1|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   1|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   2|\n|2785|155| 18|242|118|3090|238|238|122|6211|   1|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   1|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   2|\n|2595| 45|  2|153| -1| 391|220|234|150|6172|   1|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   1|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   5|\n|2579|132|  6|300|-15|  67|230|237|140|6031|   1|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   1|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   2|\n|2606| 45|  7|270|  5| 633|222|225|138|6256|   1|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   1|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   5|\n|2605| 49|  4|234|  7| 573|222|230|144|6228|   1|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   1|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   5|\n|2617| 45|  9|240| 56| 666|223|221|133|6244|   1|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   1|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   5|\n|2612| 59| 10|247| 11| 636|228|219|124|6230|   1|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   1|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   5|\n|2612|201|  4|180| 51| 735|218|243|161|6222|   1|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   1|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   5|\n|2886|151| 11|371| 26|5253|234|240|136|4051|   1|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   1|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   2|\n|2742|134| 22|150| 69|3215|248|224| 92|6091|   1|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   1|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   2|\n|2609|214|  7|150| 46| 771|213|247|170|6211|   1|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   1|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   5|\n|2503|157|  4| 67|  4| 674|224|240|151|5600|   1|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   1|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   5|\n|2495| 51|  7| 42|  2| 752|224|225|137|5576|   1|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   1|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   5|\n|2610|259|  1|120| -1| 607|216|239|161|6096|   1|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   1|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   5|\n|2517| 72|  7| 85|  6| 595|228|227|133|5607|   1|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   1|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   5|\n|2504|  0|  4| 95|  5| 691|214|232|156|5572|   1|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   1|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   5|\n|2503| 38|  5| 85| 10| 741|220|228|144|5555|   1|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   1|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   5|\n+----+---+---+---+---+----+---+---+---+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+----+\nonly showing top 20 rows\n\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1546070606053_-1760379670",
+      "id": "20181229-160326_207203234",
+      "dateCreated": "2018-12-29 16:03:26.053",
+      "dateStarted": "2018-12-29 17:37:28.063",
+      "dateFinished": "2018-12-29 17:37:30.441",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "user": "hadoop",
+      "dateUpdated": "2018-12-29 17:52:52.738",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala",
+        "editorHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1546076248000_966162893",
+      "id": "20181229-173728_1052412940",
+      "dateCreated": "2018-12-29 17:37:28.000",
       "status": "READY",
       "progressUpdateIntervalMs": 500
     }
