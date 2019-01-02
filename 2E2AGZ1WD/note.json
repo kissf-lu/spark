@@ -118,19 +118,6 @@
           }
         ]
       },
-      "runtimeInfos": {
-        "jobUrl": {
-          "propertyName": "jobUrl",
-          "label": "SPARK JOB",
-          "tooltip": "View in Spark web UI",
-          "group": "spark",
-          "values": [
-            "http://master:4040/jobs/job?id\u003d0",
-            "http://master:4040/jobs/job?id\u003d1"
-          ],
-          "interpreterSettingId": "spark"
-        }
-      },
       "apps": [],
       "jobName": "paragraph_1546069998832_-1691260314",
       "id": "20181229-155318_361099773",
@@ -389,202 +376,6 @@
           }
         ]
       },
-      "runtimeInfos": {
-        "jobUrl": {
-          "propertyName": "jobUrl",
-          "label": "SPARK JOB",
-          "tooltip": "View in Spark web UI",
-          "group": "spark",
-          "values": [
-            "http://master:4040/jobs/job?id\u003d2",
-            "http://master:4040/jobs/job?id\u003d3",
-            "http://master:4040/jobs/job?id\u003d4",
-            "http://master:4040/jobs/job?id\u003d5",
-            "http://master:4040/jobs/job?id\u003d6",
-            "http://master:4040/jobs/job?id\u003d7",
-            "http://master:4040/jobs/job?id\u003d8",
-            "http://master:4040/jobs/job?id\u003d9",
-            "http://master:4040/jobs/job?id\u003d10",
-            "http://master:4040/jobs/job?id\u003d11",
-            "http://master:4040/jobs/job?id\u003d12",
-            "http://master:4040/jobs/job?id\u003d13",
-            "http://master:4040/jobs/job?id\u003d14",
-            "http://master:4040/jobs/job?id\u003d15",
-            "http://master:4040/jobs/job?id\u003d16",
-            "http://master:4040/jobs/job?id\u003d17",
-            "http://master:4040/jobs/job?id\u003d18",
-            "http://master:4040/jobs/job?id\u003d19",
-            "http://master:4040/jobs/job?id\u003d20",
-            "http://master:4040/jobs/job?id\u003d21",
-            "http://master:4040/jobs/job?id\u003d22",
-            "http://master:4040/jobs/job?id\u003d23",
-            "http://master:4040/jobs/job?id\u003d24",
-            "http://master:4040/jobs/job?id\u003d25",
-            "http://master:4040/jobs/job?id\u003d26",
-            "http://master:4040/jobs/job?id\u003d27",
-            "http://master:4040/jobs/job?id\u003d28",
-            "http://master:4040/jobs/job?id\u003d29",
-            "http://master:4040/jobs/job?id\u003d30",
-            "http://master:4040/jobs/job?id\u003d31",
-            "http://master:4040/jobs/job?id\u003d32",
-            "http://master:4040/jobs/job?id\u003d33",
-            "http://master:4040/jobs/job?id\u003d34",
-            "http://master:4040/jobs/job?id\u003d35",
-            "http://master:4040/jobs/job?id\u003d36",
-            "http://master:4040/jobs/job?id\u003d37",
-            "http://master:4040/jobs/job?id\u003d38",
-            "http://master:4040/jobs/job?id\u003d39",
-            "http://master:4040/jobs/job?id\u003d40",
-            "http://master:4040/jobs/job?id\u003d41",
-            "http://master:4040/jobs/job?id\u003d42",
-            "http://master:4040/jobs/job?id\u003d43",
-            "http://master:4040/jobs/job?id\u003d44",
-            "http://master:4040/jobs/job?id\u003d45",
-            "http://master:4040/jobs/job?id\u003d46",
-            "http://master:4040/jobs/job?id\u003d47",
-            "http://master:4040/jobs/job?id\u003d48",
-            "http://master:4040/jobs/job?id\u003d49",
-            "http://master:4040/jobs/job?id\u003d50",
-            "http://master:4040/jobs/job?id\u003d51",
-            "http://master:4040/jobs/job?id\u003d52",
-            "http://master:4040/jobs/job?id\u003d53",
-            "http://master:4040/jobs/job?id\u003d54",
-            "http://master:4040/jobs/job?id\u003d55",
-            "http://master:4040/jobs/job?id\u003d56",
-            "http://master:4040/jobs/job?id\u003d57",
-            "http://master:4040/jobs/job?id\u003d58",
-            "http://master:4040/jobs/job?id\u003d59",
-            "http://master:4040/jobs/job?id\u003d60",
-            "http://master:4040/jobs/job?id\u003d61",
-            "http://master:4040/jobs/job?id\u003d62",
-            "http://master:4040/jobs/job?id\u003d63",
-            "http://master:4040/jobs/job?id\u003d64",
-            "http://master:4040/jobs/job?id\u003d65",
-            "http://master:4040/jobs/job?id\u003d66",
-            "http://master:4040/jobs/job?id\u003d67",
-            "http://master:4040/jobs/job?id\u003d68",
-            "http://master:4040/jobs/job?id\u003d69",
-            "http://master:4040/jobs/job?id\u003d70",
-            "http://master:4040/jobs/job?id\u003d71",
-            "http://master:4040/jobs/job?id\u003d72",
-            "http://master:4040/jobs/job?id\u003d73",
-            "http://master:4040/jobs/job?id\u003d74",
-            "http://master:4040/jobs/job?id\u003d75",
-            "http://master:4040/jobs/job?id\u003d76",
-            "http://master:4040/jobs/job?id\u003d77",
-            "http://master:4040/jobs/job?id\u003d78",
-            "http://master:4040/jobs/job?id\u003d79",
-            "http://master:4040/jobs/job?id\u003d80",
-            "http://master:4040/jobs/job?id\u003d81",
-            "http://master:4040/jobs/job?id\u003d82",
-            "http://master:4040/jobs/job?id\u003d83",
-            "http://master:4040/jobs/job?id\u003d84",
-            "http://master:4040/jobs/job?id\u003d85",
-            "http://master:4040/jobs/job?id\u003d86",
-            "http://master:4040/jobs/job?id\u003d87",
-            "http://master:4040/jobs/job?id\u003d88",
-            "http://master:4040/jobs/job?id\u003d89",
-            "http://master:4040/jobs/job?id\u003d90",
-            "http://master:4040/jobs/job?id\u003d91",
-            "http://master:4040/jobs/job?id\u003d92",
-            "http://master:4040/jobs/job?id\u003d93",
-            "http://master:4040/jobs/job?id\u003d94",
-            "http://master:4040/jobs/job?id\u003d95",
-            "http://master:4040/jobs/job?id\u003d96",
-            "http://master:4040/jobs/job?id\u003d97",
-            "http://master:4040/jobs/job?id\u003d98",
-            "http://master:4040/jobs/job?id\u003d99",
-            "http://master:4040/jobs/job?id\u003d100",
-            "http://master:4040/jobs/job?id\u003d101",
-            "http://master:4040/jobs/job?id\u003d102",
-            "http://master:4040/jobs/job?id\u003d103",
-            "http://master:4040/jobs/job?id\u003d104",
-            "http://master:4040/jobs/job?id\u003d105",
-            "http://master:4040/jobs/job?id\u003d106",
-            "http://master:4040/jobs/job?id\u003d107",
-            "http://master:4040/jobs/job?id\u003d108",
-            "http://master:4040/jobs/job?id\u003d109",
-            "http://master:4040/jobs/job?id\u003d110",
-            "http://master:4040/jobs/job?id\u003d111",
-            "http://master:4040/jobs/job?id\u003d112",
-            "http://master:4040/jobs/job?id\u003d113",
-            "http://master:4040/jobs/job?id\u003d114",
-            "http://master:4040/jobs/job?id\u003d115",
-            "http://master:4040/jobs/job?id\u003d116",
-            "http://master:4040/jobs/job?id\u003d117",
-            "http://master:4040/jobs/job?id\u003d118",
-            "http://master:4040/jobs/job?id\u003d119",
-            "http://master:4040/jobs/job?id\u003d120",
-            "http://master:4040/jobs/job?id\u003d121",
-            "http://master:4040/jobs/job?id\u003d122",
-            "http://master:4040/jobs/job?id\u003d123",
-            "http://master:4040/jobs/job?id\u003d124",
-            "http://master:4040/jobs/job?id\u003d125",
-            "http://master:4040/jobs/job?id\u003d126",
-            "http://master:4040/jobs/job?id\u003d127",
-            "http://master:4040/jobs/job?id\u003d128",
-            "http://master:4040/jobs/job?id\u003d129",
-            "http://master:4040/jobs/job?id\u003d130",
-            "http://master:4040/jobs/job?id\u003d131",
-            "http://master:4040/jobs/job?id\u003d132",
-            "http://master:4040/jobs/job?id\u003d133",
-            "http://master:4040/jobs/job?id\u003d134",
-            "http://master:4040/jobs/job?id\u003d135",
-            "http://master:4040/jobs/job?id\u003d136",
-            "http://master:4040/jobs/job?id\u003d137",
-            "http://master:4040/jobs/job?id\u003d138",
-            "http://master:4040/jobs/job?id\u003d139",
-            "http://master:4040/jobs/job?id\u003d140",
-            "http://master:4040/jobs/job?id\u003d141",
-            "http://master:4040/jobs/job?id\u003d142",
-            "http://master:4040/jobs/job?id\u003d143",
-            "http://master:4040/jobs/job?id\u003d144",
-            "http://master:4040/jobs/job?id\u003d145",
-            "http://master:4040/jobs/job?id\u003d146",
-            "http://master:4040/jobs/job?id\u003d147",
-            "http://master:4040/jobs/job?id\u003d148",
-            "http://master:4040/jobs/job?id\u003d149",
-            "http://master:4040/jobs/job?id\u003d150",
-            "http://master:4040/jobs/job?id\u003d151",
-            "http://master:4040/jobs/job?id\u003d152",
-            "http://master:4040/jobs/job?id\u003d153",
-            "http://master:4040/jobs/job?id\u003d154",
-            "http://master:4040/jobs/job?id\u003d155",
-            "http://master:4040/jobs/job?id\u003d156",
-            "http://master:4040/jobs/job?id\u003d157",
-            "http://master:4040/jobs/job?id\u003d158",
-            "http://master:4040/jobs/job?id\u003d159",
-            "http://master:4040/jobs/job?id\u003d160",
-            "http://master:4040/jobs/job?id\u003d161",
-            "http://master:4040/jobs/job?id\u003d162",
-            "http://master:4040/jobs/job?id\u003d163",
-            "http://master:4040/jobs/job?id\u003d164",
-            "http://master:4040/jobs/job?id\u003d165",
-            "http://master:4040/jobs/job?id\u003d166",
-            "http://master:4040/jobs/job?id\u003d167",
-            "http://master:4040/jobs/job?id\u003d168",
-            "http://master:4040/jobs/job?id\u003d169",
-            "http://master:4040/jobs/job?id\u003d170",
-            "http://master:4040/jobs/job?id\u003d171",
-            "http://master:4040/jobs/job?id\u003d172",
-            "http://master:4040/jobs/job?id\u003d173",
-            "http://master:4040/jobs/job?id\u003d174",
-            "http://master:4040/jobs/job?id\u003d175",
-            "http://master:4040/jobs/job?id\u003d176",
-            "http://master:4040/jobs/job?id\u003d177",
-            "http://master:4040/jobs/job?id\u003d178",
-            "http://master:4040/jobs/job?id\u003d179",
-            "http://master:4040/jobs/job?id\u003d180",
-            "http://master:4040/jobs/job?id\u003d181",
-            "http://master:4040/jobs/job?id\u003d182",
-            "http://master:4040/jobs/job?id\u003d183",
-            "http://master:4040/jobs/job?id\u003d184",
-            "http://master:4040/jobs/job?id\u003d185",
-            "http://master:4040/jobs/job?id\u003d186"
-          ],
-          "interpreterSettingId": "spark"
-        }
-      },
       "apps": [],
       "jobName": "paragraph_1546329991805_180208075",
       "id": "20190101-160631_1443147183",
@@ -752,19 +543,6 @@
           }
         ]
       },
-      "runtimeInfos": {
-        "jobUrl": {
-          "propertyName": "jobUrl",
-          "label": "SPARK JOB",
-          "tooltip": "View in Spark web UI",
-          "group": "spark",
-          "values": [
-            "http://master:4040/jobs/job?id\u003d237",
-            "http://master:4040/jobs/job?id\u003d238"
-          ],
-          "interpreterSettingId": "spark"
-        }
-      },
       "apps": [],
       "jobName": "paragraph_1546332735951_2112292878",
       "id": "20190101-165215_157768855",
@@ -887,20 +665,6 @@
           }
         ]
       },
-      "runtimeInfos": {
-        "jobUrl": {
-          "propertyName": "jobUrl",
-          "label": "SPARK JOB",
-          "tooltip": "View in Spark web UI",
-          "group": "spark",
-          "values": [
-            "http://master:4040/jobs/job?id\u003d263",
-            "http://master:4040/jobs/job?id\u003d264",
-            "http://master:4040/jobs/job?id\u003d265"
-          ],
-          "interpreterSettingId": "spark"
-        }
-      },
       "apps": [],
       "jobName": "paragraph_1546335817878_-1316264769",
       "id": "20190101-174337_1620177813",
@@ -914,7 +678,7 @@
       "title": "测试集：分类样本数(sum) VS 预测正确样本数(cross_val)",
       "text": "%sql\nselect\n`Cover_Type`, `cross_val`, `sum`\nfrom staticPercentTable\nwhere Cover_Type !\u003d \u0027sum\u0027\n",
       "user": "hadoop",
-      "dateUpdated": "2019-01-01 17:55:37.960",
+      "dateUpdated": "2019-01-01 20:45:12.480",
       "config": {
         "colWidth": 4.0,
         "fontSize": 9.0,
@@ -1113,20 +877,6 @@
           }
         ]
       },
-      "runtimeInfos": {
-        "jobUrl": {
-          "propertyName": "jobUrl",
-          "label": "SPARK JOB",
-          "tooltip": "View in Spark web UI",
-          "group": "spark",
-          "values": [
-            "http://master:4040/jobs/job?id\u003d266",
-            "http://master:4040/jobs/job?id\u003d267",
-            "http://master:4040/jobs/job?id\u003d268"
-          ],
-          "interpreterSettingId": "spark"
-        }
-      },
       "apps": [],
       "jobName": "paragraph_1546334590835_1226784990",
       "id": "20190101-172310_1692614761",
@@ -1140,7 +890,7 @@
       "title": "样本的预测准确率",
       "text": "%sql\nselect\n`Cover_Type`, ROUND(`rat` * 100, 2) as `percent`\nfrom staticPercentTable\nwhere Cover_Type !\u003d \u0027sum\u0027\n\n",
       "user": "hadoop",
-      "dateUpdated": "2019-01-01 17:56:18.786",
+      "dateUpdated": "2019-01-01 20:45:12.918",
       "config": {
         "colWidth": 4.0,
         "fontSize": 9.0,
@@ -1232,20 +982,6 @@
             "data": "Cover_Type\tpercent\n1.0\t93.53\n2.0\t96.62\n3.0\t95.65\n4.0\t80.97\n5.0\t81.18\n6.0\t90.89\n7.0\t95.63\n"
           }
         ]
-      },
-      "runtimeInfos": {
-        "jobUrl": {
-          "propertyName": "jobUrl",
-          "label": "SPARK JOB",
-          "tooltip": "View in Spark web UI",
-          "group": "spark",
-          "values": [
-            "http://master:4040/jobs/job?id\u003d269",
-            "http://master:4040/jobs/job?id\u003d270",
-            "http://master:4040/jobs/job?id\u003d271"
-          ],
-          "interpreterSettingId": "spark"
-        }
       },
       "apps": [],
       "jobName": "paragraph_1546333622297_-1093853294",
@@ -1340,20 +1076,6 @@
             "data": "Cover_Type\tcross_val\tsum\nsum\t54913\t57864\n"
           }
         ]
-      },
-      "runtimeInfos": {
-        "jobUrl": {
-          "propertyName": "jobUrl",
-          "label": "SPARK JOB",
-          "tooltip": "View in Spark web UI",
-          "group": "spark",
-          "values": [
-            "http://master:4040/jobs/job?id\u003d272",
-            "http://master:4040/jobs/job?id\u003d273",
-            "http://master:4040/jobs/job?id\u003d274"
-          ],
-          "interpreterSettingId": "spark"
-        }
       },
       "apps": [],
       "jobName": "paragraph_1546334072369_713446003",

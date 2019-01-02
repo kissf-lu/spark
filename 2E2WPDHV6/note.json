@@ -1,0 +1,419 @@
+{
+  "paragraphs": [
+    {
+      "text": "%md\n\n### \u003ccenter\u003eSpark 笔记\u003ccenter/\u003e\n\n",
+      "user": "hadoop",
+      "dateUpdated": "2019-01-02 10:43:17.304",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003e\u003ccenter\u003eSpark 笔记\u003ccenter/\u003e\u003c/h3\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1546396846854_-370489598",
+      "id": "20190102-104046_582734433",
+      "dateCreated": "2019-01-02 10:40:46.854",
+      "dateStarted": "2019-01-02 10:43:17.301",
+      "dateFinished": "2019-01-02 10:43:17.340",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "submint - yarn - client mode",
+      "text": "%md\n\n- *submint 参数配置:*\n\n\n```shell\n path_to_spark_bin/spark-submit \\\n --master yarn \\\n --deploy-mode client \\\n --num-executors 2 \\\n --executor-memory 2G \\\n --conf spark.yarn.am.memoryOverhead\u003d1024 \\\n path_to_jar/spark_2.11-0.1.jar\n```\n\n\n\n \n \n",
+      "user": "hadoop",
+      "dateUpdated": "2019-01-02 18:26:42.344",
+      "config": {
+        "colWidth": 4.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false,
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cul\u003e\n  \u003cli\u003e\u003cem\u003esubmint 参数配置:\u003c/em\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003cpre\u003e\u003ccode class\u003d\"shell\"\u003e path_to_spark_bin/spark-submit \\\n --master yarn \\\n --deploy-mode client \\\n --num-executors 2 \\\n --executor-memory 2G \\\n --conf spark.yarn.am.memoryOverhead\u003d1024 \\\n path_to_jar/spark_2.11-0.1.jar\n\u003c/code\u003e\u003c/pre\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1546396911004_-322983881",
+      "id": "20190102-104151_567791634",
+      "dateCreated": "2019-01-02 10:41:51.004",
+      "dateStarted": "2019-01-02 18:26:42.345",
+      "dateFinished": "2019-01-02 18:26:42.351",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "submint - yarn - cluster mode",
+      "text": "%md\n- *submint 参数配置:*\n\n```shell\n path_to_spark_bin/spark-submit \\\n--master yarn \\\n--deploy-mode cluster \\\n--driver-memory 2G \\\n--num-executors 4 \\\n--executor-memory 2G \\\n--conf spark.executor.memoryOverhead\u003d512 \\\n--conf spark.driver.memoryOverhead\u003d512 \\\npath_to_jar/spark_2.11-0.1.jar\n```\n",
+      "user": "hadoop",
+      "dateUpdated": "2019-01-02 18:28:40.687",
+      "config": {
+        "colWidth": 4.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false,
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cul\u003e\n  \u003cli\u003e\u003cem\u003esubmint 参数配置:\u003c/em\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003cpre\u003e\u003ccode class\u003d\"shell\"\u003e path_to_spark_bin/spark-submit \\\n--master yarn \\\n--deploy-mode cluster \\\n--driver-memory 2G \\\n--num-executors 4 \\\n--executor-memory 2G \\\n--conf spark.executor.memoryOverhead\u003d512 \\\n--conf spark.driver.memoryOverhead\u003d512 \\\npath_to_jar/spark_2.11-0.1.jar\n\u003c/code\u003e\u003c/pre\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1546417902092_-316109842",
+      "id": "20190102-163142_486869063",
+      "dateCreated": "2019-01-02 16:31:42.092",
+      "dateStarted": "2019-01-02 18:27:06.255",
+      "dateFinished": "2019-01-02 18:27:06.259",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "submint - Standalone cluster",
+      "text": "%md\n\n- spark 集群 参数配置\n\n```shell\n path_to_spark_bin/spark-submit \\\n--master spark://hadoop:7077 \\\n--deploy-mode cluster \\\n--driver-memory 2G \\\n--num-executors 2 \\\n--executor-memory 2G \\\n--conf spark.executor.memoryOverhead\u003d512 \\\n--conf spark.driver.memoryOverhead\u003d512 \\\npath_to_jar/spark_2.11-0.1.jar\n```\n",
+      "user": "hadoop",
+      "dateUpdated": "2019-01-02 18:28:49.418",
+      "config": {
+        "colWidth": 4.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false,
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cul\u003e\n  \u003cli\u003espark 集群 参数配置\u003c/li\u003e\n\u003c/ul\u003e\n\u003cpre\u003e\u003ccode class\u003d\"shell\"\u003e path_to_spark_bin/spark-submit \\\n--master spark://hadoop:7077 \\\n--deploy-mode cluster \\\n--driver-memory 2G \\\n--num-executors 2 \\\n--executor-memory 2G \\\n--conf spark.executor.memoryOverhead\u003d512 \\\n--conf spark.driver.memoryOverhead\u003d512 \\\npath_to_jar/spark_2.11-0.1.jar\n\u003c/code\u003e\u003c/pre\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1546411259969_1719567470",
+      "id": "20190102-144059_1620604616",
+      "dateCreated": "2019-01-02 14:40:59.969",
+      "dateStarted": "2019-01-02 18:28:49.418",
+      "dateFinished": "2019-01-02 18:28:49.425",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n**yarn - client mode关键参数参数说明**\n\n- **\\-- num-executorsa(spark.executor.instances)**： 执行器的数量(The number of executors for static allocation. With spark.dynamicAllocation.enabled, the initial set of executors will be at least this large)[参见](http://spark.apache.org/docs/2.3.1/running-on-yarn.html)\n\n- **\\--spark.yarn.am.memoryOverhead**: 在yarn 的 client模式下JVM 内存的堆栈溢出量 (The amount of off-heap memory to be allocated in client mode)， client模式下该值过小会造成executor is lost错误\n\n---\n\n**yarn - client mode 参数的说明**\n\n\n- **\\--conf spark.executor.memoryOverhead**: 执行器的内存溢出量\n- **\\--conf spark.driver.memoryOverhead**: 驱动器的内存溢出量\n\n---\n\n**yarn - client mode 参数的说明**\n\n",
+      "user": "hadoop",
+      "dateUpdated": "2019-01-02 18:30:03.639",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionSupport": false,
+          "completionKey": "TAB"
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003e\u003cstrong\u003eyarn - client mode关键参数参数说明\u003c/strong\u003e\u003c/p\u003e\n\u003cul\u003e\n  \u003cli\u003e\n  \u003cp\u003e\u003cstrong\u003e-- num-executorsa(spark.executor.instances)\u003c/strong\u003e： 执行器的数量(The number of executors for static allocation. With spark.dynamicAllocation.enabled, the initial set of executors will be at least this large)\u003ca href\u003d\"http://spark.apache.org/docs/2.3.1/running-on-yarn.html\"\u003e参见\u003c/a\u003e\u003c/p\u003e\u003c/li\u003e\n  \u003cli\u003e\n  \u003cp\u003e\u003cstrong\u003e--spark.yarn.am.memoryOverhead\u003c/strong\u003e: 在yarn 的 client模式下JVM 内存的堆栈溢出量 (The amount of off-heap memory to be allocated in client mode)， client模式下该值过小会造成executor is lost错误\u003c/p\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003chr/\u003e\n\u003cp\u003e\u003cstrong\u003eyarn - client mode 参数的说明\u003c/strong\u003e\u003c/p\u003e\n\u003cul\u003e\n  \u003cli\u003e\u003cstrong\u003e--conf spark.executor.memoryOverhead\u003c/strong\u003e: 执行器的内存溢出量\u003c/li\u003e\n  \u003cli\u003e\u003cstrong\u003e--conf spark.driver.memoryOverhead\u003c/strong\u003e: 驱动器的内存溢出量\u003c/li\u003e\n\u003c/ul\u003e\n\u003chr/\u003e\n\u003cp\u003e\u003cstrong\u003eyarn - client mode 参数的说明\u003c/strong\u003e\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1546417960415_-1751143121",
+      "id": "20190102-163240_760350391",
+      "dateCreated": "2019-01-02 16:32:40.415",
+      "dateStarted": "2019-01-02 18:30:03.640",
+      "dateFinished": "2019-01-02 18:30:03.651",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n## \u003ccenter\u003e 参数配置总结 \u003c/center\u003e\n### **1. 在yarn 的client 模式下发生 executor is lost?**\n\n可以参考[stakOverfllower_answer](https://stackoverflow.com/questions/37377512/what-happens-when-an-executor-is-lost)\n\n\n**DGA的处理流程DAGScheduler does three things in Spark (thorough explanations follow)** 如图spark 集群执行过程所示\n\n   - Computes an execution DAG, i.e. DAG of stages, for a job.\n   - Determines the preferred locations to run each task on.\n   - Handles failures due to shuffle output files being lost.\n \n### 解决方案\n\n***如内存分配图所示***: 调大spark.yarn.executor.memoryOverhead 的值， 直到错误消失, 参见以下文档解释\n\n**内存溢出的解释**\n\n  - increase spark.yarn.executor.memoryOverhead until this goes away. This controls the buffer between the JVM heap size and the amount of memory requested from YARN (JVMs can take up memory beyond their heap size). \n  - You also make sure that, in the YARN NodeManager configuration, yarn.nodemanager.vmem-check-enabled is set to false. Reason for false is , it will prevent the NM to keep control over the containers. If you are running out of physical memory in a container make sure that the JVM heap size is small enough to fit in the container",
+      "user": "hadoop",
+      "dateUpdated": "2019-01-02 18:31:12.496",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch2\u003e\u003ccenter\u003e 参数配置总结 \u003c/center\u003e\u003c/h2\u003e\n\u003ch3\u003e\u003cstrong\u003e1. 在yarn 的client 模式下发生 executor is lost?\u003c/strong\u003e\u003c/h3\u003e\n\u003cp\u003e可以参考\u003ca href\u003d\"https://stackoverflow.com/questions/37377512/what-happens-when-an-executor-is-lost\"\u003estakOverfllower_answer\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eDGA的处理流程DAGScheduler does three things in Spark (thorough explanations follow)\u003c/strong\u003e 如图spark 集群执行过程所示\u003c/p\u003e\n\u003cul\u003e\n  \u003cli\u003eComputes an execution DAG, i.e. DAG of stages, for a job.\u003c/li\u003e\n  \u003cli\u003eDetermines the preferred locations to run each task on.\u003c/li\u003e\n  \u003cli\u003eHandles failures due to shuffle output files being lost.\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3\u003e解决方案\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003e\u003cem\u003e如内存分配图所示\u003c/em\u003e\u003c/strong\u003e: 调大spark.yarn.executor.memoryOverhead 的值， 直到错误消失, 参见以下文档解释\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e内存溢出的解释\u003c/strong\u003e\u003c/p\u003e\n\u003cul\u003e\n  \u003cli\u003eincrease spark.yarn.executor.memoryOverhead until this goes away. This controls the buffer between the JVM heap size and the amount of memory requested from YARN (JVMs can take up memory beyond their heap size).\u003c/li\u003e\n  \u003cli\u003eYou also make sure that, in the YARN NodeManager configuration, yarn.nodemanager.vmem-check-enabled is set to false. Reason for false is , it will prevent the NM to keep control over the containers. If you are running out of physical memory in a container make sure that the JVM heap size is small enough to fit in the container\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1546422616048_1310261626",
+      "id": "20190102-175016_847630130",
+      "dateCreated": "2019-01-02 17:50:16.048",
+      "dateStarted": "2019-01-02 18:31:12.497",
+      "dateFinished": "2019-01-02 18:31:12.511",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "",
+      "text": "%md\n\n![图示](https://i.stack.imgur.com/53GTt.jpg)\n\u003ccenter\u003espark 集群执行过程\u003c/center\u003e\n",
+      "user": "hadoop",
+      "dateUpdated": "2019-01-02 18:16:37.000",
+      "config": {
+        "colWidth": 4.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 467.533,
+              "optionOpen": false
+            }
+          }
+        },
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false,
+        "title": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003e\u003cimg src\u003d\"https://i.stack.imgur.com/53GTt.jpg\" alt\u003d\"图示\" /\u003e\u003cbr/\u003e\u003ccenter\u003espark 集群执行过程\u003c/center\u003e\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1546418534343_-1971871117",
+      "id": "20190102-164214_582138379",
+      "dateCreated": "2019-01-02 16:42:14.343",
+      "dateStarted": "2019-01-02 18:15:43.883",
+      "dateFinished": "2019-01-02 18:15:43.891",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "内存的分配",
+      "text": "%md\n![pic_2](https://i.stack.imgur.com/ZeniA.png \"内存分配图\")\n\n\u003ccenter\u003e内存的分配\u003c/center\u003e",
+      "user": "hadoop",
+      "dateUpdated": "2019-01-02 18:16:46.161",
+      "config": {
+        "colWidth": 4.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 230.95,
+              "optionOpen": false
+            }
+          }
+        },
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false,
+        "title": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003e\u003cimg src\u003d\"https://i.stack.imgur.com/ZeniA.png\" alt\u003d\"pic_2\" title\u003d\"内存分配图\" /\u003e\u003c/p\u003e\n\u003ccenter\u003e内存的分配\u003c/center\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1546422883530_-486350125",
+      "id": "20190102-175443_1802801101",
+      "dateCreated": "2019-01-02 17:54:43.530",
+      "dateStarted": "2019-01-02 18:16:40.669",
+      "dateFinished": "2019-01-02 18:16:40.675",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n\n- container size should be large enough to contain:\n\n    - JVM heap\n    - permanent generation for the JVM\n    - any off-heap allocations\n\n*In most cases an overhead of between 15%-30% of the JVM heap will suffice. Your job configuration should include the proper JVM and container settings. Some jobs will require more and some will require*\n\n\n",
+      "user": "hadoop",
+      "dateUpdated": "2019-01-02 18:33:35.024",
+      "config": {
+        "colWidth": 4.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cul\u003e\n  \u003cli\u003econtainer size should be large enough to contain:\n    \u003cul\u003e\n      \u003cli\u003eJVM heap\u003c/li\u003e\n      \u003cli\u003epermanent generation for the JVM\u003c/li\u003e\n      \u003cli\u003eany off-heap allocations\u003c/li\u003e\n    \u003c/ul\u003e\n  \u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e\u003cem\u003eIn most cases an overhead of between 15%-30% of the JVM heap will suffice. Your job configuration should include the proper JVM and container settings. Some jobs will require more and some will require\u003c/em\u003e\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1546424331587_-824346097",
+      "id": "20190102-181851_299719637",
+      "dateCreated": "2019-01-02 18:18:51.588",
+      "dateStarted": "2019-01-02 18:33:35.024",
+      "dateFinished": "2019-01-02 18:33:35.035",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n",
+      "user": "hadoop",
+      "dateUpdated": "2019-01-02 18:33:06.273",
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1546425186272_889559475",
+      "id": "20190102-183306_454475401",
+      "dateCreated": "2019-01-02 18:33:06.272",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "md/spark/spark-note20180102",
+  "id": "2E2WPDHV6",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {
+    "md:shared_process": [],
+    "spark:shared_process": []
+  },
+  "config": {
+    "isZeppelinNotebookCronEnable": false
+  },
+  "info": {}
+}
