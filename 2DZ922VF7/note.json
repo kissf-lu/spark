@@ -3,7 +3,7 @@
     {
       "text": "case class Customer(cId: Long, name: String, age: Int, gender: String)\n\ncase class Product(pId: Long, name: String, price: Double, cost: Double)\n\ncase class Home(city: String, size: Int, lotSize: Int)\n",
       "user": "hadoop",
-      "dateUpdated": "2019-01-02 22:37:55.421",
+      "dateUpdated": "2019-01-03 09:06:41.420",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -34,15 +34,21 @@
       "jobName": "paragraph_1546435980402_1109744659",
       "id": "20190102-213300_1707941180",
       "dateCreated": "2019-01-02 21:33:00.405",
-      "dateStarted": "2019-01-02 22:37:55.456",
-      "dateFinished": "2019-01-02 22:37:56.386",
+      "dateStarted": "2019-01-03 09:06:41.437",
+      "dateFinished": "2019-01-03 09:06:42.052",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
+<<<<<<< Updated upstream
       "text": "%spark\n\nval customer \u003d List(\n    Customer(1, \"Jame\", 21, \"M\"),\n    Customer(1, \"Liz\", 25, \"F\"),\n    Customer(1, \"John\", 31, \"M\"),\n    Customer(1, \"Jennifer\", 45, \"F\"),\n    Customer(1, \"Robert\", 41, \"M\"),\n    Customer(1, \"Sandra\", 45, \"F\")\n)\n\n\nval customerDF \u003d sc.parallelize(customer).toDF\n",
       "user": "hadoop",
       "dateUpdated": "2019-01-03 17:56:52.005",
+=======
+      "text": "%spark\n\nval customer \u003d List(\n    Customer(1, \"Jame\", 21, \"M\"),\n    Customer(2, \"Liz\", 25, \"F\"),\n    Customer(3, \"John\", 31, \"M\"),\n    Customer(4, \"Jennifer\", 45, \"F\"),\n    Customer(5, \"Robert\", 41, \"M\"),\n    Customer(6, \"Sandra\", 45, \"F\")\n)\n\n\nval customerDF \u003d sc.parallelize(customer).toDF",
+      "user": "hadoop",
+      "dateUpdated": "2019-01-03 09:14:12.385",
+>>>>>>> Stashed changes
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -65,7 +71,7 @@
         "msg": [
           {
             "type": "TEXT",
-            "data": "customer: List[Customer] \u003d List(Customer(1,Jame,21,M), Customer(1,Liz,25,F), Customer(1,John,31,M), Customer(1,Jennifer,45,F), Customer(1,Robert,41,M), Customer(1,Sandra,45,F))\ncustomerDF: org.apache.spark.sql.DataFrame \u003d [cId: bigint, name: string ... 2 more fields]\n"
+            "data": "customer: List[Customer] \u003d List(Customer(1,Jame,21,M), Customer(2,Liz,25,F), Customer(3,John,31,M), Customer(4,Jennifer,45,F), Customer(5,Robert,41,M), Customer(6,Sandra,45,F))\ncustomerDF: org.apache.spark.sql.DataFrame \u003d [cId: bigint, name: string ... 2 more fields]\n"
           }
         ]
       },
@@ -73,15 +79,15 @@
       "jobName": "paragraph_1546439744965_1641975005",
       "id": "20190102-223544_1746421738",
       "dateCreated": "2019-01-02 22:35:44.965",
-      "dateStarted": "2019-01-02 22:41:17.808",
-      "dateFinished": "2019-01-02 22:41:21.903",
+      "dateStarted": "2019-01-03 09:14:12.399",
+      "dateFinished": "2019-01-03 09:14:13.208",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "customerDF.show",
       "user": "hadoop",
-      "dateUpdated": "2019-01-02 22:41:31.748",
+      "dateUpdated": "2019-01-03 09:14:15.394",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -104,16 +110,104 @@
         "msg": [
           {
             "type": "TEXT",
-            "data": "+---+--------+---+------+\n|cId|    name|age|gender|\n+---+--------+---+------+\n|  1|    Jame| 21|     M|\n|  1|     Liz| 25|     F|\n|  1|    John| 31|     M|\n|  1|Jennifer| 45|     F|\n|  1|  Robert| 41|     M|\n|  1|  Sandra| 45|     F|\n+---+--------+---+------+\n\n"
+            "data": "+---+--------+---+------+\n|cId|    name|age|gender|\n+---+--------+---+------+\n|  1|    Jame| 21|     M|\n|  2|     Liz| 25|     F|\n|  3|    John| 31|     M|\n|  4|Jennifer| 45|     F|\n|  5|  Robert| 41|     M|\n|  6|  Sandra| 45|     F|\n+---+--------+---+------+\n\n"
           }
         ]
       },
+<<<<<<< Updated upstream
+=======
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            "http://master:4040/jobs/job?id\u003d2",
+            "http://master:4040/jobs/job?id\u003d3"
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+>>>>>>> Stashed changes
       "apps": [],
       "jobName": "paragraph_1546439867094_-1415298401",
       "id": "20190102-223747_1069364597",
       "dateCreated": "2019-01-02 22:37:47.094",
-      "dateStarted": "2019-01-02 22:41:31.790",
-      "dateFinished": "2019-01-02 22:41:34.354",
+      "dateStarted": "2019-01-03 09:14:15.413",
+      "dateFinished": "2019-01-03 09:14:15.849",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "print(s\"\"\"\n%network {\n    \"nodes\": [{\"id\": 1, \"label\": \"User\", \"data\": {\"fullName\":\"Andrea Santurbano\"}},{\"id\": 2, \"label\": \"User\", \"data\": {\"fullName\":\"Lee Moon Soo\"}},{\"id\": 3, \"label\": \"Project\", \"data\": {\"name\":\"Zeppelin\"}}],\n    \"edges\": [{\"source\": 2, \"target\": 1, \"id\" : 1, \"label\": \"HELPS\"},{\"source\": 2, \"target\": 3, \"id\" : 2, \"label\": \"CREATE\"},{\"source\": 1, \"target\": 3, \"id\" : 3, \"label\": \"CONTRIBUTE_TO\", \"data\": {\"oldPR\": \"https://github.com/apache/zeppelin/pull/1582\"}}],\n    \"labels\": {\"User\": \"#8BC34A\", \"Project\": \"#3071A9\"},\n    \"directed\": true,\n    \"types\": [\"HELPS\", \"CREATE\", \"CONTRIBUTE_TO\"]\n}\n\"\"\")\n",
+      "user": "hadoop",
+      "dateUpdated": "2019-01-03 09:14:35.934",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {
+          "1": {
+            "graph": {
+              "mode": "network",
+              "height": 300.0,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "id": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            },
+            "helium": {}
+          }
+        },
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\n"
+          },
+          {
+            "type": "NETWORK",
+            "data": "{\n    \"nodes\": [{\"id\": 1, \"label\": \"User\", \"data\": {\"fullName\":\"Andrea Santurbano\"}},{\"id\": 2, \"label\": \"User\", \"data\": {\"fullName\":\"Lee Moon Soo\"}},{\"id\": 3, \"label\": \"Project\", \"data\": {\"name\":\"Zeppelin\"}}],\n    \"edges\": [{\"source\": 2, \"target\": 1, \"id\" : 1, \"label\": \"HELPS\"},{\"source\": 2, \"target\": 3, \"id\" : 2, \"label\": \"CREATE\"},{\"source\": 1, \"target\": 3, \"id\" : 3, \"label\": \"CONTRIBUTE_TO\", \"data\": {\"oldPR\": \"https://github.com/apache/zeppelin/pull/1582\"}}],\n    \"labels\": {\"User\": \"#8BC34A\", \"Project\": \"#3071A9\"},\n    \"directed\": true,\n    \"types\": [\"HELPS\", \"CREATE\", \"CONTRIBUTE_TO\"]\n}\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1546477574582_1518953351",
+      "id": "20190103-090614_1967387477",
+      "dateCreated": "2019-01-03 09:06:14.582",
+      "dateStarted": "2019-01-03 09:09:44.230",
+      "dateFinished": "2019-01-03 09:09:44.554",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -125,9 +219,9 @@
         "forms": {}
       },
       "apps": [],
-      "jobName": "paragraph_1546440091748_199222365",
-      "id": "20190102-224131_1432900180",
-      "dateCreated": "2019-01-02 22:41:31.748",
+      "jobName": "paragraph_1546477746330_1428339622",
+      "id": "20190103-090906_1188327294",
+      "dateCreated": "2019-01-03 09:09:06.330",
       "status": "READY",
       "progressUpdateIntervalMs": 500
     }
@@ -138,7 +232,11 @@
   "noteForms": {},
   "angularObjects": {
     "md:shared_process": [],
+<<<<<<< Updated upstream
     "python:shared_process": [],
+=======
+    "sh:shared_process": [],
+>>>>>>> Stashed changes
     "spark:shared_process": []
   },
   "config": {

@@ -86,7 +86,7 @@
       "title": "",
       "text": "\n\nimport math.Ordering\n\ncase class impListOrder[T](ls: List[T]) {\n    \n    // 隐式参数\n    def impArgOrder[A](f: T \u003d\u003e A)(implicit order: Ordering[A]): List[T] \u003d { \n        ls.sortBy(f)(order)\n    }\n    // 上下文定界\n    def impContextOrder[A: Ordering](f: T \u003d\u003e A): List[T] \u003d {\n        ls.sortBy(f)(implicitly[Ordering[A]])\n    }\n    // 非官方版本\n    def order[A : Ordering](f: T \u003d\u003e A): List[T] \u003d {\n        ls.sortBy(f)\n    }\n}\n\n\nval list1 \u003d impListOrder((1 to 4).toList)\n\n\nlist1.impArgOrder(i \u003d\u003e -i)\nlist1.impContextOrder(i \u003d\u003e -i)\nlist1.order(i \u003d\u003e -i)\n\n\n",
       "user": "hadoop",
-      "dateUpdated": "2018-12-28 14:54:17.778",
+      "dateUpdated": "2019-01-03 08:30:19.281",
       "config": {
         "colWidth": 6.0,
         "fontSize": 9.0,
@@ -111,7 +111,7 @@
         "msg": [
           {
             "type": "TEXT",
-            "data": "import math.Ordering\ndefined class impListOrder\nlist1: impListOrder[Int] \u003d impListOrder(List(1, 2, 3, 4))\nres132: List[Int] \u003d List(4, 3, 2, 1)\nres133: List[Int] \u003d List(4, 3, 2, 1)\nres134: List[Int] \u003d List(4, 3, 2, 1)\n"
+            "data": "import math.Ordering\ndefined class impListOrder\nlist1: impListOrder[Int] \u003d impListOrder(List(1, 2, 3, 4))\nres4: List[Int] \u003d List(4, 3, 2, 1)\nres5: List[Int] \u003d List(4, 3, 2, 1)\nres6: List[Int] \u003d List(4, 3, 2, 1)\n"
           }
         ]
       },
@@ -119,15 +119,15 @@
       "jobName": "paragraph_1545957258077_-292473005",
       "id": "20181228-083418_1092652387",
       "dateCreated": "2018-12-28 08:34:18.077",
-      "dateStarted": "2018-12-28 14:54:17.790",
-      "dateFinished": "2018-12-28 14:54:19.426",
+      "dateStarted": "2019-01-03 08:30:19.305",
+      "dateFinished": "2019-01-03 08:30:38.177",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "object impMax{\n    \n    def maxListImpContext[T : Ordering](listData: List[T]): T \u003d {\n        listData match {\n            case List() \u003d\u003e throw new IllegalAccessException(\"empty list!\")\n            case List(x) \u003d\u003e x\n            case x :: res \u003d\u003e {\n                val maxRes \u003d maxListImpContext(res)\n                if (implicitly[Ordering[T]].gt(x, maxRes)) x\n                else maxRes\n            }\n        }\n    }\n    \n    def maxListImpArgs[T](listData: List[T])(implicit order: Ordering[T]): T \u003d {\n        listData match {\n            case List() \u003d\u003e throw new IllegalAccessException(\"empty list!\")\n            case List(x) \u003d\u003e x\n            case x :: res \u003d\u003e {\n                val maxRes \u003d maxListImpContext(res)\n                if (order.gt(x, maxRes)) x\n                else maxRes\n            }\n        }\n    }\n}\n\nimpMax.maxListImpContext((0 to 4).toList)\nimpMax.maxListImpArgs((0 to 4).toList)",
+      "text": "object impMax{\n    \n    def maxListImpContext[T : Ordering](listData: List[T]): T \u003d {\n        listData match {\n            case List() \u003d\u003e throw new IllegalAccessException(\"empty list!\")\n            case List(x) \u003d\u003e x\n            case x :: res \u003d\u003e {\n                val maxRes \u003d maxListImpContext(res)\n                if (implicitly[Ordering[T]].gt(x, maxRes)) x\n                else maxRes\n            }\n        }\n    }\n    \n    def maxListImpArgs[T](listData: List[T])(implicit order: Ordering[T]): T \u003d {\n        listData match {\n            case List() \u003d\u003e throw new IllegalAccessException(\"empty list!\")\n            case List(x) \u003d\u003e x\n            case x :: res \u003d\u003e {\n                val maxRes \u003d maxListImpContext(res)\n                if (order.gt(x, maxRes)) x\n                else maxRes\n            }\n        }\n    }\n}\n\n\n\n\n\n\nimpMax.maxListImpContext((0 to 4).toList)\nimpMax.maxListImpArgs((0 to 4).toList)",
       "user": "hadoop",
-      "dateUpdated": "2018-12-28 14:52:02.686",
+      "dateUpdated": "2019-01-03 08:37:06.369",
       "config": {
         "colWidth": 6.0,
         "fontSize": 9.0,
@@ -150,7 +150,7 @@
         "msg": [
           {
             "type": "TEXT",
-            "data": "defined object impMax\nres126: Int \u003d 4\nres127: Int \u003d 4\n"
+            "data": "defined object impMax\nres8: Int \u003d 4\nres9: Int \u003d 4\n"
           }
         ]
       },
@@ -158,15 +158,15 @@
       "jobName": "paragraph_1545958297467_863289181",
       "id": "20181228-085137_1039536039",
       "dateCreated": "2018-12-28 08:51:37.467",
-      "dateStarted": "2018-12-28 14:51:32.062",
-      "dateFinished": "2018-12-28 14:51:33.061",
+      "dateStarted": "2019-01-03 08:37:06.392",
+      "dateFinished": "2019-01-03 08:37:07.635",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "val arr1 \u003d Array(3, 4, 6)\n\narr1.sorted()",
+      "text": "val arr1 \u003d Array(3, 2, 4, 6)\n\narr1.sorted",
       "user": "hadoop",
-      "dateUpdated": "2018-12-28 14:58:15.202",
+      "dateUpdated": "2019-01-03 08:38:30.056",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -184,10 +184,35 @@
         "params": {},
         "forms": {}
       },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "arr1: Array[Int] \u003d Array(3, 2, 4, 6)\nres17: Array[Int] \u003d Array(2, 3, 4, 6)\n"
+          }
+        ]
+      },
       "apps": [],
       "jobName": "paragraph_1545959304132_1120661154",
       "id": "20181228-090824_532971513",
       "dateCreated": "2018-12-28 09:08:24.132",
+      "dateStarted": "2019-01-03 08:38:30.077",
+      "dateFinished": "2019-01-03 08:38:30.619",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "user": "hadoop",
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1546475834907_1221833032",
+      "id": "20190103-083714_1941355589",
+      "dateCreated": "2019-01-03 08:37:14.907",
       "status": "READY",
       "progressUpdateIntervalMs": 500
     }

@@ -128,7 +128,7 @@
       "title": "submint - Standalone cluster",
       "text": "%md\n\n- spark 集群 参数配置\n\n```shell\n path_to_spark_bin/spark-submit \\\n--master spark://hadoop:7077 \\\n--deploy-mode cluster \\\n--driver-memory 2G \\\n--num-executors 2 \\\n--executor-memory 2G \\\n--conf spark.executor.memoryOverhead\u003d512 \\\n--conf spark.driver.memoryOverhead\u003d512 \\\npath_to_jar/spark_2.11-0.1.jar\n```\n",
       "user": "hadoop",
-      "dateUpdated": "2019-01-02 18:28:49.418",
+      "dateUpdated": "2019-01-03 08:27:52.854",
       "config": {
         "colWidth": 4.0,
         "fontSize": 9.0,
@@ -161,8 +161,8 @@
       "jobName": "paragraph_1546411259969_1719567470",
       "id": "20190102-144059_1620604616",
       "dateCreated": "2019-01-02 14:40:59.969",
-      "dateStarted": "2019-01-02 18:28:49.418",
-      "dateFinished": "2019-01-02 18:28:49.425",
+      "dateStarted": "2019-01-03 08:27:52.875",
+      "dateFinished": "2019-01-03 08:27:55.045",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
