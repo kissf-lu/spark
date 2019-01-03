@@ -1,0 +1,145 @@
+{
+  "paragraphs": [
+    {
+      "text": "%mysql\n\nSELECT \ne.edge_id, e.src_node_id\nFROM ezhouair_k6.p_edge as e LIMIT 10;\n",
+      "user": "hadoop",
+      "dateUpdated": "2019-01-03 17:10:18.888",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300.0,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "edge_id": "string",
+                      "src_node_id": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                },
+                "lineChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                },
+                "stackedAreaChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                },
+                "multiBarChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                }
+              },
+              "commonSetting": {},
+              "keys": [
+                {
+                  "name": "edge_id",
+                  "index": 0.0,
+                  "aggr": "sum"
+                }
+              ],
+              "groups": [],
+              "values": [
+                {
+                  "name": "src_node_id",
+                  "index": 1.0,
+                  "aggr": "sum"
+                }
+              ]
+            },
+            "helium": {}
+          }
+        },
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionSupport": true,
+          "completionKey": "TAB"
+        },
+        "editorMode": "ace/mode/sql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "edge_id\tsrc_node_id\n2971\tAE10_EO1\n2844\tAE10_EO1\n2972\tAE10_NO1\n2973\tAE10_SO1\n2974\tAE10_WO1\n2843\tAE10_WO1\n2975\tAE11_EO1\n2845\tAE11_EO1\n2976\tAE11_NO1\n2977\tAE11_SO1\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1546480065454_-1813799866",
+      "id": "20190103-094745_302142",
+      "dateCreated": "2019-01-03 09:47:45.454",
+      "dateStarted": "2019-01-03 17:10:18.923",
+      "dateFinished": "2019-01-03 17:10:18.941",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%mysql\n",
+      "user": "hadoop",
+      "dateUpdated": "2019-01-03 17:10:19.021",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/sql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1546480834336_-1128782175",
+      "id": "20190103-100034_388606390",
+      "dateCreated": "2019-01-03 10:00:34.336",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "sql/air_ezhou",
+  "id": "2E39CJPJY",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {
+    "python:shared_process": [],
+    "mysql:shared_process": []
+  },
+  "config": {
+    "isZeppelinNotebookCronEnable": false
+  },
+  "info": {}
+}

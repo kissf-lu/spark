@@ -40,9 +40,9 @@
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%spark\n\nval customer \u003d List(\n    Customer(1, \"Jame\", 21, \"M\"),\n    Customer(1, \"Liz\", 25, \"F\"),\n    Customer(1, \"John\", 31, \"M\"),\n    Customer(1, \"Jennifer\", 45, \"F\"),\n    Customer(1, \"Robert\", 41, \"M\"),\n    Customer(1, \"Sandra\", 45, \"F\")\n)\n\n\nval customerDF \u003d sc.parallelize(customer).toDF",
+      "text": "%spark\n\nval customer \u003d List(\n    Customer(1, \"Jame\", 21, \"M\"),\n    Customer(1, \"Liz\", 25, \"F\"),\n    Customer(1, \"John\", 31, \"M\"),\n    Customer(1, \"Jennifer\", 45, \"F\"),\n    Customer(1, \"Robert\", 41, \"M\"),\n    Customer(1, \"Sandra\", 45, \"F\")\n)\n\n\nval customerDF \u003d sc.parallelize(customer).toDF\n",
       "user": "hadoop",
-      "dateUpdated": "2019-01-02 22:41:17.792",
+      "dateUpdated": "2019-01-03 17:56:52.005",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -108,18 +108,6 @@
           }
         ]
       },
-      "runtimeInfos": {
-        "jobUrl": {
-          "propertyName": "jobUrl",
-          "label": "SPARK JOB",
-          "tooltip": "View in Spark web UI",
-          "group": "spark",
-          "values": [
-            "http://hadoop:4040/jobs/job?id\u003d0"
-          ],
-          "interpreterSettingId": "spark"
-        }
-      },
       "apps": [],
       "jobName": "paragraph_1546439867094_-1415298401",
       "id": "20190102-223747_1069364597",
@@ -149,6 +137,8 @@
   "noteParams": {},
   "noteForms": {},
   "angularObjects": {
+    "md:shared_process": [],
+    "python:shared_process": [],
     "spark:shared_process": []
   },
   "config": {

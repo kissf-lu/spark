@@ -1,0 +1,254 @@
+{
+  "paragraphs": [
+    {
+      "text": "%md\n\n\u003ccenter\u003emysql 文档\u003c/center\u003e\n",
+      "user": "hadoop",
+      "dateUpdated": "2019-01-03 18:35:46.665",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ccenter\u003emysql 文档\u003c/center\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1546506684758_-70173510",
+      "id": "20190103-171124_1452396199",
+      "dateCreated": "2019-01-03 17:11:24.758",
+      "dateStarted": "2019-01-03 18:35:38.831",
+      "dateFinished": "2019-01-03 18:35:38.841",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n\n### linux 安装 mysql\n\n",
+      "user": "hadoop",
+      "dateUpdated": "2019-01-03 18:35:46.711",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003elinux 安装 mysql\u003c/h3\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1546506717735_1274712554",
+      "id": "20190103-171157_1558341707",
+      "dateCreated": "2019-01-03 17:11:57.735",
+      "dateStarted": "2019-01-03 18:35:38.944",
+      "dateFinished": "2019-01-03 18:35:38.946",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n\n- Ubuntu 安装mysql：Installing MySQL on Linux Using Debian Packages from Oracle [link: 1](https://dev.mysql.com/doc/refman/5.7/en/linux-installation-debian.html)\n\n\n   - 解压下载后的安装文件:\n   \n   ```shell\n   shell\u003e tar -xvf mysql-server_MVER-DVER_CPU.deb-bundle.tar\n   ```\n   \n   - 如果需要， 安装libaio依赖库：\n   \n   ```shell\n   shell\u003e sudo apt-get install libaio1\n   ```\n   \n   - 用以下命令，预配置 mysql：\n   \n   ```shell\n   shell\u003e sudo dpkg-preconfigure mysql-community-server_*.deb\n   ```\n \n\u003e*Important Make sure you remember the root password you set. \nUsers who want to set a password later can leave the password field blank in the dialogue box and just press OK; \nin that case, root access to the server is authenticated using the MySQL Socket Peer-Credential \nAuthentication Plugin for connections using a Unix socket file. You can set the root password later using mysql_secure_installation.*\n\n\n   - 初始化root密码（For a basic installation of the MySQL server, install the database common files package, the client package, the client metapackage, the server \n   package, and the server metapackage (in that order); you can do that with a single command）: \n\n   ```shell\n   shell\u003e sudo dpkg -i mysql-{common,community-client,client,community-server,server}_*.deb\n   ```\n   \n   \n   - 如果dpkg警告您存在未满足的依赖项， 可以执行：\n   \n   ```shell\n   sudo apt-get -f install\n   ```\n   \n Here are where the files are installed on the system:\n\n\u003e  All configuration files (like my.cnf) are under /etc/mysql\n   All binaries, libraries, headers, etc., are under /usr/bin and /usr/sbin\n   The data directory is /var/lib/mysql \n\n",
+      "user": "hadoop",
+      "dateUpdated": "2019-01-03 18:35:46.754",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cul\u003e\n  \u003cli\u003e\n  \u003cp\u003eUbuntu 安装mysql：Installing MySQL on Linux Using Debian Packages from Oracle \u003ca href\u003d\"https://dev.mysql.com/doc/refman/5.7/en/linux-installation-debian.html\"\u003elink: 1\u003c/a\u003e\u003c/p\u003e\u003c/li\u003e\n  \u003cli\u003e\n  \u003cp\u003e解压下载后的安装文件:\u003c/p\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e\u003ccode\u003eshell\n   shell\u0026gt; tar -xvf mysql-server_MVER-DVER_CPU.deb-bundle.tar\n\u003c/code\u003e\u003c/p\u003e\n\u003cul\u003e\n  \u003cli\u003e如果需要， 安装libaio依赖库：\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e\u003ccode\u003eshell\n   shell\u0026gt; sudo apt-get install libaio1\n\u003c/code\u003e\u003c/p\u003e\n\u003cul\u003e\n  \u003cli\u003e用以下命令，预配置 mysql：\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e\u003ccode\u003eshell\n   shell\u0026gt; sudo dpkg-preconfigure mysql-community-server_*.deb\n\u003c/code\u003e\u003c/p\u003e\n\u003cblockquote\u003e\n  \u003cp\u003e\u003cem\u003eImportant Make sure you remember the root password you set.\u003cbr/\u003eUsers who want to set a password later can leave the password field blank in the dialogue box and just press OK;\u003cbr/\u003ein that case, root access to the server is authenticated using the MySQL Socket Peer-Credential\u003cbr/\u003eAuthentication Plugin for connections using a Unix socket file. You can set the root password later using mysql_secure_installation.\u003c/em\u003e\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cul\u003e\n  \u003cli\u003e初始化root密码（For a basic installation of the MySQL server, install the database common files package, the client package, the client metapackage, the server\u003cbr/\u003e package, and the server metapackage (in that order); you can do that with a single command）:\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e\u003ccode\u003eshell\n   shell\u0026gt; sudo dpkg -i mysql-{common,community-client,client,community-server,server}_*.deb\n\u003c/code\u003e\u003c/p\u003e\n\u003cul\u003e\n  \u003cli\u003e如果dpkg警告您存在未满足的依赖项， 可以执行：\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e\u003ccode\u003eshell\n   sudo apt-get -f install\n\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eHere are where the files are installed on the system:\u003c/p\u003e\n\u003cblockquote\u003e\n  \u003cp\u003eAll configuration files (like my.cnf) are under /etc/mysql\u003cbr/\u003e All binaries, libraries, headers, etc., are under /usr/bin and /usr/sbin\u003cbr/\u003e The data directory is /var/lib/mysql\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1546506820383_-830139010",
+      "id": "20190103-171340_723454064",
+      "dateCreated": "2019-01-03 17:13:40.383",
+      "dateStarted": "2019-01-03 18:35:39.053",
+      "dateFinished": "2019-01-03 18:35:39.063",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n\n### 更改 数据路径\n",
+      "user": "hadoop",
+      "dateUpdated": "2019-01-03 18:35:46.772",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003e更改 数据路径\u003c/h3\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1546506928814_1252589230",
+      "id": "20190103-171528_1340693024",
+      "dateCreated": "2019-01-03 17:15:28.814",
+      "dateStarted": "2019-01-03 18:35:39.160",
+      "dateFinished": "2019-01-03 18:35:39.163",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n\n\n- 1.创建新的数据库目录并修改所属主和所属组\n\n```shell\nsudo mkdir /var/mysql_data\n \nchown -R mysql.mysql /var/mysql_data\n \nchmod 700 /var/mysql_data\n```\n\n- 将datadir 修改成1中定义的目录（/etc/mysql/mysql.conf.d中的mysql.c）：\n\n```shell\ndatadir \u003d /var/mysql_data\n```\n\n- 3.这个步骤很重要，要修改apparmor的相关配置文件\n\n\n```shell\n\t\nsudo vim /etc/apparmor.d/usr.sbin.mysqld\n\n```\n\u003e\\# Allow data dir access\n  /var/mysql_data/ r,\n  /var/mysql_data/** rwk,\n  \n- 4.修改完成后要重启apparmor服务\n\n```shell\nsudo /etc/init.d/apparmor  restart\n```\n\n- 5.重启Mysql服务\n \n\n```shell\nsudo service mysql restart\n```\n\n- 6.验证mysql的目录是否已经更改, 进入mysql 命令行,执行：\n\n\n```shell\nshow variables like \u0027%datadir%\u0027\n```\n",
+      "user": "hadoop",
+      "dateUpdated": "2019-01-03 18:35:46.785",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cul\u003e\n  \u003cli\u003e1.创建新的数据库目录并修改所属主和所属组\u003c/li\u003e\n\u003c/ul\u003e\n\u003cpre\u003e\u003ccode class\u003d\"shell\"\u003esudo mkdir /var/mysql_data\n \nchown -R mysql.mysql /var/mysql_data\n \nchmod 700 /var/mysql_data\n\u003c/code\u003e\u003c/pre\u003e\n\u003cul\u003e\n  \u003cli\u003e将datadir 修改成1中定义的目录（/etc/mysql/mysql.conf.d中的mysql.c）：\u003c/li\u003e\n\u003c/ul\u003e\n\u003cpre\u003e\u003ccode class\u003d\"shell\"\u003edatadir \u003d /var/mysql_data\n\u003c/code\u003e\u003c/pre\u003e\n\u003cul\u003e\n  \u003cli\u003e3.这个步骤很重要，要修改apparmor的相关配置文件\u003c/li\u003e\n\u003c/ul\u003e\n\u003cpre\u003e\u003ccode class\u003d\"shell\"\u003e\u003cbr/\u003esudo vim /etc/apparmor.d/usr.sbin.mysqld\n\n\u003c/code\u003e\u003c/pre\u003e\n\u003cblockquote\u003e\n  \u003cp\u003e# Allow data dir access\u003cbr/\u003e /var/mysql_data/ r,\u003cbr/\u003e /var/mysql_data/** rwk,\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cul\u003e\n  \u003cli\u003e4.修改完成后要重启apparmor服务\u003c/li\u003e\n\u003c/ul\u003e\n\u003cpre\u003e\u003ccode class\u003d\"shell\"\u003esudo /etc/init.d/apparmor  restart\n\u003c/code\u003e\u003c/pre\u003e\n\u003cul\u003e\n  \u003cli\u003e5.重启Mysql服务\u003c/li\u003e\n\u003c/ul\u003e\n\u003cpre\u003e\u003ccode class\u003d\"shell\"\u003esudo service mysql restart\n\u003c/code\u003e\u003c/pre\u003e\n\u003cul\u003e\n  \u003cli\u003e6.验证mysql的目录是否已经更改, 进入mysql 命令行,执行：\u003c/li\u003e\n\u003c/ul\u003e\n\u003cpre\u003e\u003ccode class\u003d\"shell\"\u003eshow variables like \u0026#39;%datadir%\u0026#39;\n\u003c/code\u003e\u003c/pre\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1546507191229_-1944540946",
+      "id": "20190103-171951_1305112014",
+      "dateCreated": "2019-01-03 17:19:51.229",
+      "dateStarted": "2019-01-03 18:35:39.272",
+      "dateFinished": "2019-01-03 18:35:39.276",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n",
+      "user": "hadoop",
+      "dateUpdated": "2019-01-03 18:35:46.796",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "tableHide": false,
+        "editorHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1546511067856_-2019788160",
+      "id": "20190103-182427_889576095",
+      "dateCreated": "2019-01-03 18:24:27.856",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "md/mysql/mysql_doc",
+  "id": "2E2TMJ397",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {
+    "md:shared_process": [],
+    "python:shared_process": [],
+    "mysql:shared_process": [],
+    "spark:shared_process": []
+  },
+  "config": {
+    "isZeppelinNotebookCronEnable": false,
+    "looknfeel": "default",
+    "personalizedMode": "false"
+  },
+  "info": {}
+}
