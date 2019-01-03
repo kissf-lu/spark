@@ -251,7 +251,7 @@
       "title": "",
       "text": "%md\n\n![图示](https://i.stack.imgur.com/53GTt.jpg)\n\u003ccenter\u003espark 集群执行过程\u003c/center\u003e\n",
       "user": "hadoop",
-      "dateUpdated": "2019-01-02 18:16:37.000",
+      "dateUpdated": "2019-01-02 21:09:31.183",
       "config": {
         "colWidth": 4.0,
         "fontSize": 9.0,
@@ -292,8 +292,8 @@
       "jobName": "paragraph_1546418534343_-1971871117",
       "id": "20190102-164214_582138379",
       "dateCreated": "2019-01-02 16:42:14.343",
-      "dateStarted": "2019-01-02 18:15:43.883",
-      "dateFinished": "2019-01-02 18:15:43.891",
+      "dateStarted": "2019-01-02 21:09:31.203",
+      "dateFinished": "2019-01-02 21:09:31.242",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -301,7 +301,7 @@
       "title": "内存的分配",
       "text": "%md\n![pic_2](https://i.stack.imgur.com/ZeniA.png \"内存分配图\")\n\n\u003ccenter\u003e内存的分配\u003c/center\u003e",
       "user": "hadoop",
-      "dateUpdated": "2019-01-02 18:16:46.161",
+      "dateUpdated": "2019-01-02 21:09:33.357",
       "config": {
         "colWidth": 4.0,
         "fontSize": 9.0,
@@ -342,8 +342,8 @@
       "jobName": "paragraph_1546422883530_-486350125",
       "id": "20190102-175443_1802801101",
       "dateCreated": "2019-01-02 17:54:43.530",
-      "dateStarted": "2019-01-02 18:16:40.669",
-      "dateFinished": "2019-01-02 18:16:40.675",
+      "dateStarted": "2019-01-02 21:09:33.369",
+      "dateFinished": "2019-01-02 21:09:33.408",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -409,8 +409,7 @@
   "noteParams": {},
   "noteForms": {},
   "angularObjects": {
-    "md:shared_process": [],
-    "spark:shared_process": []
+    "md:shared_process": []
   },
   "config": {
     "isZeppelinNotebookCronEnable": false

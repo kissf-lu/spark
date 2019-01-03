@@ -85,7 +85,7 @@
     {
       "text": "val ls1Rdd \u003d (\u0027a\u0027 to \u0027h\u0027).toList\n\nval ls2Rdd \u003d (\u0027g\u0027 to \u0027k\u0027).toList\n    \nval charLs1 \u003d spark.sparkContext.parallelize(ls1Rdd)\nval charLs2 \u003d spark.sparkContext.parallelize(ls2Rdd)\n\n",
       "user": "hadoop",
-      "dateUpdated": "2018-12-31 00:52:18.138",
+      "dateUpdated": "2019-01-02 21:33:48.726",
       "config": {
         "colWidth": 6.0,
         "fontSize": 9.0,
@@ -108,7 +108,7 @@
         "msg": [
           {
             "type": "TEXT",
-            "data": "ls1Rdd: List[Char] \u003d List(a, b, c, d, e, f, g, h)\nls2Rdd: List[Char] \u003d List(g, h, i, j, k)\ncharLs1: org.apache.spark.rdd.RDD[Char] \u003d ParallelCollectionRDD[13] at parallelize at \u003cconsole\u003e:25\ncharLs2: org.apache.spark.rdd.RDD[Char] \u003d ParallelCollectionRDD[14] at parallelize at \u003cconsole\u003e:25\n"
+            "data": "ls1Rdd: List[Char] \u003d List(a, b, c, d, e, f, g, h)\nls2Rdd: List[Char] \u003d List(g, h, i, j, k)\ncharLs1: org.apache.spark.rdd.RDD[Char] \u003d ParallelCollectionRDD[0] at parallelize at \u003cconsole\u003e:25\ncharLs2: org.apache.spark.rdd.RDD[Char] \u003d ParallelCollectionRDD[1] at parallelize at \u003cconsole\u003e:25\n"
           }
         ]
       },
@@ -116,8 +116,8 @@
       "jobName": "paragraph_1545891358552_-281359933",
       "id": "20181227-141558_1666426389",
       "dateCreated": "2018-12-27 14:15:58.553",
-      "dateStarted": "2018-12-31 00:52:18.204",
-      "dateFinished": "2018-12-31 00:52:20.897",
+      "dateStarted": "2019-01-02 21:33:48.780",
+      "dateFinished": "2019-01-02 21:34:06.979",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -125,7 +125,7 @@
       "title": "",
       "text": "charLs1.union(charLs2).collect\n\n\n\n\n\n\n\n\n\n\n",
       "user": "hadoop",
-      "dateUpdated": "2018-12-31 00:52:22.194",
+      "dateUpdated": "2019-01-02 21:34:14.074",
       "config": {
         "colWidth": 6.0,
         "fontSize": 9.0,
@@ -149,7 +149,7 @@
         "msg": [
           {
             "type": "TEXT",
-            "data": "res8: Array[Char] \u003d Array(a, b, c, d, e, f, g, h, g, h, i, j, k)\n"
+            "data": "res5: Array[Char] \u003d Array(a, b, c, d, e, f, g, h, g, h, i, j, k)\n"
           }
         ]
       },
@@ -157,8 +157,8 @@
       "jobName": "paragraph_1545891691702_1773217175",
       "id": "20181227-142131_1179167804",
       "dateCreated": "2018-12-27 14:21:31.702",
-      "dateStarted": "2018-12-31 00:52:22.327",
-      "dateFinished": "2018-12-31 00:52:22.976",
+      "dateStarted": "2019-01-02 21:34:14.126",
+      "dateFinished": "2019-01-02 21:34:15.777",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -206,7 +206,7 @@
     {
       "text": "val intListVal \u003d spark.sparkContext.parallelize((1 to 3).toList, 3)\n\nintListVal.fold(1)(_ + _)\n\n",
       "user": "hadoop",
-      "dateUpdated": "2018-12-31 00:52:37.097",
+      "dateUpdated": "2019-01-02 21:34:23.130",
       "config": {
         "colWidth": 6.0,
         "fontSize": 9.0,
@@ -327,7 +327,7 @@
         "msg": [
           {
             "type": "TEXT",
-            "data": "intListVal: org.apache.spark.rdd.RDD[Int] \u003d ParallelCollectionRDD[16] at parallelize at \u003cconsole\u003e:23\nres10: Int \u003d 10\n"
+            "data": "intListVal: org.apache.spark.rdd.RDD[Int] \u003d ParallelCollectionRDD[3] at parallelize at \u003cconsole\u003e:23\nres7: Int \u003d 10\n"
           }
         ]
       },
@@ -335,8 +335,8 @@
       "jobName": "paragraph_1545892507425_1229127297",
       "id": "20181227-143507_886631687",
       "dateCreated": "2018-12-27 14:35:07.426",
-      "dateStarted": "2018-12-31 00:52:37.165",
-      "dateFinished": "2018-12-31 00:52:38.315",
+      "dateStarted": "2019-01-02 21:34:23.182",
+      "dateFinished": "2019-01-02 21:34:24.460",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -380,9 +380,9 @@
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "val cov_data \u003d spark.read.option(\"inferSchema\", true).option(\"header\", false).csv(\"hdfs:///user/hadoop/spark/covtype/covtype.data\")\n\n\n",
+      "text": "val cov_data \u003d spark.read.option(\"inferSchema\", true).option(\"header\", false).csv(\"hdfs:///user/hadoop/spark/covtype/covtype.data\")\n\n",
       "user": "hadoop",
-      "dateUpdated": "2018-12-31 09:17:57.591",
+      "dateUpdated": "2019-01-02 21:45:55.412",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -402,28 +402,40 @@
         "forms": {}
       },
       "results": {
-        "code": "ERROR",
+        "code": "SUCCESS",
         "msg": [
           {
             "type": "TEXT",
-            "data": "java.lang.RuntimeException: SLF4J: Class path contains multiple SLF4J bindings.\nSLF4J: Found binding in [jar:file:/home/hadoop/zeppelin/interpreter/spark/slf4j-log4j12-1.7.16.jar!/org/slf4j/impl/StaticLoggerBinder.class]\nSLF4J: Found binding in [jar:file:/home/hadoop/zeppelin/interpreter/spark/spark-interpreter-0.8.0.jar!/org/slf4j/impl/StaticLoggerBinder.class]\nSLF4J: Found binding in [jar:file:/home/hadoop/zeppelin/lib/interpreter/slf4j-log4j12-1.7.16.jar!/org/slf4j/impl/StaticLoggerBinder.class]\nSLF4J: Found binding in [jar:file:/home/hadoop/zeppelin/lib/slf4j-log4j12-1.7.16.jar!/org/slf4j/impl/StaticLoggerBinder.class]\nSLF4J: Found binding in [jar:file:/home/hadoop/spark/jars/slf4j-log4j12-1.7.16.jar!/org/slf4j/impl/StaticLoggerBinder.class]\nSLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.\nSLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]\nException in thread \"main\" org.apache.spark.SparkException: Master must either be yarn or start with spark, mesos, k8s, or local\n\tat org.apache.spark.deploy.SparkSubmit.error(SparkSubmit.scala:857)\n\tat org.apache.spark.deploy.SparkSubmit.prepareSubmitEnvironment(SparkSubmit.scala:234)\n\tat org.apache.spark.deploy.SparkSubmit.submit(SparkSubmit.scala:143)\n\tat org.apache.spark.deploy.SparkSubmit.doSubmit(SparkSubmit.scala:86)\n\tat org.apache.spark.deploy.SparkSubmit$$anon$2.doSubmit(SparkSubmit.scala:924)\n\tat org.apache.spark.deploy.SparkSubmit$.main(SparkSubmit.scala:933)\n\tat org.apache.spark.deploy.SparkSubmit.main(SparkSubmit.scala)\n\n\tat org.apache.zeppelin.interpreter.remote.RemoteInterpreterManagedProcess.start(RemoteInterpreterManagedProcess.java:205)\n\tat org.apache.zeppelin.interpreter.ManagedInterpreterGroup.getOrCreateInterpreterProcess(ManagedInterpreterGroup.java:64)\n\tat org.apache.zeppelin.interpreter.remote.RemoteInterpreter.getOrCreateInterpreterProcess(RemoteInterpreter.java:111)\n\tat org.apache.zeppelin.interpreter.remote.RemoteInterpreter.internal_create(RemoteInterpreter.java:164)\n\tat org.apache.zeppelin.interpreter.remote.RemoteInterpreter.open(RemoteInterpreter.java:132)\n\tat org.apache.zeppelin.interpreter.remote.RemoteInterpreter.getFormType(RemoteInterpreter.java:299)\n\tat org.apache.zeppelin.notebook.Paragraph.jobRun(Paragraph.java:407)\n\tat org.apache.zeppelin.scheduler.Job.run(Job.java:188)\n\tat org.apache.zeppelin.scheduler.RemoteScheduler$JobRunner.run(RemoteScheduler.java:307)\n\tat java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)\n\tat java.util.concurrent.FutureTask.run(FutureTask.java:266)\n\tat java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)\n\tat java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)\n\tat java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)\n\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)\n\tat java.lang.Thread.run(Thread.java:748)\n"
+            "data": "cov_data: org.apache.spark.sql.DataFrame \u003d [_c0: int, _c1: int ... 53 more fields]\n"
           }
         ]
+      },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            "http://hadoop:4040/jobs/job?id\u003d0",
+            "http://hadoop:4040/jobs/job?id\u003d1"
+          ],
+          "interpreterSettingId": "spark"
+        }
       },
       "apps": [],
       "jobName": "paragraph_1545893308062_-1950724019",
       "id": "20181227-144828_374008171",
       "dateCreated": "2018-12-27 14:48:28.062",
-      "dateStarted": "2018-12-31 09:17:57.781",
-      "dateFinished": "2018-12-31 09:18:57.875",
-      "status": "ERROR",
-      "errorMessage": "java.lang.RuntimeException: SLF4J: Class path contains multiple SLF4J bindings.\nSLF4J: Found binding in [jar:file:/home/hadoop/zeppelin/interpreter/spark/slf4j-log4j12-1.7.16.jar!/org/slf4j/impl/StaticLoggerBinder.class]\nSLF4J: Found binding in [jar:file:/home/hadoop/zeppelin/interpreter/spark/spark-interpreter-0.8.0.jar!/org/slf4j/impl/StaticLoggerBinder.class]\nSLF4J: Found binding in [jar:file:/home/hadoop/zeppelin/lib/interpreter/slf4j-log4j12-1.7.16.jar!/org/slf4j/impl/StaticLoggerBinder.class]\nSLF4J: Found binding in [jar:file:/home/hadoop/zeppelin/lib/slf4j-log4j12-1.7.16.jar!/org/slf4j/impl/StaticLoggerBinder.class]\nSLF4J: Found binding in [jar:file:/home/hadoop/spark/jars/slf4j-log4j12-1.7.16.jar!/org/slf4j/impl/StaticLoggerBinder.class]\nSLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.\nSLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]\nException in thread \"main\" org.apache.spark.SparkException: Master must either be yarn or start with spark, mesos, k8s, or local\n\tat org.apache.spark.deploy.SparkSubmit.error(SparkSubmit.scala:857)\n\tat org.apache.spark.deploy.SparkSubmit.prepareSubmitEnvironment(SparkSubmit.scala:234)\n\tat org.apache.spark.deploy.SparkSubmit.submit(SparkSubmit.scala:143)\n\tat org.apache.spark.deploy.SparkSubmit.doSubmit(SparkSubmit.scala:86)\n\tat org.apache.spark.deploy.SparkSubmit$$anon$2.doSubmit(SparkSubmit.scala:924)\n\tat org.apache.spark.deploy.SparkSubmit$.main(SparkSubmit.scala:933)\n\tat org.apache.spark.deploy.SparkSubmit.main(SparkSubmit.scala)\n\n\tat org.apache.zeppelin.interpreter.remote.RemoteInterpreterManagedProcess.start(RemoteInterpreterManagedProcess.java:205)\n\tat org.apache.zeppelin.interpreter.ManagedInterpreterGroup.getOrCreateInterpreterProcess(ManagedInterpreterGroup.java:64)\n\tat org.apache.zeppelin.interpreter.remote.RemoteInterpreter.getOrCreateInterpreterProcess(RemoteInterpreter.java:111)\n\tat org.apache.zeppelin.interpreter.remote.RemoteInterpreter.internal_create(RemoteInterpreter.java:164)\n\tat org.apache.zeppelin.interpreter.remote.RemoteInterpreter.open(RemoteInterpreter.java:132)\n\tat org.apache.zeppelin.interpreter.remote.RemoteInterpreter.getFormType(RemoteInterpreter.java:299)\n\tat org.apache.zeppelin.notebook.Paragraph.jobRun(Paragraph.java:407)\n\tat org.apache.zeppelin.scheduler.Job.run(Job.java:188)\n\tat org.apache.zeppelin.scheduler.RemoteScheduler$JobRunner.run(RemoteScheduler.java:307)\n\tat java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)\n\tat java.util.concurrent.FutureTask.run(FutureTask.java:266)\n\tat java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)\n\tat java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)\n\tat java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)\n\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)\n\tat java.lang.Thread.run(Thread.java:748)\n",
+      "dateStarted": "2019-01-02 21:45:55.502",
+      "dateFinished": "2019-01-02 21:46:19.760",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "cov_data.show",
       "user": "hadoop",
-      "dateUpdated": "2018-12-31 00:49:48.288",
+      "dateUpdated": "2019-01-02 21:46:23.058",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -450,12 +462,24 @@
           }
         ]
       },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            "http://hadoop:4040/jobs/job?id\u003d2"
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
       "apps": [],
       "jobName": "paragraph_1546070606053_-1760379670",
       "id": "20181229-160326_207203234",
       "dateCreated": "2018-12-29 16:03:26.053",
-      "dateStarted": "2018-12-31 00:49:48.370",
-      "dateFinished": "2018-12-31 00:49:49.844",
+      "dateStarted": "2019-01-02 21:46:23.156",
+      "dateFinished": "2019-01-02 21:46:27.280",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },

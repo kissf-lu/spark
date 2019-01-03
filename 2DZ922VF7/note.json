@@ -1,0 +1,160 @@
+{
+  "paragraphs": [
+    {
+      "text": "case class Customer(cId: Long, name: String, age: Int, gender: String)\n\ncase class Product(pId: Long, name: String, price: Double, cost: Double)\n\ncase class Home(city: String, size: Int, lotSize: Int)\n",
+      "user": "hadoop",
+      "dateUpdated": "2019-01-02 22:37:55.421",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "defined class Customer\ndefined class Product\ndefined class Home\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1546435980402_1109744659",
+      "id": "20190102-213300_1707941180",
+      "dateCreated": "2019-01-02 21:33:00.405",
+      "dateStarted": "2019-01-02 22:37:55.456",
+      "dateFinished": "2019-01-02 22:37:56.386",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%spark\n\nval customer \u003d List(\n    Customer(1, \"Jame\", 21, \"M\"),\n    Customer(1, \"Liz\", 25, \"F\"),\n    Customer(1, \"John\", 31, \"M\"),\n    Customer(1, \"Jennifer\", 45, \"F\"),\n    Customer(1, \"Robert\", 41, \"M\"),\n    Customer(1, \"Sandra\", 45, \"F\")\n)\n\n\nval customerDF \u003d sc.parallelize(customer).toDF",
+      "user": "hadoop",
+      "dateUpdated": "2019-01-02 22:41:17.792",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "customer: List[Customer] \u003d List(Customer(1,Jame,21,M), Customer(1,Liz,25,F), Customer(1,John,31,M), Customer(1,Jennifer,45,F), Customer(1,Robert,41,M), Customer(1,Sandra,45,F))\ncustomerDF: org.apache.spark.sql.DataFrame \u003d [cId: bigint, name: string ... 2 more fields]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1546439744965_1641975005",
+      "id": "20190102-223544_1746421738",
+      "dateCreated": "2019-01-02 22:35:44.965",
+      "dateStarted": "2019-01-02 22:41:17.808",
+      "dateFinished": "2019-01-02 22:41:21.903",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "customerDF.show",
+      "user": "hadoop",
+      "dateUpdated": "2019-01-02 22:41:31.748",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+---+--------+---+------+\n|cId|    name|age|gender|\n+---+--------+---+------+\n|  1|    Jame| 21|     M|\n|  1|     Liz| 25|     F|\n|  1|    John| 31|     M|\n|  1|Jennifer| 45|     F|\n|  1|  Robert| 41|     M|\n|  1|  Sandra| 45|     F|\n+---+--------+---+------+\n\n"
+          }
+        ]
+      },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            "http://hadoop:4040/jobs/job?id\u003d0"
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "apps": [],
+      "jobName": "paragraph_1546439867094_-1415298401",
+      "id": "20190102-223747_1069364597",
+      "dateCreated": "2019-01-02 22:37:47.094",
+      "dateStarted": "2019-01-02 22:41:31.790",
+      "dateFinished": "2019-01-02 22:41:34.354",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "user": "hadoop",
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1546440091748_199222365",
+      "id": "20190102-224131_1432900180",
+      "dateCreated": "2019-01-02 22:41:31.748",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "BDAWS/sql",
+  "id": "2DZ922VF7",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {
+    "spark:shared_process": []
+  },
+  "config": {
+    "isZeppelinNotebookCronEnable": false,
+    "looknfeel": "default",
+    "personalizedMode": "false"
+  },
+  "info": {}
+}
