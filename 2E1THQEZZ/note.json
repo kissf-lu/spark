@@ -1,0 +1,85 @@
+{
+  "paragraphs": [
+    {
+      "text": "%md\n\n## \u003ccenter\u003e KDD_CUP 学习 \u003c/center\u003e\n",
+      "user": "hadoop",
+      "dateUpdated": "2019-01-04 16:56:56.029",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch2\u003e\u003ccenter\u003e KDD_CUP 学习 \u003c/center\u003e\u003c/h2\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1546592149651_7010218",
+      "id": "20190104-165549_1964824127",
+      "dateCreated": "2019-01-04 16:55:49.651",
+      "dateStarted": "2019-01-04 16:56:56.029",
+      "dateFinished": "2019-01-04 16:56:56.033",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "ll\n\n",
+      "user": "hadoop",
+      "dateUpdated": "2019-01-04 17:51:11.002",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1546592202435_-2141798248",
+      "id": "20190104-165642_314544001",
+      "dateCreated": "2019-01-04 16:56:42.435",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "spark/ml_kddcup",
+  "id": "2E1THQEZZ",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {
+    "md:shared_process": [],
+    "spark:shared_process": []
+  },
+  "config": {
+    "isZeppelinNotebookCronEnable": false
+  },
+  "info": {}
+}

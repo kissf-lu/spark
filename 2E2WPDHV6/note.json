@@ -169,7 +169,7 @@
     {
       "text": "%md\n**yarn - client mode关键参数参数说明**\n\n- **\\-- num-executorsa(spark.executor.instances)**： 执行器的数量(The number of executors for static allocation. With spark.dynamicAllocation.enabled, the initial set of executors will be at least this large)[参见](http://spark.apache.org/docs/2.3.1/running-on-yarn.html)\n\n- **\\--spark.yarn.am.memoryOverhead**: 在yarn 的 client模式下JVM 内存的堆栈溢出量 (The amount of off-heap memory to be allocated in client mode)， client模式下该值过小会造成executor is lost错误\n\n---\n\n**yarn - client mode 参数的说明**\n\n\n- **\\--conf spark.executor.memoryOverhead**: 执行器的内存溢出量\n- **\\--conf spark.driver.memoryOverhead**: 驱动器的内存溢出量\n\n---\n\n**yarn - client mode 参数的说明**\n\n",
       "user": "hadoop",
-      "dateUpdated": "2019-01-02 18:30:03.639",
+      "dateUpdated": "2019-01-04 09:49:19.251",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -202,8 +202,8 @@
       "jobName": "paragraph_1546417960415_-1751143121",
       "id": "20190102-163240_760350391",
       "dateCreated": "2019-01-02 16:32:40.415",
-      "dateStarted": "2019-01-02 18:30:03.640",
-      "dateFinished": "2019-01-02 18:30:03.651",
+      "dateStarted": "2019-01-04 09:49:19.261",
+      "dateFinished": "2019-01-04 09:49:19.290",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -249,18 +249,18 @@
     },
     {
       "title": "",
-      "text": "%md\n\n![图示](https://i.stack.imgur.com/53GTt.jpg)\n\u003ccenter\u003espark 集群执行过程\u003c/center\u003e\n",
+      "text": "%md\n\n![图示](https://i.stack.imgur.com/53GTt.jpg)\n\u003ccenter\u003espark 集群执行过程\u003c/center\u003e\n\n\n\n\n\n\n\n\n",
       "user": "hadoop",
-      "dateUpdated": "2019-01-02 21:09:31.183",
+      "dateUpdated": "2019-01-04 09:51:27.848",
       "config": {
-        "colWidth": 4.0,
+        "colWidth": 5.0,
         "fontSize": 9.0,
         "enabled": true,
         "results": {
           "0": {
             "graph": {
               "mode": "table",
-              "height": 467.533,
+              "height": 447.391,
               "optionOpen": false
             }
           }
@@ -292,8 +292,8 @@
       "jobName": "paragraph_1546418534343_-1971871117",
       "id": "20190102-164214_582138379",
       "dateCreated": "2019-01-02 16:42:14.343",
-      "dateStarted": "2019-01-02 21:09:31.203",
-      "dateFinished": "2019-01-02 21:09:31.242",
+      "dateStarted": "2019-01-04 09:51:21.791",
+      "dateFinished": "2019-01-04 09:51:21.797",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -301,16 +301,16 @@
       "title": "内存的分配",
       "text": "%md\n![pic_2](https://i.stack.imgur.com/ZeniA.png \"内存分配图\")\n\n\u003ccenter\u003e内存的分配\u003c/center\u003e",
       "user": "hadoop",
-      "dateUpdated": "2019-01-02 21:09:33.357",
+      "dateUpdated": "2019-01-04 09:50:54.611",
       "config": {
-        "colWidth": 4.0,
+        "colWidth": 7.0,
         "fontSize": 9.0,
         "enabled": true,
         "results": {
           "0": {
             "graph": {
               "mode": "table",
-              "height": 230.95,
+              "height": 388.0,
               "optionOpen": false
             }
           }
@@ -342,17 +342,17 @@
       "jobName": "paragraph_1546422883530_-486350125",
       "id": "20190102-175443_1802801101",
       "dateCreated": "2019-01-02 17:54:43.530",
-      "dateStarted": "2019-01-02 21:09:33.369",
-      "dateFinished": "2019-01-02 21:09:33.408",
+      "dateStarted": "2019-01-04 09:50:08.671",
+      "dateFinished": "2019-01-04 09:50:08.687",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\n\n- container size should be large enough to contain:\n\n    - JVM heap\n    - permanent generation for the JVM\n    - any off-heap allocations\n\n*In most cases an overhead of between 15%-30% of the JVM heap will suffice. Your job configuration should include the proper JVM and container settings. Some jobs will require more and some will require*\n\n\n",
       "user": "hadoop",
-      "dateUpdated": "2019-01-02 18:33:35.024",
+      "dateUpdated": "2019-01-04 09:51:11.338",
       "config": {
-        "colWidth": 4.0,
+        "colWidth": 7.0,
         "fontSize": 9.0,
         "enabled": true,
         "results": {},
