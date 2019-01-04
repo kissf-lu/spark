@@ -3,7 +3,7 @@
     {
       "text": "%python\nimport matplotlib.pyplot as plt\n",
       "user": "hadoop",
-      "dateUpdated": "2019-01-02 21:01:53.969",
+      "dateUpdated": "2019-01-03 21:36:33.310",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -30,15 +30,15 @@
       "jobName": "paragraph_1546068433300_-1005650103",
       "id": "20181229-152713_2064897013",
       "dateCreated": "2018-12-29 15:27:13.300",
-      "dateStarted": "2019-01-02 21:01:54.033",
-      "dateFinished": "2019-01-02 21:01:58.276",
+      "dateStarted": "2019-01-03 21:36:33.398",
+      "dateFinished": "2019-01-03 21:36:36.579",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%python\n\nplt.plot([1, 2, 3])\n",
       "user": "hadoop",
-      "dateUpdated": "2019-01-02 21:02:38.024",
+      "dateUpdated": "2019-01-03 21:36:39.068",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -60,7 +60,7 @@
         "msg": [
           {
             "type": "TEXT",
-            "data": "[\u003cmatplotlib.lines.Line2D object at 0x7fcf3eec1cf8\u003e]\n"
+            "data": "[\u003cmatplotlib.lines.Line2D object at 0x7f1ded880e80\u003e]\n"
           },
           {
             "type": "HTML",
@@ -72,8 +72,8 @@
       "jobName": "paragraph_1546068629038_1226776121",
       "id": "20181229-153029_1078481204",
       "dateCreated": "2018-12-29 15:30:29.038",
-      "dateStarted": "2019-01-02 21:02:38.073",
-      "dateFinished": "2019-01-02 21:02:38.409",
+      "dateStarted": "2019-01-03 21:36:39.101",
+      "dateFinished": "2019-01-03 21:36:39.436",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -97,6 +97,7 @@
   "noteParams": {},
   "noteForms": {},
   "angularObjects": {
+    "md:shared_process": [],
     "python:shared_process": [],
     "spark:shared_process": []
   },

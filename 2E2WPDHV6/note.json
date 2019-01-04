@@ -409,10 +409,14 @@
   "noteParams": {},
   "noteForms": {},
   "angularObjects": {
-    "md:shared_process": []
+    "md:shared_process": [],
+    "python:shared_process": [],
+    "spark:shared_process": []
   },
   "config": {
-    "isZeppelinNotebookCronEnable": false
+    "isZeppelinNotebookCronEnable": false,
+    "looknfeel": "report",
+    "personalizedMode": "false"
   },
   "info": {}
 }

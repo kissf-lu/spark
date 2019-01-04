@@ -200,7 +200,7 @@
     {
       "text": "%sql \nselect age, count(1) value\nfrom bank \nwhere age \u003c 30 \ngroup by age \norder by age",
       "user": "hadoop",
-      "dateUpdated": "2018-12-29 16:46:23.826",
+      "dateUpdated": "2019-01-03 22:08:46.920",
       "config": {
         "colWidth": 6.0,
         "fontSize": 10.0,
@@ -307,7 +307,7 @@
     {
       "text": "%sql \nselect age, count(1) value \nfrom bank \nwhere age \u003c ${maxAge\u003d30} \ngroup by age \norder by age",
       "user": "hadoop",
-      "dateUpdated": "2018-12-29 16:46:23.931",
+      "dateUpdated": "2019-01-03 22:08:46.973",
       "config": {
         "colWidth": 6.0,
         "fontSize": 10.0,
@@ -453,7 +453,7 @@
   "noteParams": {},
   "noteForms": {},
   "angularObjects": {
-    "md:shared_process": [],
+    "python:shared_process": [],
     "spark:shared_process": []
   },
   "config": {

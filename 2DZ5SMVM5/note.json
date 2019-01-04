@@ -1,0 +1,297 @@
+{
+  "paragraphs": [
+    {
+      "text": "%md\n\n## Scala trait属性的内容解析-class\n\n\n---\n\n### 特质属性说明：\n\n\n   ",
+      "user": "hadoop",
+      "dateUpdated": "2019-01-03 22:27:52.951",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch2\u003eScala trait属性的内容解析-class\u003c/h2\u003e\n\u003chr/\u003e\n\u003ch3\u003e特质属性说明：\u003c/h3\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1546525672950_985896086",
+      "id": "20181228-152905_1851469699",
+      "dateCreated": "2019-01-03 22:27:52.950",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "trait 的定义",
+      "text": "%md\n\n   - **特质是Scala 代码复用的基础单元， 可以将方法和字段定义封装;**\n   - *以混入的方式实现复用；*\n   - *特质不能有任何类参数；*\n   - *特质本质上类似于抽象类；*\n   \n   \n\n\n\n\n\n\n\n\n   ",
+      "user": "hadoop",
+      "dateUpdated": "2019-01-03 22:27:52.952",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "title": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cul\u003e\n  \u003cli\u003e\u003cstrong\u003e特质是Scala 代码复用的基础单元， 可以将方法和字段定义封装;\u003c/strong\u003e\u003c/li\u003e\n  \u003cli\u003e\u003cem\u003e以混入的方式实现复用；\u003c/em\u003e\u003c/li\u003e\n  \u003cli\u003e\u003cem\u003e特质不能有任何类参数；\u003c/em\u003e\u003c/li\u003e\n  \u003cli\u003e\u003cem\u003e特质本质上类似于抽象类；\u003c/em\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1546525672952_-343978443",
+      "id": "20181228-165256_1955406293",
+      "dateCreated": "2019-01-03 22:27:52.952",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "1、 混入特质",
+      "text": "/*\n\n**/\n\n\ncase class PeopleInfo(age: Int, name: String, birth: Long)\n\nabstract class Person {\n  val sex: Boolean\n  val info: PeopleInfo\n}\n\n\ntrait PersonTrait extends Person{\n  \n  override def toString \u003d \"Black People\"\n  \n  def getInfo: PeopleInfo \u003d info\n}\n\nclass BlackMan(infPeople: PeopleInfo) extends Person with PersonTrait{\n  val sex \u003d true\n  val info \u003d infPeople\n}\n\nval blackMan1 \u003d new BlackMan(PeopleInfo(22, \"kiss\", 2018))\n\nblackMan1.sex\n",
+      "user": "hadoop",
+      "dateUpdated": "2019-01-03 22:27:52.953",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 6.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "editorHide": false,
+        "title": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "defined class PeopleInfo\ndefined class Person\ndefined trait PersonTrait\ndefined class BlackMan\nblackMan1: BlackMan \u003d Black People\nres33: Boolean \u003d true\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1546525672953_-891068632",
+      "id": "20181228-230109_598231514",
+      "dateCreated": "2019-01-03 22:27:52.953",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "2、特质",
+      "text": "\n",
+      "user": "hadoop",
+      "dateUpdated": "2019-01-03 22:27:52.954",
+      "config": {
+        "lineNumbers": true,
+        "tableHide": false,
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 6.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "editorHide": false,
+        "title": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "defined class PeopleInfo\ndefined class Person\ndefined trait PersonTrait\ndefined class BlackMan\nblackMan1: BlackMan \u003d Black People\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1546525672953_950685250",
+      "id": "20181228-165530_16872359",
+      "dateCreated": "2019-01-03 22:27:52.953",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "",
+      "text": "\nabstract class IntQueue {\n  def get: Option[Int]\n  def put(x: Int)\n}\n\nclass BasicIntQueue extends IntQueue {\n  \n  private val buf \u003d new scala.collection.mutable.ArrayBuffer[Int]\n  \n  def empty:Boolean \u003d buf.isEmpty\n  \n  override def get \u003d {\n      if (empty) None\n      else Some(buf.remove(0))\n  }\n\n  override def put(x: Int): Unit \u003d {\n    buf +\u003d x\n  }\n}\n\ntrait Incrementing extends IntQueue {\n//   super 动态加载\n  abstract override def put(x: Int):Unit \u003d { super.put(x + 1) }\n}\n\ntrait Filtering extends IntQueue {\n  abstract override def put(x: Int):Unit \u003d { if (x \u003e 0) super.put(x) }\n}\n",
+      "user": "hadoop",
+      "dateUpdated": "2019-01-03 22:27:52.955",
+      "config": {
+        "lineNumbers": true,
+        "tableHide": false,
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 6.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "editorHide": false,
+        "title": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "defined class IntQueue\ndefined class BasicIntQueue\ndefined trait Incrementing\ndefined trait Filtering\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1546525672954_1033361583",
+      "id": "20181228-153012_1345015745",
+      "dateCreated": "2019-01-03 22:27:52.954",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "Trait 的混入的",
+      "text": "object TraitFunctions {\n  // \n  object QueueIF extends BasicIntQueue with Incrementing with Filtering\n  \n\n}\n\n\nval queueIF \u003d TraitFunctions.QueueIF\n\n(-1 to 4).map(queueIF.put(_))\n\nqueueIF.get\n",
+      "user": "hadoop",
+      "dateUpdated": "2019-01-03 22:27:52.955",
+      "config": {
+        "lineNumbers": true,
+        "tableHide": false,
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 6.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "editorHide": false,
+        "title": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "defined object TraitFunctions\nqueueIF: TraitFunctions.QueueIF.type \u003d TraitFunctions$QueueIF$@6f759e3a\nres229: scala.collection.immutable.IndexedSeq[Unit] \u003d Vector((), (), (), (), (), ())\nres230: Option[Int] \u003d Some(2)\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1546525672955_-1401903130",
+      "id": "20181228-153043_752505141",
+      "dateCreated": "2019-01-03 22:27:52.955",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "user": "hadoop",
+      "dateUpdated": "2019-01-03 22:27:52.956",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 6.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1546525672956_1988088867",
+      "id": "20181228-161130_355501052",
+      "dateCreated": "2019-01-03 22:27:52.956",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "scala/trait_lab",
+  "id": "2DZ5SMVM5",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {
+    "md:shared_process": [],
+    "spark:shared_process": []
+  },
+  "config": {
+    "isZeppelinNotebookCronEnable": false
+  },
+  "info": {}
+}
