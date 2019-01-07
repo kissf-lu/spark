@@ -86,7 +86,7 @@
       "title": "1、 混入特质",
       "text": "/*\n\n**/\n\n\ncase class PeopleInfo(age: Int, name: String, birth: Long)\n\nabstract class Person {\n  val sex: Boolean\n  val info: PeopleInfo\n}\n\n\ntrait PersonTrait extends Person{\n  \n  override def toString \u003d \"Black People\"\n  \n  def getInfo: PeopleInfo \u003d info\n}\n\nclass BlackMan(infPeople: PeopleInfo) extends Person with PersonTrait{\n  val sex \u003d true\n  val info \u003d infPeople\n}\n\nval blackMan1 \u003d new BlackMan(PeopleInfo(22, \"kiss\", 2018))\n\nblackMan1.sex\n",
       "user": "hadoop",
-      "dateUpdated": "2019-01-03 22:27:52.953",
+      "dateUpdated": "2019-01-07 08:15:25.666",
       "config": {
         "tableHide": false,
         "editorSetting": {
@@ -112,7 +112,7 @@
         "msg": [
           {
             "type": "TEXT",
-            "data": "defined class PeopleInfo\ndefined class Person\ndefined trait PersonTrait\ndefined class BlackMan\nblackMan1: BlackMan \u003d Black People\nres33: Boolean \u003d true\n"
+            "data": "defined class PeopleInfo\ndefined class Person\ndefined trait PersonTrait\ndefined class BlackMan\nblackMan1: BlackMan \u003d Black People\nres53: Boolean \u003d true\n"
           }
         ]
       },
@@ -120,8 +120,9 @@
       "jobName": "paragraph_1546525672953_-891068632",
       "id": "20181228-230109_598231514",
       "dateCreated": "2019-01-03 22:27:52.953",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "2019-01-07 08:15:25.681",
+      "dateFinished": "2019-01-07 08:15:27.022",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
