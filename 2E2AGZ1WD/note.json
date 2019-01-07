@@ -678,6 +678,7 @@
       "title": "测试集：分类样本数(sum) VS 预测正确样本数(cross_val)",
       "text": "%sql\nselect\n`Cover_Type`, `cross_val`, `sum`\nfrom staticPercentTable\nwhere Cover_Type !\u003d \u0027sum\u0027\n",
       "user": "hadoop",
+      "dateUpdated": "2019-01-05 10:02:40.232",
       "config": {
         "colWidth": 4.0,
         "fontSize": 9.0,
@@ -889,6 +890,7 @@
       "title": "样本的预测准确率",
       "text": "%sql\nselect\n`Cover_Type`, ROUND(`rat` * 100, 2) as `percent`\nfrom staticPercentTable\nwhere Cover_Type !\u003d \u0027sum\u0027\n\n",
       "user": "hadoop",
+      "dateUpdated": "2019-01-05 10:02:40.498",
       "config": {
         "colWidth": 4.0,
         "fontSize": 9.0,
@@ -1113,7 +1115,7 @@
       "progressUpdateIntervalMs": 500
     }
   ],
-  "name": "spark/ml_tree",
+  "name": "~Trash/spark/ml_tree",
   "id": "2E2AGZ1WD",
   "noteParams": {},
   "noteForms": {},

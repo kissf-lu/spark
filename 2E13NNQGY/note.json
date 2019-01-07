@@ -1,0 +1,30 @@
+{
+  "paragraphs": [
+    {
+      "user": "hadoop",
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1546660161054_-1870704165",
+      "id": "20190105-114921_1942006794",
+      "dateCreated": "2019-01-05 11:49:21.054",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "scala/implicit_PS5",
+  "id": "2E13NNQGY",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {
+    "md:shared_process": [],
+    "spark:shared_process": []
+  },
+  "config": {
+    "isZeppelinNotebookCronEnable": false
+  },
+  "info": {}
+}

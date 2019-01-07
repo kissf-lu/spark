@@ -1,0 +1,67 @@
+{
+  "paragraphs": [
+    {
+      "text": "%sh\n\nls .",
+      "user": "hadoop",
+      "dateUpdated": "2019-01-05 14:13:26.294",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "ERROR",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "org.apache.zeppelin.interpreter.InterpreterNotFoundException: Either no interpreter named sh or it is not binded to this note"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1546668782552_1867276622",
+      "id": "20190105-141302_2059030017",
+      "dateCreated": "2019-01-05 14:13:02.552",
+      "status": "ERROR",
+      "errorMessage": "org.apache.zeppelin.interpreter.InterpreterNotFoundException: Either no interpreter named sh or it is not binded to this note\n\tat org.apache.zeppelin.interpreter.InterpreterFactory.getInterpreter(InterpreterFactory.java:101)\n\tat org.apache.zeppelin.notebook.Paragraph.getBindedInterpreter(Paragraph.java:242)\n\tat org.apache.zeppelin.notebook.Paragraph.execute(Paragraph.java:350)\n\tat org.apache.zeppelin.notebook.Note.run(Note.java:683)\n\tat org.apache.zeppelin.socket.NotebookServer.persistAndExecuteSingleParagraph(NotebookServer.java:1867)\n\tat org.apache.zeppelin.socket.NotebookServer.runParagraph(NotebookServer.java:1826)\n\tat org.apache.zeppelin.socket.NotebookServer.onMessage(NotebookServer.java:261)\n\tat org.apache.zeppelin.socket.NotebookSocket.onWebSocketText(NotebookSocket.java:59)\n\tat org.eclipse.jetty.websocket.common.events.JettyListenerEventDriver.onTextMessage(JettyListenerEventDriver.java:128)\n\tat org.eclipse.jetty.websocket.common.message.SimpleTextMessage.messageComplete(SimpleTextMessage.java:69)\n\tat org.eclipse.jetty.websocket.common.events.AbstractEventDriver.appendMessage(AbstractEventDriver.java:65)\n\tat org.eclipse.jetty.websocket.common.events.JettyListenerEventDriver.onTextFrame(JettyListenerEventDriver.java:122)\n\tat org.eclipse.jetty.websocket.common.events.AbstractEventDriver.incomingFrame(AbstractEventDriver.java:161)\n\tat org.eclipse.jetty.websocket.common.WebSocketSession.incomingFrame(WebSocketSession.java:309)\n\tat org.eclipse.jetty.websocket.common.extensions.ExtensionStack.incomingFrame(ExtensionStack.java:214)\n\tat org.eclipse.jetty.websocket.common.Parser.notifyFrame(Parser.java:220)\n\tat org.eclipse.jetty.websocket.common.Parser.parse(Parser.java:258)\n\tat org.eclipse.jetty.websocket.common.io.AbstractWebSocketConnection.readParse(AbstractWebSocketConnection.java:632)\n\tat org.eclipse.jetty.websocket.common.io.AbstractWebSocketConnection.onFillable(AbstractWebSocketConnection.java:480)\n\tat org.eclipse.jetty.io.AbstractConnection$2.run(AbstractConnection.java:544)\n\tat org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:635)\n\tat org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:555)\n\tat java.lang.Thread.run(Thread.java:748)\n",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "user": "hadoop",
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1546668796919_-154880761",
+      "id": "20190105-141316_1919567078",
+      "dateCreated": "2019-01-05 14:13:16.919",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "~Trash/shell/local_sell",
+  "id": "2E1CHKCH2",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {
+    "spark:shared_process": []
+  },
+  "config": {
+    "isZeppelinNotebookCronEnable": false
+  },
+  "info": {}
+}
