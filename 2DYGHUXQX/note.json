@@ -45,7 +45,7 @@
       "title": " 初始化环境",
       "text": "import scala.util.Random\n\nimport org.apache.spark.sql.functions._\nimport org.apache.spark.sql.DataFrame\n\nimport org.apache.spark.ml.{Pipeline, PipelineModel}\nimport org.apache.spark.ml.linalg.{Vector, Vectors}\nimport org.apache.spark.ml.feature.{VectorIndexer, VectorAssembler}\nimport org.apache.spark.ml.classification.{DecisionTreeClassifier, RandomForestClassifier, RandomForestClassificationModel}\n\nimport org.apache.spark.ml.tuning.{ParamGridBuilder, TrainValidationSplit}\nimport org.apache.spark.ml.evaluation.MulticlassClassificationEvaluator\n",
       "user": "hadoop",
-      "dateUpdated": "2019-01-04 09:45:40.986",
+      "dateUpdated": "2019-01-07 09:10:19.780",
       "config": {
         "tableHide": false,
         "editorSetting": {
@@ -86,9 +86,9 @@
     },
     {
       "title": "HDFS 数据文件路径配置",
-      "text": "// hdfs 路径\nval dir_base \u003d \"hdfs:///user/hadoop/spark/covtype\"\nval dataWithoutHeaded \u003d spark.read.\n  option(\"inferSchema\", true).\n  option(\"header\", false).\n  csv(s\"${dir_base}/covtype.data\")\n  \n  \n\n\n",
+      "text": "// hdfs 路径\nval dir_base \u003d \"hdfs:///user/hadoop/spark/covtype\"\nval dataWithoutHeaded \u003d spark.read.\n  option(\"inferSchema\", true).\n  option(\"header\", false).\n  csv(s\"${dir_base}/covtype.data\")\n  \n\n\n",
       "user": "hadoop",
-      "dateUpdated": "2019-01-04 09:45:50.281",
+      "dateUpdated": "2019-01-07 10:15:43.746",
       "config": {
         "tableHide": false,
         "editorSetting": {
@@ -100,7 +100,7 @@
         "colWidth": 6.0,
         "editorMode": "ace/mode/scala",
         "fontSize": 9.0,
-        "editorHide": true,
+        "editorHide": false,
         "title": true,
         "results": {},
         "enabled": true
@@ -681,7 +681,7 @@
       "title": "测试集：分类样本数(sum) VS 预测正确样本数(cross_val)",
       "text": "%sql\nselect\n`Cover_Type`, `cross_val`, `sum_val`\nfrom staticPercentTable\nwhere Cover_Type !\u003d \u0027sum_val\u0027\n",
       "user": "hadoop",
-      "dateUpdated": "2019-01-05 10:02:49.861",
+      "dateUpdated": "2019-01-07 10:15:26.102",
       "config": {
         "editorSetting": {
           "language": "sql",
@@ -893,7 +893,7 @@
       "title": "样本的预测准确率",
       "text": "%sql\nselect\n`Cover_Type`, ROUND(`rat` * 100, 2) as `percent`\nfrom staticPercentTable\nwhere Cover_Type !\u003d \u0027sum_val\u0027\n\n",
       "user": "hadoop",
-      "dateUpdated": "2019-01-05 10:02:50.048",
+      "dateUpdated": "2019-01-07 10:15:26.183",
       "config": {
         "editorSetting": {
           "language": "sql",
@@ -1193,7 +1193,10 @@
   "id": "2DYGHUXQX",
   "noteParams": {},
   "noteForms": {},
-  "angularObjects": {},
+  "angularObjects": {
+    "md:shared_process": [],
+    "spark:shared_process": []
+  },
   "config": {
     "isZeppelinNotebookCronEnable": false,
     "looknfeel": "default",
