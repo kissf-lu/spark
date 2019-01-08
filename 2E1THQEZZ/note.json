@@ -42,37 +42,9 @@
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "",
-      "user": "hadoop",
-      "dateUpdated": "2019-01-07 08:49:49.575",
-      "config": {
-        "colWidth": 12.0,
-        "fontSize": 9.0,
-        "enabled": true,
-        "results": {},
-        "editorSetting": {
-          "language": "scala",
-          "editOnDblClick": false,
-          "completionKey": "TAB",
-          "completionSupport": true
-        },
-        "editorMode": "ace/mode/scala"
-      },
-      "settings": {
-        "params": {},
-        "forms": {}
-      },
-      "apps": [],
-      "jobName": "paragraph_1546592202435_-2141798248",
-      "id": "20190104-165642_314544001",
-      "dateCreated": "2019-01-04 16:56:42.435",
-      "status": "READY",
-      "progressUpdateIntervalMs": 500
-    },
-    {
       "text": "// hdfs 路径\nval dir_base \u003d \"hdfs:///user/hadoop/spark/kddcup\"\n\n\nval data \u003d spark.read.\n      option(\"inferSchema\", true).\n      option(\"header\", false).\n      csv(s\"${dir_base}/kddcup.data\").\n      toDF(\n        \"duration\", \"protocol_type\", \"service\", \"flag\",\n        \"src_bytes\", \"dst_bytes\", \"land\", \"wrong_fragment\", \"urgent\",\n        \"hot\", \"num_failed_logins\", \"logged_in\", \"num_compromised\",\n        \"root_shell\", \"su_attempted\", \"num_root\", \"num_file_creations\",\n        \"num_shells\", \"num_access_files\", \"num_outbound_cmds\",\n        \"is_host_login\", \"is_guest_login\", \"count\", \"srv_count\",\n        \"serror_rate\", \"srv_serror_rate\", \"rerror_rate\", \"srv_rerror_rate\",\n        \"same_srv_rate\", \"diff_srv_rate\", \"srv_diff_host_rate\",\n        \"dst_host_count\", \"dst_host_srv_count\",\n        \"dst_host_same_srv_rate\", \"dst_host_diff_srv_rate\",\n        \"dst_host_same_src_port_rate\", \"dst_host_srv_diff_host_rate\",\n        \"dst_host_serror_rate\", \"dst_host_srv_serror_rate\",\n        \"dst_host_rerror_rate\", \"dst_host_srv_rerror_rate\",\n        \"label\")\n\ndata.cache()\n\n",
       "user": "hadoop",
-      "dateUpdated": "2019-01-07 14:35:01.529",
+      "dateUpdated": "2019-01-08 09:31:27.866",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -84,7 +56,8 @@
           "completionKey": "TAB",
           "completionSupport": true
         },
-        "editorMode": "ace/mode/scala"
+        "editorMode": "ace/mode/scala",
+        "editorHide": false
       },
       "settings": {
         "params": {},
@@ -95,7 +68,7 @@
         "msg": [
           {
             "type": "TEXT",
-            "data": "dir_base: String \u003d hdfs:///user/hadoop/spark/kddcup\ndata: org.apache.spark.sql.DataFrame \u003d [duration: int, protocol_type: string ... 40 more fields]\nres74: data.type \u003d [duration: int, protocol_type: string ... 40 more fields]\n"
+            "data": "dir_base: String \u003d hdfs:///user/hadoop/spark/kddcup\ndata: org.apache.spark.sql.DataFrame \u003d [duration: int, protocol_type: string ... 40 more fields]\nres10: data.type \u003d [duration: int, protocol_type: string ... 40 more fields]\n"
           }
         ]
       },
@@ -106,8 +79,8 @@
           "tooltip": "View in Spark web UI",
           "group": "spark",
           "values": [
-            "http://master:4040/jobs/job?id\u003d210",
-            "http://master:4040/jobs/job?id\u003d211"
+            "http://master:4040/jobs/job?id\u003d3",
+            "http://master:4040/jobs/job?id\u003d4"
           ],
           "interpreterSettingId": "spark"
         }
@@ -116,15 +89,15 @@
       "jobName": "paragraph_1546823233979_2019666342",
       "id": "20190107-090713_1348174779",
       "dateCreated": "2019-01-07 09:07:13.980",
-      "dateStarted": "2019-01-07 14:35:01.542",
-      "dateFinished": "2019-01-07 14:35:27.126",
+      "dateStarted": "2019-01-08 09:31:27.889",
+      "dateFinished": "2019-01-08 09:32:19.622",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "data.select(\"label\").groupBy(\"label\").count().orderBy($\"count\".desc).show(15)\n",
       "user": "hadoop",
-      "dateUpdated": "2019-01-07 09:17:51.185",
+      "dateUpdated": "2019-01-08 09:36:31.076",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -158,7 +131,7 @@
           "tooltip": "View in Spark web UI",
           "group": "spark",
           "values": [
-            "http://master:4040/jobs/job?id\u003d209"
+            "http://master:4040/jobs/job?id\u003d6"
           ],
           "interpreterSettingId": "spark"
         }
@@ -167,47 +140,8 @@
       "jobName": "paragraph_1546823438940_1838593709",
       "id": "20190107-091038_1366215404",
       "dateCreated": "2019-01-07 09:10:38.940",
-      "dateStarted": "2019-01-07 09:17:37.082",
-      "dateFinished": "2019-01-07 09:17:38.337",
-      "status": "FINISHED",
-      "progressUpdateIntervalMs": 500
-    },
-    {
-      "text": "spark.sparkContext()",
-      "user": "hadoop",
-      "dateUpdated": "2019-01-07 14:32:07.689",
-      "config": {
-        "colWidth": 12.0,
-        "fontSize": 9.0,
-        "enabled": true,
-        "results": {},
-        "editorSetting": {
-          "language": "scala",
-          "editOnDblClick": false,
-          "completionKey": "TAB",
-          "completionSupport": true
-        },
-        "editorMode": "ace/mode/scala"
-      },
-      "settings": {
-        "params": {},
-        "forms": {}
-      },
-      "results": {
-        "code": "SUCCESS",
-        "msg": [
-          {
-            "type": "TEXT",
-            "data": "res71: org.apache.spark.sql.SparkSession \u003d org.apache.spark.sql.SparkSession@76f2e3a6\n"
-          }
-        ]
-      },
-      "apps": [],
-      "jobName": "paragraph_1546823524012_-709735290",
-      "id": "20190107-091204_1961476104",
-      "dateCreated": "2019-01-07 09:12:04.013",
-      "dateStarted": "2019-01-07 14:31:38.574",
-      "dateFinished": "2019-01-07 14:31:38.868",
+      "dateStarted": "2019-01-08 09:36:31.101",
+      "dateFinished": "2019-01-08 09:36:33.197",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
