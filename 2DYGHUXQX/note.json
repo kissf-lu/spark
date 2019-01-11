@@ -3,7 +3,7 @@
     {
       "text": "%md \n\n### \u003ccenter\u003eSpark ML 机器学习LAB- 森林植被预测\u003c/center\u003e\n\n---",
       "user": "hadoop",
-      "dateUpdated": "2019-01-04 09:43:13.721",
+      "dateUpdated": "2019-01-09 17:25:02.817",
       "config": {
         "tableHide": false,
         "editorSetting": {
@@ -36,8 +36,8 @@
       "jobName": "paragraph_1546563386621_2030111969",
       "id": "20181229-154554_1028883481",
       "dateCreated": "2019-01-04 08:56:26.621",
-      "dateStarted": "2019-01-04 09:43:07.628",
-      "dateFinished": "2019-01-04 09:43:10.188",
+      "dateStarted": "2019-01-09 17:25:02.855",
+      "dateFinished": "2019-01-09 17:25:02.860",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -45,7 +45,7 @@
       "title": " 初始化环境",
       "text": "import scala.util.Random\n\nimport org.apache.spark.sql.functions._\nimport org.apache.spark.sql.DataFrame\n\nimport org.apache.spark.ml.{Pipeline, PipelineModel}\nimport org.apache.spark.ml.linalg.{Vector, Vectors}\nimport org.apache.spark.ml.feature.{VectorIndexer, VectorAssembler}\nimport org.apache.spark.ml.classification.{DecisionTreeClassifier, RandomForestClassifier, RandomForestClassificationModel}\n\nimport org.apache.spark.ml.tuning.{ParamGridBuilder, TrainValidationSplit}\nimport org.apache.spark.ml.evaluation.MulticlassClassificationEvaluator\n",
       "user": "hadoop",
-      "dateUpdated": "2019-01-07 09:10:19.780",
+      "dateUpdated": "2019-01-09 17:25:02.953",
       "config": {
         "tableHide": false,
         "editorSetting": {
@@ -57,7 +57,7 @@
         "colWidth": 12.0,
         "editorMode": "ace/mode/scala",
         "fontSize": 9.0,
-        "editorHide": true,
+        "editorHide": false,
         "title": true,
         "results": {},
         "enabled": true
@@ -79,8 +79,8 @@
       "jobName": "paragraph_1546563386625_1633044892",
       "id": "20181229-155155_182595759",
       "dateCreated": "2019-01-04 08:56:26.625",
-      "dateStarted": "2019-01-04 09:45:36.208",
-      "dateFinished": "2019-01-04 09:45:52.912",
+      "dateStarted": "2019-01-09 17:25:02.983",
+      "dateFinished": "2019-01-09 17:25:19.915",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -88,7 +88,7 @@
       "title": "HDFS 数据文件路径配置",
       "text": "// hdfs 路径\nval dir_base \u003d \"hdfs:///user/hadoop/spark/covtype\"\nval dataWithoutHeaded \u003d spark.read.\n  option(\"inferSchema\", true).\n  option(\"header\", false).\n  csv(s\"${dir_base}/covtype.data\")\n  \n\n\n",
       "user": "hadoop",
-      "dateUpdated": "2019-01-07 10:15:43.746",
+      "dateUpdated": "2019-01-09 17:25:20.001",
       "config": {
         "tableHide": false,
         "editorSetting": {
@@ -118,12 +118,25 @@
           }
         ]
       },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            "http://master:4040/jobs/job?id\u003d0",
+            "http://master:4040/jobs/job?id\u003d1"
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
       "apps": [],
       "jobName": "paragraph_1546563386626_944350714",
       "id": "20181229-155318_361099773",
       "dateCreated": "2019-01-04 08:56:26.626",
-      "dateStarted": "2019-01-04 09:45:50.331",
-      "dateFinished": "2019-01-04 09:46:08.916",
+      "dateStarted": "2019-01-09 17:25:20.031",
+      "dateFinished": "2019-01-09 17:25:37.072",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -131,7 +144,7 @@
       "title": "数据集的表头名制作",
       "text": "val colNames \u003d Seq(\n    \"Elevation\", \"Aspect\", \"Slope\",\n    \"Horizontal_Distance_To_Hydrology\", \"Vertical_Distance_To_Hydrology\",\n    \"Horizontal_Distance_To_Roadways\",\n    \"Hillshade_9am\", \"Hillshade_Noon\", \"Hillshade_3pm\", \"Horizontal_Distance_To_Fire_Points\"\n) ++ ((0 until 4).map(i \u003d\u003e s\"Wilderness_Area_$i\")\n) ++ ((0 until 40).map(i \u003d\u003e s\"Soil_Type_$i\")\n) ++ Seq(\"Cover_Type\")\nval data \u003d dataWithoutHeaded.\n  toDF(colNames:_*).\n  withColumn(\"Cover_Type\", $\"Cover_Type\".cast(\"double\"))\n  ",
       "user": "hadoop",
-      "dateUpdated": "2019-01-04 09:45:55.693",
+      "dateUpdated": "2019-01-09 17:25:37.151",
       "config": {
         "tableHide": false,
         "editorSetting": {
@@ -143,7 +156,7 @@
         "colWidth": 6.0,
         "editorMode": "ace/mode/scala",
         "fontSize": 9.0,
-        "editorHide": true,
+        "editorHide": false,
         "title": true,
         "results": {},
         "enabled": true
@@ -165,8 +178,8 @@
       "jobName": "paragraph_1546563386627_-1188784158",
       "id": "20190101-155633_944444497",
       "dateCreated": "2019-01-04 08:56:26.627",
-      "dateStarted": "2019-01-04 09:45:55.722",
-      "dateFinished": "2019-01-04 09:46:10.497",
+      "dateStarted": "2019-01-09 17:25:37.196",
+      "dateFinished": "2019-01-09 17:25:39.441",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -174,7 +187,7 @@
       "title": "函数定义",
       "text": "// --------------------------- 数据的转换函数 ------------------------\n\n/*\n数据的多列转换为非热键的单列数据类型：\na: Wilderness_Area 野地类型\nb: Soil_Type 土壤类型\n**/ \n\ndef unencodeOneHot(data: DataFrame): DataFrame \u003d {\n    // 二进制向量转换为 OneHot编码： 1.0的索引值为单点数据： (0, 0, 1, 0, 0) -\u003e 2.0\n    val unhotUDF \u003d udf((vec: Vector) \u003d\u003e vec.toArray.indexOf(1.0).toDouble)\n    // \n    val wildernessCols \u003d (0 until 4).map(i \u003d\u003e s\"Wilderness_Area_$i\").toArray\n    \n    // 获取野地类型\n    val wildernessAssembler \u003d new VectorAssembler().\n      setInputCols(wildernessCols).\n      setOutputCol(\"wilderness\")\n    // 获取二进制向量的， 丢弃wilderness的\n    val withWilderness \u003d wildernessAssembler.transform(data).\n      drop(wildernessCols:_*).\n      withColumn(\"wilderness\", unhotUDF($\"wilderness\"))\n    \n    // 转换二进制土壤类型指标为单值指标\n    val soilCols \u003d (0 until 40).map(i \u003d\u003e s\"Soil_Type_$i\").toArray\n    val soilAssembler \u003d new VectorAssembler().\n      setInputCols(soilCols).\n      setOutputCol(\"soil\")\n    soilAssembler.transform(withWilderness).\n      drop(soilCols:_*).\n      withColumn(\"soil\", unhotUDF($\"soil\"))  // 获取(0, ..., 1.0, 0, ..) -\u003e i i为1.0的索引值\n    \n}\n\n// -------------------------- 评估函数---------------------------------\n\n/*宽表转换为长表\nds: 需要转换的DF数据\n\ncol: 转换的列列表\n**/\ndef getTDataset(ds: DataFrame, col: Array[String]): DataFrame \u003d {\n    val dsSch \u003d ds.schema\n    ds.flatMap(r \u003d\u003e {\n      (0 until r.size).map(i \u003d\u003e {\n        (dsSch(i).name, r.getLong(i))\n      })\n    }).toDF(col:_*)\n}\n\n/*提取agg聚合函数的col名，将聚合的表头替换为原始的列表表头\n\n如： sum(col1) -\u003e col1, max(col2) -\u003e col2\n\n**/\ndef aggCol2Col(col: String) \u003d {\n    val reg \u003d raw\"(\\D+)\\((\\w+)\\)\".r\n    col match {\n        case reg(_, k, _*) \u003d\u003e k\n    }\n}\n\n\n/*获取预测数据的预测只与正确值同统计矩阵\n\nlabelRange： 测试标签的取值范围列表，用于pivot函数的lable输入参数\n**/\ndef getPredictionCount(data: DataFrame, label: String, labelRange: Array[Int]): DataFrame \u003d {\n    data.groupBy(label).\n      pivot(\"prediction\", labelRange).\n      count.na.fill(0.0).orderBy(label)\n}\n\n/*获取DF数值列的纵向和统计结果\nfunStr: 统计表表头的转换函数： 比如aggCol2Col函数，提取原始表名\n**/\ndef getAggRowDF(data: DataFrame, funStr: String\u003d\"sum\") \u003d {\n  // 数字特征的预测结果列\n  val colName \u003d data.columns.tail\n  // sum 聚合\n  val sumCols \u003d data.agg(colName.map(i \u003d\u003e s\"$i\" -\u003e funStr).toMap)\n  // 表头替换 添加sum行表头\n  sumCols.\n    toDF(sumCols.columns.map(aggCol2Col):_*)\n}\n\n\n\n\n",
       "user": "hadoop",
-      "dateUpdated": "2019-01-04 09:46:38.742",
+      "dateUpdated": "2019-01-09 17:25:39.498",
       "config": {
         "tableHide": false,
         "editorSetting": {
@@ -208,8 +221,8 @@
       "jobName": "paragraph_1546563386627_512073214",
       "id": "20190101-154915_2061646246",
       "dateCreated": "2019-01-04 08:56:26.627",
-      "dateStarted": "2019-01-04 09:46:38.766",
-      "dateFinished": "2019-01-04 09:46:41.952",
+      "dateStarted": "2019-01-09 17:25:39.554",
+      "dateFinished": "2019-01-09 17:25:42.869",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -217,7 +230,7 @@
       "title": "数据集划分: 9 ： 1 划分训练数据与测试数据",
       "text": "// traindata and testdata split\n\nval Array(trainData, testData) \u003d data.randomSplit(Array(0.9, 0.1))\n\n// cache data\ntrainData.cache\ntestData.cache\n",
       "user": "hadoop",
-      "dateUpdated": "2019-01-04 09:47:04.189",
+      "dateUpdated": "2019-01-09 17:25:42.956",
       "config": {
         "tableHide": false,
         "editorSetting": {
@@ -243,7 +256,7 @@
         "msg": [
           {
             "type": "TEXT",
-            "data": "trainData: org.apache.spark.sql.Dataset[org.apache.spark.sql.Row] \u003d [Elevation: int, Aspect: int ... 53 more fields]\ntestData: org.apache.spark.sql.Dataset[org.apache.spark.sql.Row] \u003d [Elevation: int, Aspect: int ... 53 more fields]\nres20: trainData.type \u003d [Elevation: int, Aspect: int ... 53 more fields]\nres21: testData.type \u003d [Elevation: int, Aspect: int ... 53 more fields]\n"
+            "data": "trainData: org.apache.spark.sql.Dataset[org.apache.spark.sql.Row] \u003d [Elevation: int, Aspect: int ... 53 more fields]\ntestData: org.apache.spark.sql.Dataset[org.apache.spark.sql.Row] \u003d [Elevation: int, Aspect: int ... 53 more fields]\nres18: trainData.type \u003d [Elevation: int, Aspect: int ... 53 more fields]\nres19: testData.type \u003d [Elevation: int, Aspect: int ... 53 more fields]\n"
           }
         ]
       },
@@ -251,8 +264,8 @@
       "jobName": "paragraph_1546563386628_1960282659",
       "id": "20190101-155007_993786457",
       "dateCreated": "2019-01-04 08:56:26.628",
-      "dateStarted": "2019-01-04 09:47:04.212",
-      "dateFinished": "2019-01-04 09:47:05.873",
+      "dateStarted": "2019-01-09 17:25:42.982",
+      "dateFinished": "2019-01-09 17:25:44.633",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -260,7 +273,7 @@
       "title": "训练数据 和 测试数据的数据转换",
       "text": "// 编码转换\nval unencTrainData \u003d unencodeOneHot(trainData)\nval unencTestData \u003d unencodeOneHot(testData)\n",
       "user": "hadoop",
-      "dateUpdated": "2019-01-04 09:47:08.841",
+      "dateUpdated": "2019-01-09 17:25:44.681",
       "config": {
         "tableHide": false,
         "editorSetting": {
@@ -294,8 +307,8 @@
       "jobName": "paragraph_1546563386628_-1182313286",
       "id": "20181229-155244_1250204333",
       "dateCreated": "2019-01-04 08:56:26.628",
-      "dateStarted": "2019-01-04 09:47:08.867",
-      "dateFinished": "2019-01-04 09:47:09.708",
+      "dateStarted": "2019-01-09 17:25:44.724",
+      "dateFinished": "2019-01-09 17:25:45.570",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -303,7 +316,7 @@
       "title": "pipeline 管道转换配置",
       "text": "// 特征向量转换器\nval assembler \u003d new VectorAssembler().\n  setInputCols(unencTrainData.columns.filter(_ !\u003d \"Cover_Type\")).\n  setOutputCol(\"featureVector\")\n// 特质分类转换器\nval indexer \u003d new VectorIndexer().\n  setMaxCategories(40).\n  setInputCol(\"featureVector\").\n  setOutputCol(\"indexedVector\")\n// 随机数分类器\nval classifier \u003d new RandomForestClassifier().\n  setSeed(Random.nextLong).\n  setLabelCol(\"Cover_Type\").\n  setFeaturesCol(\"indexedVector\").\n  setPredictionCol(\"prediction\").\n  setImpurity(\"entropy\").\n  setMaxDepth(20).\n  setMaxBins(220)\n\n\nval pipeline \u003d new Pipeline().setStages(Array(assembler, indexer, classifier))\n",
       "user": "hadoop",
-      "dateUpdated": "2019-01-04 09:47:12.918",
+      "dateUpdated": "2019-01-09 17:25:45.623",
       "config": {
         "tableHide": false,
         "editorSetting": {
@@ -329,7 +342,7 @@
         "msg": [
           {
             "type": "TEXT",
-            "data": "assembler: org.apache.spark.ml.feature.VectorAssembler \u003d vecAssembler_7e0ff9a30e80\nindexer: org.apache.spark.ml.feature.VectorIndexer \u003d vecIdx_a58ef868bfe2\nclassifier: org.apache.spark.ml.classification.RandomForestClassifier \u003d rfc_ed9332e43726\npipeline: org.apache.spark.ml.Pipeline \u003d pipeline_b13c842ac794\n"
+            "data": "assembler: org.apache.spark.ml.feature.VectorAssembler \u003d vecAssembler_ab6cc1c86e48\nindexer: org.apache.spark.ml.feature.VectorIndexer \u003d vecIdx_cbfb5e0ab3e3\nclassifier: org.apache.spark.ml.classification.RandomForestClassifier \u003d rfc_5dd6d5196f6d\npipeline: org.apache.spark.ml.Pipeline \u003d pipeline_0cd19edc320d\n"
           }
         ]
       },
@@ -337,8 +350,8 @@
       "jobName": "paragraph_1546563386629_1847011714",
       "id": "20190101-110359_531644912",
       "dateCreated": "2019-01-04 08:56:26.629",
-      "dateStarted": "2019-01-04 09:47:12.946",
-      "dateFinished": "2019-01-04 09:47:14.145",
+      "dateStarted": "2019-01-09 17:25:45.683",
+      "dateFinished": "2019-01-09 17:25:46.927",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -346,9 +359,9 @@
       "title": "训练数据的多参数拟合",
       "text": "val paramGrid \u003d new ParamGridBuilder().\n  addGrid(classifier.minInfoGain, Seq(0.0, 0.05)).\n  addGrid(classifier.numTrees, Seq(1, 10)).\n  build()\n\nval multiclassEval \u003d new MulticlassClassificationEvaluator().\n  setLabelCol(\"Cover_Type\").\n  setPredictionCol(\"prediction\").\n  setMetricName(\"accuracy\")\n\nval validator \u003d new TrainValidationSplit().\n  setSeed(Random.nextLong).\n  setEstimator(pipeline).\n  setEvaluator(multiclassEval).\n  setEstimatorParamMaps(paramGrid).\n  setTrainRatio(0.9)\n\nval validatorModel \u003d validator.fit(unencTrainData)\n\n",
       "user": "hadoop",
-      "dateUpdated": "2019-01-04 09:47:32.012",
+      "dateUpdated": "2019-01-09 17:25:46.976",
       "config": {
-        "tableHide": true,
+        "tableHide": false,
         "editorSetting": {
           "language": "scala",
           "editOnDblClick": false,
@@ -372,16 +385,214 @@
         "msg": [
           {
             "type": "TEXT",
-            "data": "paramGrid: Array[org.apache.spark.ml.param.ParamMap] \u003d\nArray({\n\trfc_ed9332e43726-minInfoGain: 0.0,\n\trfc_ed9332e43726-numTrees: 1\n}, {\n\trfc_ed9332e43726-minInfoGain: 0.05,\n\trfc_ed9332e43726-numTrees: 1\n}, {\n\trfc_ed9332e43726-minInfoGain: 0.0,\n\trfc_ed9332e43726-numTrees: 10\n}, {\n\trfc_ed9332e43726-minInfoGain: 0.05,\n\trfc_ed9332e43726-numTrees: 10\n})\nmulticlassEval: org.apache.spark.ml.evaluation.MulticlassClassificationEvaluator \u003d mcEval_75ff1e402ed0\nvalidator: org.apache.spark.ml.tuning.TrainValidationSplit \u003d tvs_f64fcbf0f666\nvalidatorModel: org.apache.spark.ml.tuning.TrainValidationSplitModel \u003d tvs_f64fcbf0f666\n"
+            "data": "paramGrid: Array[org.apache.spark.ml.param.ParamMap] \u003d\nArray({\n\trfc_5dd6d5196f6d-minInfoGain: 0.0,\n\trfc_5dd6d5196f6d-numTrees: 1\n}, {\n\trfc_5dd6d5196f6d-minInfoGain: 0.05,\n\trfc_5dd6d5196f6d-numTrees: 1\n}, {\n\trfc_5dd6d5196f6d-minInfoGain: 0.0,\n\trfc_5dd6d5196f6d-numTrees: 10\n}, {\n\trfc_5dd6d5196f6d-minInfoGain: 0.05,\n\trfc_5dd6d5196f6d-numTrees: 10\n})\nmulticlassEval: org.apache.spark.ml.evaluation.MulticlassClassificationEvaluator \u003d mcEval_ad1652b32024\nvalidator: org.apache.spark.ml.tuning.TrainValidationSplit \u003d tvs_58e1753ae6b4\nvalidatorModel: org.apache.spark.ml.tuning.TrainValidationSplitModel \u003d tvs_58e1753ae6b4\n"
           }
         ]
+      },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            "http://master:4040/jobs/job?id\u003d2",
+            "http://master:4040/jobs/job?id\u003d3",
+            "http://master:4040/jobs/job?id\u003d4",
+            "http://master:4040/jobs/job?id\u003d5",
+            "http://master:4040/jobs/job?id\u003d6",
+            "http://master:4040/jobs/job?id\u003d7",
+            "http://master:4040/jobs/job?id\u003d8",
+            "http://master:4040/jobs/job?id\u003d9",
+            "http://master:4040/jobs/job?id\u003d10",
+            "http://master:4040/jobs/job?id\u003d11",
+            "http://master:4040/jobs/job?id\u003d12",
+            "http://master:4040/jobs/job?id\u003d13",
+            "http://master:4040/jobs/job?id\u003d14",
+            "http://master:4040/jobs/job?id\u003d15",
+            "http://master:4040/jobs/job?id\u003d16",
+            "http://master:4040/jobs/job?id\u003d17",
+            "http://master:4040/jobs/job?id\u003d18",
+            "http://master:4040/jobs/job?id\u003d19",
+            "http://master:4040/jobs/job?id\u003d20",
+            "http://master:4040/jobs/job?id\u003d21",
+            "http://master:4040/jobs/job?id\u003d22",
+            "http://master:4040/jobs/job?id\u003d23",
+            "http://master:4040/jobs/job?id\u003d24",
+            "http://master:4040/jobs/job?id\u003d25",
+            "http://master:4040/jobs/job?id\u003d26",
+            "http://master:4040/jobs/job?id\u003d27",
+            "http://master:4040/jobs/job?id\u003d28",
+            "http://master:4040/jobs/job?id\u003d29",
+            "http://master:4040/jobs/job?id\u003d30",
+            "http://master:4040/jobs/job?id\u003d31",
+            "http://master:4040/jobs/job?id\u003d32",
+            "http://master:4040/jobs/job?id\u003d33",
+            "http://master:4040/jobs/job?id\u003d34",
+            "http://master:4040/jobs/job?id\u003d35",
+            "http://master:4040/jobs/job?id\u003d36",
+            "http://master:4040/jobs/job?id\u003d37",
+            "http://master:4040/jobs/job?id\u003d38",
+            "http://master:4040/jobs/job?id\u003d39",
+            "http://master:4040/jobs/job?id\u003d40",
+            "http://master:4040/jobs/job?id\u003d41",
+            "http://master:4040/jobs/job?id\u003d42",
+            "http://master:4040/jobs/job?id\u003d43",
+            "http://master:4040/jobs/job?id\u003d44",
+            "http://master:4040/jobs/job?id\u003d45",
+            "http://master:4040/jobs/job?id\u003d46",
+            "http://master:4040/jobs/job?id\u003d47",
+            "http://master:4040/jobs/job?id\u003d48",
+            "http://master:4040/jobs/job?id\u003d49",
+            "http://master:4040/jobs/job?id\u003d50",
+            "http://master:4040/jobs/job?id\u003d51",
+            "http://master:4040/jobs/job?id\u003d52",
+            "http://master:4040/jobs/job?id\u003d53",
+            "http://master:4040/jobs/job?id\u003d54",
+            "http://master:4040/jobs/job?id\u003d55",
+            "http://master:4040/jobs/job?id\u003d56",
+            "http://master:4040/jobs/job?id\u003d57",
+            "http://master:4040/jobs/job?id\u003d58",
+            "http://master:4040/jobs/job?id\u003d59",
+            "http://master:4040/jobs/job?id\u003d60",
+            "http://master:4040/jobs/job?id\u003d61",
+            "http://master:4040/jobs/job?id\u003d62",
+            "http://master:4040/jobs/job?id\u003d63",
+            "http://master:4040/jobs/job?id\u003d64",
+            "http://master:4040/jobs/job?id\u003d65",
+            "http://master:4040/jobs/job?id\u003d66",
+            "http://master:4040/jobs/job?id\u003d67",
+            "http://master:4040/jobs/job?id\u003d68",
+            "http://master:4040/jobs/job?id\u003d69",
+            "http://master:4040/jobs/job?id\u003d70",
+            "http://master:4040/jobs/job?id\u003d71",
+            "http://master:4040/jobs/job?id\u003d72",
+            "http://master:4040/jobs/job?id\u003d73",
+            "http://master:4040/jobs/job?id\u003d74",
+            "http://master:4040/jobs/job?id\u003d75",
+            "http://master:4040/jobs/job?id\u003d76",
+            "http://master:4040/jobs/job?id\u003d77",
+            "http://master:4040/jobs/job?id\u003d78",
+            "http://master:4040/jobs/job?id\u003d79",
+            "http://master:4040/jobs/job?id\u003d80",
+            "http://master:4040/jobs/job?id\u003d81",
+            "http://master:4040/jobs/job?id\u003d82",
+            "http://master:4040/jobs/job?id\u003d83",
+            "http://master:4040/jobs/job?id\u003d84",
+            "http://master:4040/jobs/job?id\u003d85",
+            "http://master:4040/jobs/job?id\u003d86",
+            "http://master:4040/jobs/job?id\u003d87",
+            "http://master:4040/jobs/job?id\u003d88",
+            "http://master:4040/jobs/job?id\u003d89",
+            "http://master:4040/jobs/job?id\u003d90",
+            "http://master:4040/jobs/job?id\u003d91",
+            "http://master:4040/jobs/job?id\u003d92",
+            "http://master:4040/jobs/job?id\u003d93",
+            "http://master:4040/jobs/job?id\u003d94",
+            "http://master:4040/jobs/job?id\u003d95",
+            "http://master:4040/jobs/job?id\u003d96",
+            "http://master:4040/jobs/job?id\u003d97",
+            "http://master:4040/jobs/job?id\u003d98",
+            "http://master:4040/jobs/job?id\u003d99",
+            "http://master:4040/jobs/job?id\u003d100",
+            "http://master:4040/jobs/job?id\u003d101",
+            "http://master:4040/jobs/job?id\u003d102",
+            "http://master:4040/jobs/job?id\u003d103",
+            "http://master:4040/jobs/job?id\u003d104",
+            "http://master:4040/jobs/job?id\u003d105",
+            "http://master:4040/jobs/job?id\u003d106",
+            "http://master:4040/jobs/job?id\u003d107",
+            "http://master:4040/jobs/job?id\u003d108",
+            "http://master:4040/jobs/job?id\u003d109",
+            "http://master:4040/jobs/job?id\u003d110",
+            "http://master:4040/jobs/job?id\u003d111",
+            "http://master:4040/jobs/job?id\u003d112",
+            "http://master:4040/jobs/job?id\u003d113",
+            "http://master:4040/jobs/job?id\u003d114",
+            "http://master:4040/jobs/job?id\u003d115",
+            "http://master:4040/jobs/job?id\u003d116",
+            "http://master:4040/jobs/job?id\u003d117",
+            "http://master:4040/jobs/job?id\u003d118",
+            "http://master:4040/jobs/job?id\u003d119",
+            "http://master:4040/jobs/job?id\u003d120",
+            "http://master:4040/jobs/job?id\u003d121",
+            "http://master:4040/jobs/job?id\u003d122",
+            "http://master:4040/jobs/job?id\u003d123",
+            "http://master:4040/jobs/job?id\u003d124",
+            "http://master:4040/jobs/job?id\u003d125",
+            "http://master:4040/jobs/job?id\u003d126",
+            "http://master:4040/jobs/job?id\u003d127",
+            "http://master:4040/jobs/job?id\u003d128",
+            "http://master:4040/jobs/job?id\u003d129",
+            "http://master:4040/jobs/job?id\u003d130",
+            "http://master:4040/jobs/job?id\u003d131",
+            "http://master:4040/jobs/job?id\u003d132",
+            "http://master:4040/jobs/job?id\u003d133",
+            "http://master:4040/jobs/job?id\u003d134",
+            "http://master:4040/jobs/job?id\u003d135",
+            "http://master:4040/jobs/job?id\u003d136",
+            "http://master:4040/jobs/job?id\u003d137",
+            "http://master:4040/jobs/job?id\u003d138",
+            "http://master:4040/jobs/job?id\u003d139",
+            "http://master:4040/jobs/job?id\u003d140",
+            "http://master:4040/jobs/job?id\u003d141",
+            "http://master:4040/jobs/job?id\u003d142",
+            "http://master:4040/jobs/job?id\u003d143",
+            "http://master:4040/jobs/job?id\u003d144",
+            "http://master:4040/jobs/job?id\u003d145",
+            "http://master:4040/jobs/job?id\u003d146",
+            "http://master:4040/jobs/job?id\u003d147",
+            "http://master:4040/jobs/job?id\u003d148",
+            "http://master:4040/jobs/job?id\u003d149",
+            "http://master:4040/jobs/job?id\u003d150",
+            "http://master:4040/jobs/job?id\u003d151",
+            "http://master:4040/jobs/job?id\u003d152",
+            "http://master:4040/jobs/job?id\u003d153",
+            "http://master:4040/jobs/job?id\u003d154",
+            "http://master:4040/jobs/job?id\u003d155",
+            "http://master:4040/jobs/job?id\u003d156",
+            "http://master:4040/jobs/job?id\u003d157",
+            "http://master:4040/jobs/job?id\u003d158",
+            "http://master:4040/jobs/job?id\u003d159",
+            "http://master:4040/jobs/job?id\u003d160",
+            "http://master:4040/jobs/job?id\u003d161",
+            "http://master:4040/jobs/job?id\u003d162",
+            "http://master:4040/jobs/job?id\u003d163",
+            "http://master:4040/jobs/job?id\u003d164",
+            "http://master:4040/jobs/job?id\u003d165",
+            "http://master:4040/jobs/job?id\u003d166",
+            "http://master:4040/jobs/job?id\u003d167",
+            "http://master:4040/jobs/job?id\u003d168",
+            "http://master:4040/jobs/job?id\u003d169",
+            "http://master:4040/jobs/job?id\u003d170",
+            "http://master:4040/jobs/job?id\u003d171",
+            "http://master:4040/jobs/job?id\u003d172",
+            "http://master:4040/jobs/job?id\u003d173",
+            "http://master:4040/jobs/job?id\u003d174",
+            "http://master:4040/jobs/job?id\u003d175",
+            "http://master:4040/jobs/job?id\u003d176",
+            "http://master:4040/jobs/job?id\u003d177",
+            "http://master:4040/jobs/job?id\u003d178",
+            "http://master:4040/jobs/job?id\u003d179",
+            "http://master:4040/jobs/job?id\u003d180",
+            "http://master:4040/jobs/job?id\u003d181",
+            "http://master:4040/jobs/job?id\u003d182",
+            "http://master:4040/jobs/job?id\u003d183",
+            "http://master:4040/jobs/job?id\u003d184",
+            "http://master:4040/jobs/job?id\u003d185",
+            "http://master:4040/jobs/job?id\u003d186",
+            "http://master:4040/jobs/job?id\u003d187",
+            "http://master:4040/jobs/job?id\u003d188"
+          ],
+          "interpreterSettingId": "spark"
+        }
       },
       "apps": [],
       "jobName": "paragraph_1546563386629_1353642972",
       "id": "20190101-160631_1443147183",
       "dateCreated": "2019-01-04 08:56:26.629",
-      "dateStarted": "2019-01-04 09:47:32.045",
-      "dateFinished": "2019-01-04 09:54:18.291",
+      "dateStarted": "2019-01-09 17:25:47.013",
+      "dateFinished": "2019-01-09 17:31:40.353",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -389,7 +600,7 @@
       "title": "从多组训练模型中获取最佳训练模型",
       "text": "val bestModel \u003d validatorModel.bestModel\n// \nval forestModel \u003d bestModel.asInstanceOf[PipelineModel].stages.last.asInstanceOf[RandomForestClassificationModel]\n// 模型参数\nforestModel.featureImportances.toArray.\n  zip(unencTrainData.columns.filter(_ !\u003d \"Cover_Type\")).\n  sorted.reverse.foreach(println)\n  ",
       "user": "hadoop",
-      "dateUpdated": "2019-01-04 09:57:12.814",
+      "dateUpdated": "2019-01-09 17:31:40.436",
       "config": {
         "tableHide": false,
         "editorSetting": {
@@ -415,7 +626,7 @@
         "msg": [
           {
             "type": "TEXT",
-            "data": "bestModel: org.apache.spark.ml.Model[_] \u003d pipeline_b13c842ac794\nforestModel: org.apache.spark.ml.classification.RandomForestClassificationModel \u003d RandomForestClassificationModel (uid\u003drfc_ed9332e43726) with 10 trees\n(0.3273348314899433,Elevation)\n(0.15856891738756348,soil)\n(0.11891287306378424,Horizontal_Distance_To_Roadways)\n(0.10490492804121232,Horizontal_Distance_To_Fire_Points)\n(0.06477154744141567,wilderness)\n(0.048883793495656615,Horizontal_Distance_To_Hydrology)\n(0.043365363484731294,Vertical_Distance_To_Hydrology)\n(0.03234686649186845,Aspect)\n(0.029681275970792877,Hillshade_Noon)\n(0.028693333892371976,Hillshade_9am)\n(0.024866224253559704,Hillshade_3pm)\n(0.017670044987100165,Slope)\n"
+            "data": "bestModel: org.apache.spark.ml.Model[_] \u003d pipeline_0cd19edc320d\nforestModel: org.apache.spark.ml.classification.RandomForestClassificationModel \u003d RandomForestClassificationModel (uid\u003drfc_5dd6d5196f6d) with 10 trees\n(0.3569301997855663,Elevation)\n(0.1347554917096339,soil)\n(0.1098565191593875,Horizontal_Distance_To_Roadways)\n(0.10650120708984487,Horizontal_Distance_To_Fire_Points)\n(0.061950405310615686,wilderness)\n(0.049113808558834224,Horizontal_Distance_To_Hydrology)\n(0.043182722548452505,Vertical_Distance_To_Hydrology)\n(0.03114142627456698,Aspect)\n(0.030761567785939102,Hillshade_Noon)\n(0.028491712463402857,Hillshade_9am)\n(0.025833706492854623,Hillshade_3pm)\n(0.021481232820901617,Slope)\n"
           }
         ]
       },
@@ -423,15 +634,15 @@
       "jobName": "paragraph_1546563386630_-1366017958",
       "id": "20190101-160853_1978815652",
       "dateCreated": "2019-01-04 08:56:26.630",
-      "dateStarted": "2019-01-04 09:57:12.846",
-      "dateFinished": "2019-01-04 09:57:13.986",
+      "dateStarted": "2019-01-09 17:31:40.482",
+      "dateFinished": "2019-01-09 17:31:41.752",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\n##  \u003ccenter\u003e模型的测试集合验证 与 模型评估\u003c/center\u003e\n---",
       "user": "hadoop",
-      "dateUpdated": "2019-01-04 09:57:19.582",
+      "dateUpdated": "2019-01-09 17:31:41.772",
       "config": {
         "tableHide": false,
         "editorSetting": {
@@ -464,8 +675,8 @@
       "jobName": "paragraph_1546563386630_23122976",
       "id": "20190101-164757_1725714885",
       "dateCreated": "2019-01-04 08:56:26.630",
-      "dateStarted": "2019-01-04 09:57:19.582",
-      "dateFinished": "2019-01-04 09:57:19.588",
+      "dateStarted": "2019-01-09 17:31:41.806",
+      "dateFinished": "2019-01-09 17:31:41.810",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -473,7 +684,7 @@
       "title": "测试集验证模型",
       "text": "val bstPrediction \u003d bestModel.transform(unencTestData)\n",
       "user": "hadoop",
-      "dateUpdated": "2019-01-04 09:57:23.862",
+      "dateUpdated": "2019-01-09 17:31:41.903",
       "config": {
         "editorSetting": {
           "language": "scala",
@@ -507,8 +718,8 @@
       "jobName": "paragraph_1546563386631_629757316",
       "id": "20190101-164717_1695296736",
       "dateCreated": "2019-01-04 08:56:26.631",
-      "dateStarted": "2019-01-04 09:57:23.891",
-      "dateFinished": "2019-01-04 09:57:24.234",
+      "dateStarted": "2019-01-09 17:31:41.930",
+      "dateFinished": "2019-01-09 17:31:42.292",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -516,7 +727,7 @@
       "title": "获取测试数据集的测试结果统计",
       "text": "// 统计矩阵： 对角线为正确预测数， 非对角线为错误\nval contDF \u003d getPredictionCount(data\u003dbstPrediction, label\u003d\"Cover_Type\", labelRange\u003d(1 to 7).toArray)\n// 获取矩阵的对角线值，将结果列cross_val左联接至原始表\n\n\n// 获取对角线的数值\n// 获取统计表的正确统计值DF\nval crossValDF \u003d contDF.map(r \u003d\u003e {\n    val idx \u003d r.getDouble(0).toInt\n    (idx, r.getLong(idx))\n}).toDF(\"Type\", \"cross_val\")\n\n// -----------------------------获取矩阵的对角线值，将结果列cross_val左联接至原始表---------\nval validateModelDF \u003d contDF.\n  join(crossValDF, contDF.col(\"Cover_Type\").equalTo(crossValDF.col(\"Type\")), \"left\").\n  drop(\"Type\")\n  \n\n// ----------------------------增加纵向求和行数据------------------------------------------\nval sumTypeDF \u003d getAggRowDF(data\u003dvalidateModelDF)\n// \nval sumRowTypeDF \u003d sumTypeDF.withColumn(\"Cover_Type\", lit(\"sum_val\"))\n// // // 根据columns 名称 做 表格的行数据增加\nval sumAllTypeOfCovert \u003d validateModelDF.unionByName(sumRowTypeDF)\n\n// ---------------------------缓存中间表---------------------\n\nsumAllTypeOfCovert.cache\n\n\n// ----------------------------统计表生成---------------------\n// val contData \u003d sumAllTypeOfCovert.show\n\nval staticPercentData \u003d sumAllTypeOfCovert.\n  withColumn(\"sum_val\", $\"1\" + $\"2\" + $\"3\" + $\"4\" + $\"5\" + $\"6\" + $\"7\").\n  withColumn(\"rat\", $\"cross_val\" / $\"sum_val\")\n  \n// ------------------------ sql 注册 -------------------------\n\nstaticPercentData.registerTempTable(\"staticPercentTable\")\n\n",
       "user": "hadoop",
-      "dateUpdated": "2019-01-04 16:55:20.211",
+      "dateUpdated": "2019-01-09 17:31:42.330",
       "config": {
         "tableHide": true,
         "editorSetting": {
@@ -542,23 +753,36 @@
         "msg": [
           {
             "type": "TEXT",
-            "data": "contDF: org.apache.spark.sql.DataFrame \u003d [Cover_Type: double, 1: bigint ... 6 more fields]\ncrossValDF: org.apache.spark.sql.DataFrame \u003d [Type: int, cross_val: bigint]\nvalidateModelDF: org.apache.spark.sql.DataFrame \u003d [Cover_Type: double, 1: bigint ... 7 more fields]\nsumTypeDF: org.apache.spark.sql.DataFrame \u003d [4: bigint, 5: bigint ... 6 more fields]\nsumRowTypeDF: org.apache.spark.sql.DataFrame \u003d [4: bigint, 5: bigint ... 7 more fields]\nsumAllTypeOfCovert: org.apache.spark.sql.Dataset[org.apache.spark.sql.Row] \u003d [Cover_Type: string, 1: bigint ... 7 more fields]\nres44: sumAllTypeOfCovert.type \u003d [Cover_Type: string, 1: bigint ... 7 more fields]\nstaticPercentData: org.apache.spark.sql.DataFrame \u003d [Cover_Type: string, 1: bigint ... 9 more fields]\nwarning: there was one deprecation warning; re-run with -deprecation for details\n"
+            "data": "contDF: org.apache.spark.sql.DataFrame \u003d [Cover_Type: double, 1: bigint ... 6 more fields]\ncrossValDF: org.apache.spark.sql.DataFrame \u003d [Type: int, cross_val: bigint]\nvalidateModelDF: org.apache.spark.sql.DataFrame \u003d [Cover_Type: double, 1: bigint ... 7 more fields]\nsumTypeDF: org.apache.spark.sql.DataFrame \u003d [4: bigint, 5: bigint ... 6 more fields]\nsumRowTypeDF: org.apache.spark.sql.DataFrame \u003d [4: bigint, 5: bigint ... 7 more fields]\nsumAllTypeOfCovert: org.apache.spark.sql.Dataset[org.apache.spark.sql.Row] \u003d [Cover_Type: string, 1: bigint ... 7 more fields]\nres42: sumAllTypeOfCovert.type \u003d [Cover_Type: string, 1: bigint ... 7 more fields]\nstaticPercentData: org.apache.spark.sql.DataFrame \u003d [Cover_Type: string, 1: bigint ... 9 more fields]\nwarning: there was one deprecation warning; re-run with -deprecation for details\n"
           }
         ]
+      },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            "http://master:4040/jobs/job?id\u003d189",
+            "http://master:4040/jobs/job?id\u003d190"
+          ],
+          "interpreterSettingId": "spark"
+        }
       },
       "apps": [],
       "jobName": "paragraph_1546563386631_-140477722",
       "id": "20190101-165215_157768855",
       "dateCreated": "2019-01-04 08:56:26.631",
-      "dateStarted": "2019-01-04 09:57:27.680",
-      "dateFinished": "2019-01-04 09:59:45.915",
+      "dateStarted": "2019-01-09 17:31:42.377",
+      "dateFinished": "2019-01-09 17:32:54.466",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\n- 增加每个特征的预测结果统计\n   - cross_val: 正确预测值\n   - sum: 预测结果总计\n   - rat: 预测的正确率： cross_val / sum\n",
       "user": "hadoop",
-      "dateUpdated": "2019-01-04 09:43:56.046",
+      "dateUpdated": "2019-01-09 17:32:54.542",
       "config": {
         "tableHide": false,
         "editorSetting": {
@@ -591,8 +815,8 @@
       "jobName": "paragraph_1546563386632_1879423884",
       "id": "20190101-165250_1347405289",
       "dateCreated": "2019-01-04 08:56:26.632",
-      "dateStarted": "2019-01-04 09:43:56.046",
-      "dateFinished": "2019-01-04 09:43:56.069",
+      "dateStarted": "2019-01-09 17:32:54.571",
+      "dateFinished": "2019-01-09 17:32:54.579",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -600,7 +824,7 @@
       "title": "统计表格",
       "text": "%sql\nselect\n*\nfrom staticPercentTable\n",
       "user": "hadoop",
-      "dateUpdated": "2019-01-04 10:48:44.322",
+      "dateUpdated": "2019-01-09 17:32:54.671",
       "config": {
         "tableHide": false,
         "editorSetting": {
@@ -664,16 +888,30 @@
         "msg": [
           {
             "type": "TABLE",
-            "data": "Cover_Type\t1\t2\t3\t4\t5\t6\t7\tcross_val\tsum_val\trat\n1.0\t19829\t1348\t0\t0\t4\t1\t43\t19829\t21225\t0.934228504122497\n2.0\t679\t27531\t51\t0\t42\t30\t6\t27531\t28339\t0.9714880553301104\n3.0\t0\t62\t3397\t13\t7\t76\t0\t3397\t3555\t0.9555555555555556\n4.0\t0\t0\t26\t220\t0\t7\t0\t220\t253\t0.8695652173913043\n5.0\t17\t184\t11\t0\t800\t1\t0\t800\t1013\t0.7897334649555775\n6.0\t5\t58\t99\t16\t3\t1553\t0\t1553\t1734\t0.8956170703575548\n7.0\t96\t13\t0\t0\t0\t0\t1986\t1986\t2095\t0.9479713603818616\nsum_val\t20626\t29196\t3584\t249\t856\t1668\t2035\t55316\t58214\t0.9502181605799292\n"
+            "data": "Cover_Type\t1\t2\t3\t4\t5\t6\t7\tcross_val\tsum_val\trat\n1.0\t19601\t1334\t0\t0\t5\t2\t42\t19601\t20984\t0.9340926420129623\n2.0\t809\t27405\t39\t0\t39\t31\t6\t27405\t28329\t0.9673832468495182\n3.0\t1\t50\t3500\t14\t8\t77\t0\t3500\t3650\t0.958904109589041\n4.0\t0\t0\t32\t214\t0\t11\t0\t214\t257\t0.8326848249027238\n5.0\t3\t143\t14\t0\t764\t5\t0\t764\t929\t0.8223896663078579\n6.0\t1\t49\t123\t12\t0\t1599\t0\t1599\t1784\t0.8963004484304933\n7.0\t101\t8\t0\t0\t0\t0\t1862\t1862\t1971\t0.9446981227803145\nsum_val\t20516\t28989\t3708\t240\t816\t1725\t1910\t54945\t57904\t0.9488981762917933\n"
           }
         ]
+      },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            "http://master:4040/jobs/job?id\u003d191",
+            "http://master:4040/jobs/job?id\u003d192",
+            "http://master:4040/jobs/job?id\u003d193"
+          ],
+          "interpreterSettingId": "spark"
+        }
       },
       "apps": [],
       "jobName": "paragraph_1546563386633_-1393803092",
       "id": "20190101-174337_1620177813",
       "dateCreated": "2019-01-04 08:56:26.633",
-      "dateStarted": "2019-01-04 10:48:44.349",
-      "dateFinished": "2019-01-04 10:48:57.068",
+      "dateStarted": "2019-01-09 17:32:54.705",
+      "dateFinished": "2019-01-09 17:33:06.215",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -681,7 +919,7 @@
       "title": "测试集：分类样本数(sum) VS 预测正确样本数(cross_val)",
       "text": "%sql\nselect\n`Cover_Type`, `cross_val`, `sum_val`\nfrom staticPercentTable\nwhere Cover_Type !\u003d \u0027sum_val\u0027\n",
       "user": "hadoop",
-      "dateUpdated": "2019-01-07 10:15:26.102",
+      "dateUpdated": "2019-01-09 17:33:41.342",
       "config": {
         "editorSetting": {
           "language": "sql",
@@ -876,16 +1114,30 @@
         "msg": [
           {
             "type": "TABLE",
-            "data": "Cover_Type\tcross_val\tsum_val\n1.0\t19829\t21225\n2.0\t27531\t28339\n3.0\t3397\t3555\n4.0\t220\t253\n5.0\t800\t1013\n6.0\t1553\t1734\n7.0\t1986\t2095\n"
+            "data": "Cover_Type\tcross_val\tsum_val\n1.0\t19601\t20984\n2.0\t27405\t28329\n3.0\t3500\t3650\n4.0\t214\t257\n5.0\t764\t929\n6.0\t1599\t1784\n7.0\t1862\t1971\n"
           }
         ]
+      },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            "http://master:4040/jobs/job?id\u003d194",
+            "http://master:4040/jobs/job?id\u003d195",
+            "http://master:4040/jobs/job?id\u003d196"
+          ],
+          "interpreterSettingId": "spark"
+        }
       },
       "apps": [],
       "jobName": "paragraph_1546563386633_-1373705370",
       "id": "20190101-172310_1692614761",
       "dateCreated": "2019-01-04 08:56:26.633",
-      "dateStarted": "2019-01-04 10:49:26.264",
-      "dateFinished": "2019-01-04 10:49:34.844",
+      "dateStarted": "2019-01-09 17:33:06.342",
+      "dateFinished": "2019-01-09 17:33:14.580",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -893,7 +1145,7 @@
       "title": "样本的预测准确率",
       "text": "%sql\nselect\n`Cover_Type`, ROUND(`rat` * 100, 2) as `percent`\nfrom staticPercentTable\nwhere Cover_Type !\u003d \u0027sum_val\u0027\n\n",
       "user": "hadoop",
-      "dateUpdated": "2019-01-07 10:15:26.183",
+      "dateUpdated": "2019-01-09 17:33:41.364",
       "config": {
         "editorSetting": {
           "language": "sql",
@@ -983,16 +1235,30 @@
         "msg": [
           {
             "type": "TABLE",
-            "data": "Cover_Type\tpercent\n1.0\t93.42\n2.0\t97.15\n3.0\t95.56\n4.0\t86.96\n5.0\t78.97\n6.0\t89.56\n7.0\t94.8\n"
+            "data": "Cover_Type\tpercent\n1.0\t93.41\n2.0\t96.74\n3.0\t95.89\n4.0\t83.27\n5.0\t82.24\n6.0\t89.63\n7.0\t94.47\n"
           }
         ]
+      },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            "http://master:4040/jobs/job?id\u003d197",
+            "http://master:4040/jobs/job?id\u003d198",
+            "http://master:4040/jobs/job?id\u003d199"
+          ],
+          "interpreterSettingId": "spark"
+        }
       },
       "apps": [],
       "jobName": "paragraph_1546563386634_414325950",
       "id": "20190101-170702_497267167",
       "dateCreated": "2019-01-04 08:56:26.634",
-      "dateStarted": "2019-01-04 10:49:38.438",
-      "dateFinished": "2019-01-04 10:49:46.998",
+      "dateStarted": "2019-01-09 17:33:14.675",
+      "dateFinished": "2019-01-09 17:33:23.606",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -1000,7 +1266,7 @@
       "title": "测试样本的预测准确数(cross_val)VS样本总量(sum)",
       "text": "%sql\nselect\n`Cover_Type`, `cross_val`, `sum_val`\nfrom staticPercentTable\nwhere Cover_Type \u003d \u0027sum_val\u0027\n",
       "user": "hadoop",
-      "dateUpdated": "2019-01-04 10:50:27.630",
+      "dateUpdated": "2019-01-09 17:33:23.684",
       "config": {
         "editorSetting": {
           "language": "sql",
@@ -1090,24 +1356,50 @@
         "msg": [
           {
             "type": "TABLE",
-            "data": "Cover_Type\tcross_val\tsum_val\nsum_val\t55316\t58214\n"
+            "data": "Cover_Type\tcross_val\tsum_val\nsum_val\t54945\t57904\n"
           }
         ]
+      },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            "http://master:4040/jobs/job?id\u003d200",
+            "http://master:4040/jobs/job?id\u003d201",
+            "http://master:4040/jobs/job?id\u003d202"
+          ],
+          "interpreterSettingId": "spark"
+        }
       },
       "apps": [],
       "jobName": "paragraph_1546563386634_1004633985",
       "id": "20190101-171432_827064185",
       "dateCreated": "2019-01-04 08:56:26.634",
-      "dateStarted": "2019-01-04 10:49:48.475",
-      "dateFinished": "2019-01-04 10:49:58.183",
+      "dateStarted": "2019-01-09 17:33:23.706",
+      "dateFinished": "2019-01-09 17:33:32.070",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%sql\n",
       "user": "hadoop",
-      "dateUpdated": "2019-01-04 09:44:25.629",
-      "config": {},
+      "dateUpdated": "2019-01-09 17:33:32.113",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/sql"
+      },
       "settings": {
         "params": {},
         "forms": {}
@@ -1116,13 +1408,13 @@
       "jobName": "paragraph_1546566265628_1220099381",
       "id": "20190104-094425_947776596",
       "dateCreated": "2019-01-04 09:44:25.628",
-      "status": "READY",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "staticPercentData.show",
       "user": "hadoop",
-      "dateUpdated": "2019-01-04 15:47:04.122",
+      "dateUpdated": "2019-01-09 17:33:32.139",
       "config": {
         "editorSetting": {
           "language": "scala",
@@ -1147,23 +1439,75 @@
         "msg": [
           {
             "type": "TEXT",
-            "data": "+----------+-----+-----+----+---+---+----+----+---------+-------+------------------+\n|Cover_Type|    1|    2|   3|  4|  5|   6|   7|cross_val|sum_val|               rat|\n+----------+-----+-----+----+---+---+----+----+---------+-------+------------------+\n|       1.0|19829| 1348|   0|  0|  4|   1|  43|    19829|  21225| 0.934228504122497|\n|       2.0|  679|27531|  51|  0| 42|  30|   6|    27531|  28339|0.9714880553301104|\n|       3.0|    0|   62|3397| 13|  7|  76|   0|     3397|   3555|0.9555555555555556|\n|       4.0|    0|    0|  26|220|  0|   7|   0|      220|    253|0.8695652173913043|\n|       5.0|   17|  184|  11|  0|800|   1|   0|      800|   1013|0.7897334649555775|\n|       6.0|    5|   58|  99| 16|  3|1553|   0|     1553|   1734|0.8956170703575548|\n|       7.0|   96|   13|   0|  0|  0|   0|1986|     1986|   2095|0.9479713603818616|\n|   sum_val|20626|29196|3584|249|856|1668|2035|    55316|  58214|0.9502181605799292|\n+----------+-----+-----+----+---+---+----+----+---------+-------+------------------+\n\n"
+            "data": "+----------+-----+-----+----+---+---+----+----+---------+-------+------------------+\n|Cover_Type|    1|    2|   3|  4|  5|   6|   7|cross_val|sum_val|               rat|\n+----------+-----+-----+----+---+---+----+----+---------+-------+------------------+\n|       1.0|19601| 1334|   0|  0|  5|   2|  42|    19601|  20984|0.9340926420129623|\n|       2.0|  809|27405|  39|  0| 39|  31|   6|    27405|  28329|0.9673832468495182|\n|       3.0|    1|   50|3500| 14|  8|  77|   0|     3500|   3650| 0.958904109589041|\n|       4.0|    0|    0|  32|214|  0|  11|   0|      214|    257|0.8326848249027238|\n|       5.0|    3|  143|  14|  0|764|   5|   0|      764|    929|0.8223896663078579|\n|       6.0|    1|   49| 123| 12|  0|1599|   0|     1599|   1784|0.8963004484304933|\n|       7.0|  101|    8|   0|  0|  0|   0|1862|     1862|   1971|0.9446981227803145|\n|   sum_val|20516|28989|3708|240|816|1725|1910|    54945|  57904|0.9488981762917933|\n+----------+-----+-----+----+---+---+----+----+---------+-------+------------------+\n\n"
           }
         ]
+      },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            "http://master:4040/jobs/job?id\u003d203",
+            "http://master:4040/jobs/job?id\u003d204",
+            "http://master:4040/jobs/job?id\u003d205"
+          ],
+          "interpreterSettingId": "spark"
+        }
       },
       "apps": [],
       "jobName": "paragraph_1546563386635_262354832",
       "id": "20190101-171400_1073931274",
       "dateCreated": "2019-01-04 08:56:26.635",
-      "dateStarted": "2019-01-04 15:47:04.151",
-      "dateFinished": "2019-01-04 15:47:17.630",
+      "dateStarted": "2019-01-09 17:33:32.162",
+      "dateFinished": "2019-01-09 17:33:40.814",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "staticPercentData.cube()",
       "user": "hadoop",
-      "dateUpdated": "2019-01-04 15:48:55.903",
+      "dateUpdated": "2019-01-09 17:33:40.868",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res50: org.apache.spark.sql.RelationalGroupedDataset \u003d RelationalGroupedDataset: [grouping expressions: [], value: [Cover_Type: string, 1: bigint ... 9 more fields], type: Cube]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1546588024123_457340036",
+      "id": "20190104-154704_1664623246",
+      "dateCreated": "2019-01-04 15:47:04.123",
+      "dateStarted": "2019-01-09 17:33:40.890",
+      "dateFinished": "2019-01-09 17:33:41.267",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "user": "hadoop",
+      "dateUpdated": "2019-01-09 17:33:41.292",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -1182,10 +1526,10 @@
         "forms": {}
       },
       "apps": [],
-      "jobName": "paragraph_1546588024123_457340036",
-      "id": "20190104-154704_1664623246",
-      "dateCreated": "2019-01-04 15:47:04.123",
-      "status": "READY",
+      "jobName": "paragraph_1547022481646_2076678272",
+      "id": "20190109-162801_453689223",
+      "dateCreated": "2019-01-09 16:28:01.646",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     }
   ],
