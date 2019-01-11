@@ -44,7 +44,7 @@
     {
       "text": "// hdfs 路径\nval dir_base \u003d \"hdfs:///user/hadoop/spark/kddcup\"\n\n\nval data \u003d spark.read.\n      option(\"inferSchema\", true).\n      option(\"header\", false).\n      csv(s\"${dir_base}/kddcup.data\").\n      toDF(\n        \"duration\", \"protocol_type\", \"service\", \"flag\",\n        \"src_bytes\", \"dst_bytes\", \"land\", \"wrong_fragment\", \"urgent\",\n        \"hot\", \"num_failed_logins\", \"logged_in\", \"num_compromised\",\n        \"root_shell\", \"su_attempted\", \"num_root\", \"num_file_creations\",\n        \"num_shells\", \"num_access_files\", \"num_outbound_cmds\",\n        \"is_host_login\", \"is_guest_login\", \"count\", \"srv_count\",\n        \"serror_rate\", \"srv_serror_rate\", \"rerror_rate\", \"srv_rerror_rate\",\n        \"same_srv_rate\", \"diff_srv_rate\", \"srv_diff_host_rate\",\n        \"dst_host_count\", \"dst_host_srv_count\",\n        \"dst_host_same_srv_rate\", \"dst_host_diff_srv_rate\",\n        \"dst_host_same_src_port_rate\", \"dst_host_srv_diff_host_rate\",\n        \"dst_host_serror_rate\", \"dst_host_srv_serror_rate\",\n        \"dst_host_rerror_rate\", \"dst_host_srv_rerror_rate\",\n        \"label\")\n\ndata.cache()\n\n",
       "user": "hadoop",
-      "dateUpdated": "2019-01-08 09:31:27.866",
+      "dateUpdated": "2019-01-11 08:41:03.117",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -68,7 +68,7 @@
         "msg": [
           {
             "type": "TEXT",
-            "data": "dir_base: String \u003d hdfs:///user/hadoop/spark/kddcup\ndata: org.apache.spark.sql.DataFrame \u003d [duration: int, protocol_type: string ... 40 more fields]\nres10: data.type \u003d [duration: int, protocol_type: string ... 40 more fields]\n"
+            "data": "dir_base: String \u003d hdfs:///user/hadoop/spark/kddcup\ndata: org.apache.spark.sql.DataFrame \u003d [duration: int, protocol_type: string ... 40 more fields]\nres5: data.type \u003d [duration: int, protocol_type: string ... 40 more fields]\n"
           }
         ]
       },
@@ -79,8 +79,8 @@
           "tooltip": "View in Spark web UI",
           "group": "spark",
           "values": [
-            "http://master:4040/jobs/job?id\u003d3",
-            "http://master:4040/jobs/job?id\u003d4"
+            "http://master:4040/jobs/job?id\u003d0",
+            "http://master:4040/jobs/job?id\u003d1"
           ],
           "interpreterSettingId": "spark"
         }
@@ -89,15 +89,365 @@
       "jobName": "paragraph_1546823233979_2019666342",
       "id": "20190107-090713_1348174779",
       "dateCreated": "2019-01-07 09:07:13.980",
-      "dateStarted": "2019-01-08 09:31:27.889",
-      "dateFinished": "2019-01-08 09:32:19.622",
+      "dateStarted": "2019-01-11 08:41:03.128",
+      "dateFinished": "2019-01-11 08:42:05.847",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "data.select(\"label\").groupBy(\"label\").count().orderBy($\"count\".desc).show(15)\n",
+      "text": "data.select(\"label\").\n  groupBy(\"label\").count().\n  orderBy($\"count\".desc).show(5)\n",
       "user": "hadoop",
-      "dateUpdated": "2019-01-08 09:36:31.076",
+      "dateUpdated": "2019-01-11 08:45:42.642",
+      "config": {
+        "colWidth": 4.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+--------+-------+\n|   label|  count|\n+--------+-------+\n|  smurf.|2807886|\n|neptune.|1072017|\n| normal.| 972781|\n|  satan.|  15892|\n|ipsweep.|  12481|\n+--------+-------+\nonly showing top 5 rows\n\n"
+          }
+        ]
+      },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            "http://master:4040/jobs/job?id\u003d4"
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "apps": [],
+      "jobName": "paragraph_1546823438940_1838593709",
+      "id": "20190107-091038_1366215404",
+      "dateCreated": "2019-01-07 09:10:38.940",
+      "dateStarted": "2019-01-11 08:45:42.655",
+      "dateFinished": "2019-01-11 08:45:44.203",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "import scala.util.Random\n\nimport org.apache.spark.ml.{PipelineModel, Pipeline}\nimport org.apache.spark.ml.clustering.{KMeans, KMeansModel}\nimport org.apache.spark.ml.feature.{OneHotEncoder, VectorAssembler, StringIndexer, StandardScaler}\nimport org.apache.spark.ml.linalg.{Vector, Vectors}\nimport org.apache.spark.sql.{DataFrame, SparkSession}\n\nimport spark.implicits._\n",
+      "user": "hadoop",
+      "dateUpdated": "2019-01-11 08:53:50.759",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 12.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "import scala.util.Random\nimport org.apache.spark.ml.{PipelineModel, Pipeline}\nimport org.apache.spark.ml.clustering.{KMeans, KMeansModel}\nimport org.apache.spark.ml.feature.{OneHotEncoder, VectorAssembler, StringIndexer, StandardScaler}\nimport org.apache.spark.ml.linalg.{Vector, Vectors}\nimport org.apache.spark.sql.{DataFrame, SparkSession}\nimport spark.implicits._\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1546842576926_-64265555",
+      "id": "20190107-142936_353013751",
+      "dateCreated": "2019-01-07 14:29:36.926",
+      "dateStarted": "2019-01-11 08:53:50.774",
+      "dateFinished": "2019-01-11 08:53:52.178",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "def clusteringScore1(data: DataFrame, k: Int): Double \u003d {\n    val assembler \u003d new VectorAssembler().\n      setInputCols(data.columns.filter(_ !\u003d \"label\")).\n      setOutputCol(\"featureVector\")\n\n    val kmeans \u003d new KMeans().\n      setSeed(Random.nextLong()).\n      setK(k).\n      setPredictionCol(\"cluster\").\n      setFeaturesCol(\"featureVector\").\n      setMaxIter(40).\n      setTol(1.0e-5)\n\n    val pipeline \u003d new Pipeline().setStages(Array(assembler, kmeans))\n\n    val kmeansModel \u003d pipeline.fit(data).stages.last.asInstanceOf[KMeansModel]\n    kmeansModel.computeCost(assembler.transform(data)) / data.count()\n  }\n\ndef clusteringTake1(data: DataFrame): Unit \u003d {\n    \n  val numericOnly \u003d data.drop(\"protocol_type\", \"service\", \"flag\").cache()\n  \n  (20 to 100 by 20).map(k \u003d\u003e (k, clusteringScore1(numericOnly, k))).foreach(println)\n  \n  numericOnly.unpersist()\n}\n",
+      "user": "hadoop",
+      "dateUpdated": "2019-01-11 08:53:54.918",
+      "config": {
+        "colWidth": 6.0,
+        "fontSize": 12.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala",
+        "lineNumbers": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "clusteringScore1: (data: org.apache.spark.sql.DataFrame, k: Int)Double\nclusteringTake1: (data: org.apache.spark.sql.DataFrame)Unit\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1547167372644_-2110667653",
+      "id": "20190111-084252_1228065382",
+      "dateCreated": "2019-01-11 08:42:52.644",
+      "dateStarted": "2019-01-11 08:53:54.935",
+      "dateFinished": "2019-01-11 08:53:55.796",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "Mode - 1",
+      "text": "clusteringTake1(data)\n",
+      "user": "hadoop",
+      "dateUpdated": "2019-01-11 08:59:09.181",
+      "config": {
+        "colWidth": 6.0,
+        "fontSize": 12.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala",
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "(20,6.982127937707834E7)\n(40,4.708898544223402E7)\n(60,1.0867437962581754E7)\n(80,7655223.264818007)\n(100,8800347.065302772)\n"
+          }
+        ]
+      },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            "http://master:4040/jobs/job?id\u003d185",
+            "http://master:4040/jobs/job?id\u003d186",
+            "http://master:4040/jobs/job?id\u003d187",
+            "http://master:4040/jobs/job?id\u003d188",
+            "http://master:4040/jobs/job?id\u003d189",
+            "http://master:4040/jobs/job?id\u003d190",
+            "http://master:4040/jobs/job?id\u003d191",
+            "http://master:4040/jobs/job?id\u003d192",
+            "http://master:4040/jobs/job?id\u003d193",
+            "http://master:4040/jobs/job?id\u003d194",
+            "http://master:4040/jobs/job?id\u003d195",
+            "http://master:4040/jobs/job?id\u003d196",
+            "http://master:4040/jobs/job?id\u003d197",
+            "http://master:4040/jobs/job?id\u003d198",
+            "http://master:4040/jobs/job?id\u003d199",
+            "http://master:4040/jobs/job?id\u003d200",
+            "http://master:4040/jobs/job?id\u003d201",
+            "http://master:4040/jobs/job?id\u003d202",
+            "http://master:4040/jobs/job?id\u003d203",
+            "http://master:4040/jobs/job?id\u003d204",
+            "http://master:4040/jobs/job?id\u003d205",
+            "http://master:4040/jobs/job?id\u003d206",
+            "http://master:4040/jobs/job?id\u003d207",
+            "http://master:4040/jobs/job?id\u003d208",
+            "http://master:4040/jobs/job?id\u003d209",
+            "http://master:4040/jobs/job?id\u003d210",
+            "http://master:4040/jobs/job?id\u003d211",
+            "http://master:4040/jobs/job?id\u003d212",
+            "http://master:4040/jobs/job?id\u003d213",
+            "http://master:4040/jobs/job?id\u003d214",
+            "http://master:4040/jobs/job?id\u003d215",
+            "http://master:4040/jobs/job?id\u003d216",
+            "http://master:4040/jobs/job?id\u003d217",
+            "http://master:4040/jobs/job?id\u003d218",
+            "http://master:4040/jobs/job?id\u003d219",
+            "http://master:4040/jobs/job?id\u003d220",
+            "http://master:4040/jobs/job?id\u003d221",
+            "http://master:4040/jobs/job?id\u003d222",
+            "http://master:4040/jobs/job?id\u003d223",
+            "http://master:4040/jobs/job?id\u003d224",
+            "http://master:4040/jobs/job?id\u003d225",
+            "http://master:4040/jobs/job?id\u003d226",
+            "http://master:4040/jobs/job?id\u003d227",
+            "http://master:4040/jobs/job?id\u003d228",
+            "http://master:4040/jobs/job?id\u003d229",
+            "http://master:4040/jobs/job?id\u003d230",
+            "http://master:4040/jobs/job?id\u003d231",
+            "http://master:4040/jobs/job?id\u003d232",
+            "http://master:4040/jobs/job?id\u003d233",
+            "http://master:4040/jobs/job?id\u003d234",
+            "http://master:4040/jobs/job?id\u003d235",
+            "http://master:4040/jobs/job?id\u003d236",
+            "http://master:4040/jobs/job?id\u003d237",
+            "http://master:4040/jobs/job?id\u003d238",
+            "http://master:4040/jobs/job?id\u003d239",
+            "http://master:4040/jobs/job?id\u003d240",
+            "http://master:4040/jobs/job?id\u003d241",
+            "http://master:4040/jobs/job?id\u003d242",
+            "http://master:4040/jobs/job?id\u003d243",
+            "http://master:4040/jobs/job?id\u003d244",
+            "http://master:4040/jobs/job?id\u003d245",
+            "http://master:4040/jobs/job?id\u003d246",
+            "http://master:4040/jobs/job?id\u003d247",
+            "http://master:4040/jobs/job?id\u003d248",
+            "http://master:4040/jobs/job?id\u003d249",
+            "http://master:4040/jobs/job?id\u003d250",
+            "http://master:4040/jobs/job?id\u003d251",
+            "http://master:4040/jobs/job?id\u003d252",
+            "http://master:4040/jobs/job?id\u003d253",
+            "http://master:4040/jobs/job?id\u003d254",
+            "http://master:4040/jobs/job?id\u003d255",
+            "http://master:4040/jobs/job?id\u003d256",
+            "http://master:4040/jobs/job?id\u003d257",
+            "http://master:4040/jobs/job?id\u003d258",
+            "http://master:4040/jobs/job?id\u003d259",
+            "http://master:4040/jobs/job?id\u003d260",
+            "http://master:4040/jobs/job?id\u003d261",
+            "http://master:4040/jobs/job?id\u003d262",
+            "http://master:4040/jobs/job?id\u003d263",
+            "http://master:4040/jobs/job?id\u003d264",
+            "http://master:4040/jobs/job?id\u003d265",
+            "http://master:4040/jobs/job?id\u003d266",
+            "http://master:4040/jobs/job?id\u003d267",
+            "http://master:4040/jobs/job?id\u003d268",
+            "http://master:4040/jobs/job?id\u003d269",
+            "http://master:4040/jobs/job?id\u003d270",
+            "http://master:4040/jobs/job?id\u003d271",
+            "http://master:4040/jobs/job?id\u003d272",
+            "http://master:4040/jobs/job?id\u003d273",
+            "http://master:4040/jobs/job?id\u003d274",
+            "http://master:4040/jobs/job?id\u003d275",
+            "http://master:4040/jobs/job?id\u003d276",
+            "http://master:4040/jobs/job?id\u003d277",
+            "http://master:4040/jobs/job?id\u003d278",
+            "http://master:4040/jobs/job?id\u003d279",
+            "http://master:4040/jobs/job?id\u003d280",
+            "http://master:4040/jobs/job?id\u003d281",
+            "http://master:4040/jobs/job?id\u003d282",
+            "http://master:4040/jobs/job?id\u003d283",
+            "http://master:4040/jobs/job?id\u003d284",
+            "http://master:4040/jobs/job?id\u003d285",
+            "http://master:4040/jobs/job?id\u003d286",
+            "http://master:4040/jobs/job?id\u003d287",
+            "http://master:4040/jobs/job?id\u003d288",
+            "http://master:4040/jobs/job?id\u003d289",
+            "http://master:4040/jobs/job?id\u003d290",
+            "http://master:4040/jobs/job?id\u003d291",
+            "http://master:4040/jobs/job?id\u003d292",
+            "http://master:4040/jobs/job?id\u003d293",
+            "http://master:4040/jobs/job?id\u003d294",
+            "http://master:4040/jobs/job?id\u003d295",
+            "http://master:4040/jobs/job?id\u003d296",
+            "http://master:4040/jobs/job?id\u003d297",
+            "http://master:4040/jobs/job?id\u003d298",
+            "http://master:4040/jobs/job?id\u003d299",
+            "http://master:4040/jobs/job?id\u003d300",
+            "http://master:4040/jobs/job?id\u003d301",
+            "http://master:4040/jobs/job?id\u003d302",
+            "http://master:4040/jobs/job?id\u003d303",
+            "http://master:4040/jobs/job?id\u003d304",
+            "http://master:4040/jobs/job?id\u003d305",
+            "http://master:4040/jobs/job?id\u003d306",
+            "http://master:4040/jobs/job?id\u003d307",
+            "http://master:4040/jobs/job?id\u003d308",
+            "http://master:4040/jobs/job?id\u003d309",
+            "http://master:4040/jobs/job?id\u003d310",
+            "http://master:4040/jobs/job?id\u003d311",
+            "http://master:4040/jobs/job?id\u003d312",
+            "http://master:4040/jobs/job?id\u003d313",
+            "http://master:4040/jobs/job?id\u003d314",
+            "http://master:4040/jobs/job?id\u003d315",
+            "http://master:4040/jobs/job?id\u003d316",
+            "http://master:4040/jobs/job?id\u003d317",
+            "http://master:4040/jobs/job?id\u003d318",
+            "http://master:4040/jobs/job?id\u003d319",
+            "http://master:4040/jobs/job?id\u003d320",
+            "http://master:4040/jobs/job?id\u003d321",
+            "http://master:4040/jobs/job?id\u003d322",
+            "http://master:4040/jobs/job?id\u003d323",
+            "http://master:4040/jobs/job?id\u003d324",
+            "http://master:4040/jobs/job?id\u003d325",
+            "http://master:4040/jobs/job?id\u003d326",
+            "http://master:4040/jobs/job?id\u003d327",
+            "http://master:4040/jobs/job?id\u003d328",
+            "http://master:4040/jobs/job?id\u003d329",
+            "http://master:4040/jobs/job?id\u003d330",
+            "http://master:4040/jobs/job?id\u003d331",
+            "http://master:4040/jobs/job?id\u003d332",
+            "http://master:4040/jobs/job?id\u003d333",
+            "http://master:4040/jobs/job?id\u003d334",
+            "http://master:4040/jobs/job?id\u003d335",
+            "http://master:4040/jobs/job?id\u003d336",
+            "http://master:4040/jobs/job?id\u003d337",
+            "http://master:4040/jobs/job?id\u003d338",
+            "http://master:4040/jobs/job?id\u003d339",
+            "http://master:4040/jobs/job?id\u003d340",
+            "http://master:4040/jobs/job?id\u003d341",
+            "http://master:4040/jobs/job?id\u003d342",
+            "http://master:4040/jobs/job?id\u003d343",
+            "http://master:4040/jobs/job?id\u003d344",
+            "http://master:4040/jobs/job?id\u003d345",
+            "http://master:4040/jobs/job?id\u003d346",
+            "http://master:4040/jobs/job?id\u003d347",
+            "http://master:4040/jobs/job?id\u003d348",
+            "http://master:4040/jobs/job?id\u003d349",
+            "http://master:4040/jobs/job?id\u003d350",
+            "http://master:4040/jobs/job?id\u003d351",
+            "http://master:4040/jobs/job?id\u003d352"
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "apps": [],
+      "jobName": "paragraph_1547167649316_-1351548430",
+      "id": "20190111-084729_1884976512",
+      "dateCreated": "2019-01-11 08:47:29.316",
+      "dateStarted": "2019-01-11 08:59:09.203",
+      "dateFinished": "2019-01-11 09:01:43.639",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "\n",
+      "user": "hadoop",
+      "dateUpdated": "2019-01-11 10:08:14.145",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -120,42 +470,32 @@
         "msg": [
           {
             "type": "TEXT",
-            "data": "+----------------+-------+\n|           label|  count|\n+----------------+-------+\n|          smurf.|2807886|\n|        neptune.|1072017|\n|         normal.| 972781|\n|          satan.|  15892|\n|        ipsweep.|  12481|\n|      portsweep.|  10413|\n|           nmap.|   2316|\n|           back.|   2203|\n|    warezclient.|   1020|\n|       teardrop.|    979|\n|            pod.|    264|\n|   guess_passwd.|     53|\n|buffer_overflow.|     30|\n|           land.|     21|\n|    warezmaster.|     20|\n+----------------+-------+\nonly showing top 15 rows\n\n"
+            "data": "2\n"
           }
         ]
       },
-      "runtimeInfos": {
-        "jobUrl": {
-          "propertyName": "jobUrl",
-          "label": "SPARK JOB",
-          "tooltip": "View in Spark web UI",
-          "group": "spark",
-          "values": [
-            "http://master:4040/jobs/job?id\u003d6"
-          ],
-          "interpreterSettingId": "spark"
-        }
-      },
       "apps": [],
-      "jobName": "paragraph_1546823438940_1838593709",
-      "id": "20190107-091038_1366215404",
-      "dateCreated": "2019-01-07 09:10:38.940",
-      "dateStarted": "2019-01-08 09:36:31.101",
-      "dateFinished": "2019-01-08 09:36:33.197",
+      "jobName": "paragraph_1547168125018_-1850804695",
+      "id": "20190111-085525_523290948",
+      "dateCreated": "2019-01-11 08:55:25.018",
+      "dateStarted": "2019-01-11 09:04:20.648",
+      "dateFinished": "2019-01-11 09:04:26.922",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
+      "text": "%python\n",
       "user": "hadoop",
+      "dateUpdated": "2019-01-11 09:04:20.630",
       "config": {},
       "settings": {
         "params": {},
         "forms": {}
       },
       "apps": [],
-      "jobName": "paragraph_1546842576926_-64265555",
-      "id": "20190107-142936_353013751",
-      "dateCreated": "2019-01-07 14:29:36.926",
+      "jobName": "paragraph_1547168660629_-455677736",
+      "id": "20190111-090420_669327614",
+      "dateCreated": "2019-01-11 09:04:20.629",
       "status": "READY",
       "progressUpdateIntervalMs": 500
     }
@@ -166,6 +506,7 @@
   "noteForms": {},
   "angularObjects": {
     "md:shared_process": [],
+    "python:shared_process": [],
     "spark:shared_process": []
   },
   "config": {
